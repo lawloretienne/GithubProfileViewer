@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Event Types -->
+    <integer name="events">1</integer>
+    <integer name="received_events">2</integer>
+
+</resources>

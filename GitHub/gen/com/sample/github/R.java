@@ -55,16 +55,22 @@ public final class R {
         public static final int view_profile_button=0x7f02000e;
     }
     public static final class id {
-        public static final int accounts=0x7f090009;
-        public static final int avatar=0x7f090004;
-        public static final int bio=0x7f090007;
-        public static final int eventBody=0x7f090001;
-        public static final int eventEntry=0x7f090000;
-        public static final int html_url=0x7f090006;
-        public static final int name=0x7f090005;
-        public static final int pager=0x7f090008;
-        public static final int user_account=0x7f090002;
-        public static final int view_profile_button=0x7f090003;
+        public static final int accounts=0x7f0a0009;
+        public static final int avatar=0x7f0a0004;
+        public static final int bio=0x7f0a0007;
+        public static final int eventBody=0x7f0a0001;
+        public static final int eventEntry=0x7f0a0000;
+        public static final int html_url=0x7f0a0006;
+        public static final int name=0x7f0a0005;
+        public static final int pager=0x7f0a0008;
+        public static final int user_account=0x7f0a0002;
+        public static final int view_profile_button=0x7f0a0003;
+    }
+    public static final class integer {
+        /**  Event Types 
+         */
+        public static final int events=0x7f060000;
+        public static final int received_events=0x7f060001;
     }
     public static final class layout {
         public static final int event=0x7f030000;
@@ -73,30 +79,30 @@ public final class R {
         public static final int profile_manager=0x7f030003;
     }
     public static final class menu {
-        public static final int profile_manager=0x7f080000;
+        public static final int profile_manager=0x7f090000;
     }
     public static final class string {
-        public static final int access_token=0x7f060005;
+        public static final int access_token=0x7f070005;
         /**  Menu items 
          */
-        public static final int action_accounts=0x7f060001;
-        public static final int action_refresh=0x7f060002;
-        public static final int app_name=0x7f060000;
+        public static final int action_accounts=0x7f070001;
+        public static final int action_refresh=0x7f070002;
+        public static final int app_name=0x7f070000;
         /**  Content Descriptions 
          */
-        public static final int avatar_content_description=0x7f060006;
-        public static final int empty_events_fragment_text=0x7f06000c;
-        public static final int github_logo_background_content_description=0x7f060009;
+        public static final int avatar_content_description=0x7f070006;
+        public static final int empty_events_fragment_text=0x7f07000c;
+        public static final int github_logo_background_content_description=0x7f070009;
         /**  Network Related Strings 
          */
-        public static final int invalid_account_name=0x7f060003;
-        public static final int logo_background_content_description=0x7f060007;
-        public static final int no_network_connection=0x7f060004;
+        public static final int invalid_account_name=0x7f070003;
+        public static final int logo_background_content_description=0x7f070007;
+        public static final int no_network_connection=0x7f070004;
         /**  View texts 
          */
-        public static final int user_account_hint=0x7f06000a;
-        public static final int view_profile_button_content_description=0x7f060008;
-        public static final int view_profile_button_text=0x7f06000b;
+        public static final int user_account_hint=0x7f07000a;
+        public static final int view_profile_button_content_description=0x7f070008;
+        public static final int view_profile_button_text=0x7f07000b;
     }
     public static final class style {
         /** 
@@ -120,13 +126,13 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int Black=0x7f070004;
-        public static final int ButtonBlack=0x7f070002;
-        public static final int ImageButtonBlack=0x7f070003;
+        public static final int AppTheme=0x7f080001;
+        public static final int Black=0x7f080004;
+        public static final int ButtonBlack=0x7f080002;
+        public static final int ImageButtonBlack=0x7f080003;
     }
 }

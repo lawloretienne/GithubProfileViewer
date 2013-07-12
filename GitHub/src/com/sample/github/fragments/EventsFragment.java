@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -29,14 +30,19 @@ public class EventsFragment extends ListFragment {
 	private EventsListAdapter mAdapter;
 	private MenuItem mRefreshItem;
 	private String mEventsUrl, mReceivedEventsUrl;
+	private Resources mResources;
+	private int mEventsType;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
+		mResources = getActivity().getResources();
+		
 		Bundle b = (Bundle) getArguments();
 		String result = b.getString("result");
-
+		mEventsType = b.getInt("eventsType");
+		
 		JSONObject jObject = null;
 
 		try {
@@ -50,11 +56,12 @@ public class EventsFragment extends ListFragment {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-//		Log.d(DEBUG_TAG, mEventsUrl);
-		// Log.d(DEBUG_TAG, mReceivedEventsUrl);
 
-		new EventsDownload().execute(mReceivedEventsUrl);
-//		new EventsDownload().execute(mEventsUrl);
+		if(mEventsType == mResources.getInteger(R.integer.events)){
+			new EventsDownload().execute(mEventsUrl);
+		}else if(mEventsType == mResources.getInteger(R.integer.received_events)){
+			new EventsDownload().execute(mReceivedEventsUrl);
+		}
 
 		// We have a menu item to show in action bar.
 		setHasOptionsMenu(true);
@@ -88,7 +95,11 @@ public class EventsFragment extends ListFragment {
 		if (item.getItemId() == mRefreshItem.getItemId()) {
 			ProgressBar pb = new ProgressBar(getActivity());
 			item.setActionView(pb);
-			new EventsDownload().execute(mReceivedEventsUrl);
+			if(mEventsType == mResources.getInteger(R.integer.events)){
+				new EventsDownload().execute(mEventsUrl);
+			}else if(mEventsType == mResources.getInteger(R.integer.received_events)){
+				new EventsDownload().execute(mReceivedEventsUrl);
+			}
 			return true;
 		} else {
 			return super.onOptionsItemSelected(item);

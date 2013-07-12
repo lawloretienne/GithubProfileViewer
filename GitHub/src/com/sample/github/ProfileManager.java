@@ -43,20 +43,29 @@ public class ProfileManager extends FragmentActivity {
 		String result = data.getStringExtra("result");
 
 		List<Fragment> fragments = new Vector<Fragment>();
-		ProfileFragment pf = (ProfileFragment) Fragment.instantiate(this,
+		ProfileFragment profile = (ProfileFragment) Fragment.instantiate(this,
 				ProfileFragment.class.getName());
 		Bundle b = new Bundle();
 		b.putString("result", result);
-		pf.setArguments(b);
+		profile.setArguments(b);
 
-		EventsFragment ef = (EventsFragment) Fragment.instantiate(this,
+		EventsFragment events = (EventsFragment) Fragment.instantiate(this,
 				EventsFragment.class.getName());
 		Bundle b2 = new Bundle();
 		b2.putString("result", result);
-		ef.setArguments(b);
+		b2.putInt("eventsType", getResources().getInteger(R.integer.events));
+		events.setArguments(b2);
+		
+		EventsFragment receivedEvents = (EventsFragment) Fragment.instantiate(this,
+				EventsFragment.class.getName());
+		Bundle b3 = new Bundle();
+		b3.putString("result", result);
+		b3.putInt("eventsType", getResources().getInteger(R.integer.received_events));
+		receivedEvents.setArguments(b3);
 
-		fragments.add(pf);
-		fragments.add(ef);
+		fragments.add(profile);
+		fragments.add(events);
+		fragments.add(receivedEvents);
 
 		mActionBar = getActionBar();
 
@@ -99,8 +108,11 @@ public class ProfileManager extends FragmentActivity {
 		mActionBar.addTab(mActionBar.newTab().setText("Profile")
 				.setTabListener(new TabListener<ProfileFragment>("0", mPager)));
 
+		mActionBar.addTab(mActionBar.newTab().setText("Events")
+				.setTabListener(new TabListener<EventsFragment>("1", mPager)));
+		
 		mActionBar.addTab(mActionBar.newTab().setText("Received Events")
-				.setTabListener(new TabListener<ProfileFragment>("1", mPager)));
+				.setTabListener(new TabListener<EventsFragment>("2", mPager)));
 
 		if (savedInstanceState != null) {
 			mActionBar.setSelectedNavigationItem(savedInstanceState.getInt(
