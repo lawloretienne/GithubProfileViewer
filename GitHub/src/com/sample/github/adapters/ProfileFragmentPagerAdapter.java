@@ -1,4 +1,4 @@
-package com.sample.github;
+package com.sample.github.adapters;
 
 import java.util.List;
 

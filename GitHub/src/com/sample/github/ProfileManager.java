@@ -20,6 +20,10 @@ import android.text.SpannableString;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.sample.github.adapters.ProfileFragmentPagerAdapter;
+import com.sample.github.fragments.EventsFragment;
+import com.sample.github.fragments.ProfileFragment;
+
 public class ProfileManager extends FragmentActivity {
 
 	private String DEBUG_TAG = "GitHub";

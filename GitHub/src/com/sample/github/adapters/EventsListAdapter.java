@@ -1,4 +1,4 @@
-package com.sample.github;
+package com.sample.github.adapters;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +18,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.sample.github.R;
 import com.sample.github.models.Actor;
 import com.sample.github.models.Event;
 import com.sample.github.models.Issue;
 import com.sample.github.models.Page;
 import com.sample.github.models.Payload;
 import com.sample.github.models.Repo;
+
+
 
 public class EventsListAdapter extends BaseAdapter {
 

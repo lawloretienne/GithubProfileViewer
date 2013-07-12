@@ -1,4 +1,4 @@
-package com.sample.github;
+package com.sample.github.fragments;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -19,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.sample.github.R;
 
 public class ProfileFragment extends Fragment {
 

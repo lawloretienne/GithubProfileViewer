@@ -1,4 +1,4 @@
-package com.sample.github;
+package com.sample.github.fragments;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,6 +17,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
+import com.sample.github.EventsJSONParser;
+import com.sample.github.R;
+import com.sample.github.adapters.EventsListAdapter;
 import com.sample.github.models.Event;
 import com.sample.github.utils.HTTPUtils;
 
