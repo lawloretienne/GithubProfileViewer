@@ -75,24 +75,33 @@ public class EventsListAdapter extends BaseAdapter {
 		String repoName = repo.getName();
 		String createdAt = event.getCreatedAt();
 
-		Typeface tf = Typeface.createFromAsset(mContext.getAssets(),
+		Typeface robotoLightTypeface = Typeface.createFromAsset(mContext.getAssets(),
 				"fonts/Roboto-Light.ttf");
-		mHolder.eventBody.setTypeface(tf);
+		mHolder.eventText.setTypeface(robotoLightTypeface);
 
-		mHolder.eventBody.setText(getEventText(login, eventType, repoName,
-				payload, createdAt));
+		CharSequence eventText = getEventText(login, eventType, repoName,
+				payload, createdAt);
+		mHolder.eventText.setText(eventText);
 
+		
+		Typeface octiconTypeface = Typeface.createFromAsset(mContext.getAssets(),
+				"fonts/octicons-regular-webfont.ttf");
+		mHolder.eventIcon.setTypeface(octiconTypeface);
+		
+		
 		return convertView;
 
 	}
 
 	protected class ViewHolder {
-		TextView eventBody;
+		TextView eventIcon;
+		TextView eventText;
 	}
 
 	private ViewHolder setupViewHolder(View convertView) {
 		ViewHolder holder = new ViewHolder();
-		holder.eventBody = (TextView) convertView.findViewById(R.id.eventBody);
+		holder.eventIcon = (TextView) convertView.findViewById(R.id.eventIcon);
+		holder.eventText = (TextView) convertView.findViewById(R.id.eventText);
 		return holder;
 	}
 
@@ -116,9 +125,17 @@ public class EventsListAdapter extends BaseAdapter {
 		action = TextUtils.concat(action, styleText(login), " ");
 		if (eventType.equals("IssuesEvent")) {
 			Issue issue = payload.getIssue();
+			if(payload.getAction().equals("opened")){
+				mHolder.eventIcon.setText("\uf026");
+			}else if(payload.getAction().equals("reopened")){
+				mHolder.eventIcon.setText("\uf027");
+			}else if(payload.getAction().equals("closed")){
+				mHolder.eventIcon.setText("\uf028");
+			}
 			action = TextUtils.concat(action, payload.getAction(), " issue ",
 					styleText(repoName + "#" + issue.getNumber()));
 		} else if (eventType.equals("IssueCommentEvent")) {
+			mHolder.eventIcon.setText("\uf04f"); 
 			action = TextUtils.concat(action, "commented on ");
 			Issue issue = payload.getIssue();
 			if (issue != null) {
@@ -134,11 +151,13 @@ public class EventsListAdapter extends BaseAdapter {
 						.concat(action, "issue ", styleText(repoName));
 			}
 		} else if (eventType.equals("PushEvent")) {
+			mHolder.eventIcon.setText("\uf01f");
 			String ref = payload.getRef();
 			ref = ref.substring(ref.indexOf("refs/heads/") + 11, ref.length());
 			action = TextUtils.concat(action, "pushed to ", styleText(ref),
 					" at ", styleText(repoName));
 		} else if (eventType.equals("PullRequestEvent")) {
+			mHolder.eventIcon.setText("\uf009");
 			if (payload.getAction().equals("closed")) {
 				if (payload.getPullRequest().getMerged() == true) {
 					action = TextUtils.concat(action, "merged pull request ");
@@ -152,9 +171,11 @@ public class EventsListAdapter extends BaseAdapter {
 			action = TextUtils.concat(action, styleText(repoName + "#"
 					+ payload.getNumber()));
 		} else if (eventType.equals("FollowEvent")) {
+			mHolder.eventIcon.setText("\uf01c");
 			action = TextUtils.concat(action, "started following ",
 					styleText(payload.getTarget().getLogin()));
 		} else if (eventType.equals("ForkEvent")) {
+			mHolder.eventIcon.setText("\uf020");
 			action = TextUtils.concat(action, "forked ", styleText(repoName),
 					" to ", styleText(payload.getForkee().getFullName()));
 		} else if (eventType.equals("CreateEvent")) {
@@ -163,17 +184,23 @@ public class EventsListAdapter extends BaseAdapter {
 			if (!(payload.getRef().equals("null"))) {
 				action = TextUtils.concat(action, styleText(payload.getRef()));
 			}
-			if (payload.getRefType().equals("branch")
-					|| payload.getRefType().equals("tag")) {
+			if (payload.getRefType().equals("branch")) {
+				mHolder.eventIcon.setText("\uf023");
+				action = TextUtils.concat(action, " at ", styleText(repoName));
+			}
+			if (payload.getRefType().equals("tag")) {
+				mHolder.eventIcon.setText("\uf054");
 				action = TextUtils.concat(action, " at ", styleText(repoName));
 			}
 			if (payload.getRefType().equals("repository")) {
+				mHolder.eventIcon.setText("\uf003");
 				repoName = repoName.substring(
 						repoName.indexOf(login) + login.length() + 1,
 						repoName.length());
 				action = TextUtils.concat(action, styleText(repoName));
 			}
 		} else if (eventType.equals("DeleteEvent")) {
+			mHolder.eventIcon.setText("\uf084");
 			action = TextUtils.concat(action, "deleted ", payload.getRefType(),
 					" ");
 			if (!(payload.getRef().equals("null"))) {
@@ -181,33 +208,44 @@ public class EventsListAdapter extends BaseAdapter {
 			}
 			action = TextUtils.concat(action, "at ", styleText(repoName));
 		} else if (eventType.equals("WatchEvent")) {
+			mHolder.eventIcon.setText("\uf02a");
 			if (payload.getAction().equals("started")) {
 				action = TextUtils.concat(action, "starred ",
 						styleText(repoName));
 			}
 		} else if (eventType.equals("MemberEvent")) {
+			mHolder.eventIcon.setText("\uf01a");
 			action = TextUtils.concat(action, "added ", styleText(payload
 					.getMember().getLogin()), " to ", styleText(repoName));
 		} else if (eventType.equals("GistEvent")) {
 			if (payload.getGist() != null) {
-				action = TextUtils.concat(action, "created ",
-						styleText("gist: " + payload.getGist().getId()));
+				mHolder.eventIcon.setText("\uf00e");
+				if(payload.getAction().equals("update")){
+					action = TextUtils.concat(action, "updated");
+				}else if(payload.getAction().equals("create")){
+					action = TextUtils.concat(action, "created");
+				}
+				action = TextUtils.concat(action, styleText(" gist: " + payload.getGist().getId()));
 			}
 		} else if (eventType.equals("GollumEvent")) {
+			mHolder.eventIcon.setText("\uf007");
 			ArrayList<Page> pages = payload.getPages();
 			Page page = pages.get(0);
 			action = TextUtils.concat(action, page.getAction(), " the ",
 					styleText(repoName), " wiki");
 		} else if (eventType.equals("PublicEvent")) {
+			mHolder.eventIcon.setText("\uf001");
 			action = TextUtils.concat(action, "open sourced ",
 					styleText(repoName));
 		} else if (eventType.equals("CommitCommentEvent")) {
+			mHolder.eventIcon.setText("\uf04f");
 			action = TextUtils.concat(action, "commented on commit ");
 			if (payload.getComment() != null) {
 				action = TextUtils.concat(action, styleText(repoName + "@"
 						+ payload.getComment().getCommitId()));
 			}
 		} else if (eventType.equals("PullRequestReviewCommentEvent")) {
+			mHolder.eventIcon.setText("\uf04f"); 
 			String pullRequestUrl = payload.getComment().getPullRequestUrl();
 			if (pullRequestUrl.length() > 0) {
 				String pullRequestUrlId = pullRequestUrl.substring(

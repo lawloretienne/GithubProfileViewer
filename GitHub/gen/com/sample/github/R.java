@@ -45,26 +45,49 @@ public final class R {
         public static final int btn_default_holo_light_black=0x7f020004;
         public static final int btn_default_normal_holo_light_black=0x7f020005;
         public static final int btn_default_pressed_holo_light_black=0x7f020006;
-        public static final int default_gravatar=0x7f020007;
-        public static final int github_background=0x7f020008;
-        public static final int github_logo=0x7f020009;
-        public static final int github_logo_transparent=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int ic_menu_refresh=0x7f02000c;
-        public static final int octocat_sad=0x7f02000d;
-        public static final int view_profile_button=0x7f02000e;
+        public static final int clock=0x7f020007;
+        public static final int default_gravatar=0x7f020008;
+        public static final int github_background=0x7f020009;
+        public static final int github_logo=0x7f02000a;
+        public static final int github_logo_transparent=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int ic_menu_refresh=0x7f02000d;
+        public static final int link=0x7f02000e;
+        public static final int mail=0x7f02000f;
+        public static final int map_pin_stroke=0x7f020010;
+        public static final int octocat_sad=0x7f020011;
+        public static final int view_profile_button=0x7f020012;
     }
     public static final class id {
-        public static final int accounts=0x7f0a0009;
-        public static final int avatar=0x7f0a0004;
-        public static final int bio=0x7f0a0007;
-        public static final int eventBody=0x7f0a0001;
+        public static final int accounts=0x7f0a001c;
+        public static final int avatar=0x7f0a0005;
+        public static final int bio=0x7f0a001a;
+        public static final int blog=0x7f0a0014;
+        public static final int blogIcon=0x7f0a0013;
+        public static final int blogLayout=0x7f0a0012;
+        public static final int company=0x7f0a000b;
+        public static final int companyIcon=0x7f0a000a;
+        public static final int companyLayout=0x7f0a0009;
+        public static final int createdAt=0x7f0a0017;
+        public static final int createdAtIcon=0x7f0a0016;
+        public static final int createdAtLayout=0x7f0a0015;
+        public static final int divider1=0x7f0a0008;
+        public static final int email=0x7f0a0011;
+        public static final int emailIcon=0x7f0a0010;
+        public static final int emailLayout=0x7f0a000f;
         public static final int eventEntry=0x7f0a0000;
-        public static final int html_url=0x7f0a0006;
-        public static final int name=0x7f0a0005;
-        public static final int pager=0x7f0a0008;
-        public static final int user_account=0x7f0a0002;
-        public static final int view_profile_button=0x7f0a0003;
+        public static final int eventIcon=0x7f0a0001;
+        public static final int eventText=0x7f0a0002;
+        public static final int followers=0x7f0a0018;
+        public static final int following=0x7f0a0019;
+        public static final int html_url=0x7f0a0007;
+        public static final int location=0x7f0a000e;
+        public static final int locationIcon=0x7f0a000d;
+        public static final int locationLayout=0x7f0a000c;
+        public static final int name=0x7f0a0006;
+        public static final int pager=0x7f0a001b;
+        public static final int user_account=0x7f0a0003;
+        public static final int view_profile_button=0x7f0a0004;
     }
     public static final class integer {
         /**  Event Types 
@@ -98,6 +121,13 @@ public final class R {
         public static final int invalid_account_name=0x7f070003;
         public static final int logo_background_content_description=0x7f070007;
         public static final int no_network_connection=0x7f070004;
+        public static final int octicon_clock=0x7f070011;
+        /**  Octicons 
+         */
+        public static final int octicon_company=0x7f07000d;
+        public static final int octicon_link=0x7f070010;
+        public static final int octicon_location=0x7f07000e;
+        public static final int octicon_mail=0x7f07000f;
         /**  View texts 
          */
         public static final int user_account_hint=0x7f07000a;
@@ -131,8 +161,9 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f080001;
-        public static final int Black=0x7f080004;
+        public static final int Black=0x7f080005;
         public static final int ButtonBlack=0x7f080002;
+        public static final int Divider=0x7f080004;
         public static final int ImageButtonBlack=0x7f080003;
     }
 }

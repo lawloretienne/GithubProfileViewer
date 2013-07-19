@@ -22,5 +22,15 @@
     <string name="user_account_hint">Enter User Account</string>
     <string name="view_profile_button_text">View Profile</string>
     <string name="empty_events_fragment_text">No received events</string>
+    
+    <!-- Octicons -->
+    <string name="octicon_company">\uf019</string>
+    <string name="octicon_location">\uf060</string>
+    <string name="octicon_mail">\uf03b</string>
+    <string name="octicon_link">\uf05c</string>
+    <string name="octicon_clock">\uf046</string>
+    
+    
+    
 
 </resources>

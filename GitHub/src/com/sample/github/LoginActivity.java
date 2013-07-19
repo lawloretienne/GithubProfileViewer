@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.login_activity);
-
+		
 		mActivity = this;
 		mResources = getResources();
 		mUserAccount = (EditText) findViewById(R.id.user_account);
