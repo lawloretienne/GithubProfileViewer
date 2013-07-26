@@ -6,6 +6,7 @@ public class Payload {
 
 	private String mRef, mRefType, mMasterBranch, mDescription, mPushId;
 	private String mSize, mDistinctSize, mHead, mBefore, mAction, mNumber;
+	private String mName, mObject, mCommit, mObjectName, mRepo;
 	private Member mMember;
 	private Comment mComment;
 	private Issue mIssue;
@@ -15,6 +16,7 @@ public class Payload {
 	private Gist mGist;
 	private Release mRelease;
 	private PullRequest mPullRequest;
+	private Download mDownload;
 
 	public Payload() {
 
@@ -63,19 +65,19 @@ public class Payload {
 	public String getNumber() {
 		return mNumber;
 	}
-	
+
 	public Member getMember() {
 		return mMember;
 	}
-	
+
 	public Comment getComment() {
 		return mComment;
 	}
-	
+
 	public ArrayList<Page> getPages() {
 		return mPages;
 	}
-	
+
 	public Issue getIssue() {
 		return mIssue;
 	}
@@ -83,21 +85,45 @@ public class Payload {
 	public Target getTarget() {
 		return mTarget;
 	}
-	
+
 	public Forkee getForkee() {
 		return mForkee;
 	}
-	
+
 	public Gist getGist() {
 		return mGist;
 	}
-	
+
 	public Release getRelease() {
 		return mRelease;
 	}
-	
+
 	public PullRequest getPullRequest() {
 		return mPullRequest;
+	}
+
+	public String getName() {
+		return mName;
+	}
+
+	public String getObject() {
+		return mObject;
+	}
+
+	public String getCommit() {
+		return mCommit;
+	}
+	
+	public String getObjectName() {
+		return mObjectName;
+	}
+	
+	public Download getDownload() {
+		return mDownload;
+	}
+	
+	public String getRepo() {
+		return mRepo;
 	}
 	
 	public void setRef(String ref) {
@@ -143,42 +169,64 @@ public class Payload {
 	public void setNumber(String number) {
 		mNumber = number;
 	}
-	
+
 	public void setMember(Member member) {
 		mMember = member;
 	}
-	
+
 	public void setComment(Comment comment) {
 		mComment = comment;
 	}
-	
+
 	public void setIssue(Issue issue) {
 		mIssue = issue;
 	}
-	
+
 	public void setPages(ArrayList<Page> pages) {
 		mPages = pages;
 	}
-	
+
 	public void setTarget(Target target) {
 		mTarget = target;
 	}
-	
+
 	public void setForkee(Forkee forkee) {
 		mForkee = forkee;
 	}
-	
+
 	public void setGist(Gist gist) {
 		mGist = gist;
 	}
-	
+
 	public void setRelease(Release release) {
 		mRelease = release;
 	}
-	
+
 	public void setPullRequest(PullRequest pullRequest) {
 		mPullRequest = pullRequest;
 	}
+
+	public void setName(String name) {
+		mName = name;
+	}
+
+	public void setObject(String object) {
+		mObject = object;
+	}
+
+	public void setCommit(String commit) {
+		mCommit = commit;
+	}
 	
+	public void setObjectName(String objectName) {
+		mObjectName = objectName;
+	}
 	
+	public void setDownload(Download download) {
+		mDownload = download;
+	}
+	
+	public void setRepo(String repo) {
+		mRepo = repo;
+	}
 }

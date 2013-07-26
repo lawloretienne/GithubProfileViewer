@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import com.sample.github.models.Actor;
 import com.sample.github.models.Comment;
+import com.sample.github.models.Download;
 import com.sample.github.models.Event;
 import com.sample.github.models.Forkee;
 import com.sample.github.models.Gist;
@@ -30,7 +31,7 @@ public class EventsJSONParser {
 		DEBUG_TAG = getClass().getSimpleName().toString();
 	}
 
-	//Parse the JSON Response from the GitHub API
+	// Parse the JSON Response from the GitHub API
 	public static ArrayList<Event> parseJSON(String result) {
 		ArrayList<Event> items = new ArrayList<Event>();
 		JSONObject jObject = null;
@@ -47,15 +48,15 @@ public class EventsJSONParser {
 				jObject = (JSONObject) jArray.get(i);
 
 				id = jObject.getString("id");
-				
+
 				createdAt = jObject.getString("created_at");
 				createdAt = ISO8601.formatDate(createdAt);
-				
+
 				isPublic = jObject.getBoolean("public");
 				type = jObject.getString("type");
 
 				Repo repo = getRepo(jObject);
-				
+
 				Actor actor = getActor(jObject);
 
 				Org org = null;
@@ -157,8 +158,10 @@ public class EventsJSONParser {
 	}
 
 	private static Payload getPayload(JSONObject jObject) {
-		String ref, refType, masterBranch, description, pushId, size, distinctSize, head, before, action, number;
-		ref = refType = masterBranch = description = pushId = size = distinctSize = head = before = action = number = "";
+		String ref, refType, masterBranch, description, pushId, size, distinctSize;
+		String head, before, action, number, name, object, commit, objectName, repo;
+		ref = refType = masterBranch = description = pushId = size = distinctSize = "";
+		head = before = action = number = name = object = commit = objectName = repo = "";
 		Payload payload = new Payload();
 		Member member = null;
 		Comment comment = null;
@@ -169,6 +172,7 @@ public class EventsJSONParser {
 		Gist gist = null;
 		Release release = null;
 		PullRequest pullRequest = null;
+		Download download = null;
 
 		try {
 			JSONObject jObjectPayload = jObject.getJSONObject("payload");
@@ -232,8 +236,25 @@ public class EventsJSONParser {
 			if (jObjectPayload.has("pull_request")) {
 				pullRequest = getPullRequest(jObjectPayload);
 			}
-			
-			
+			if (jObjectPayload.has("name")) {
+				name = jObjectPayload.getString("name");
+			}
+			if (jObjectPayload.has("object")) {
+				object = jObjectPayload.getString("object");
+			}
+			if (jObjectPayload.has("commit")) {
+				commit = jObjectPayload.getString("commit");
+			}
+			if (jObjectPayload.has("object_name")) {
+				objectName = jObjectPayload.getString("object_name");
+			}
+			if (jObjectPayload.has("download")) {
+				download = getDownload(jObjectPayload);
+			}
+			if (jObjectPayload.has("repo")) {
+				repo = jObjectPayload.getString("repo");
+			}
+
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -258,7 +279,13 @@ public class EventsJSONParser {
 		payload.setGist(gist);
 		payload.setRelease(release);
 		payload.setPullRequest(pullRequest);
-
+		payload.setName(name);
+		payload.setObject(object);
+		payload.setCommit(commit);
+		payload.setObjectName(objectName);
+		payload.setDownload(download);
+		payload.setRepo(repo);
+		
 		return payload;
 	}
 
@@ -333,7 +360,7 @@ public class EventsJSONParser {
 			JSONObject jObjectPullRequest = jObject
 					.getJSONObject("pull_request");
 			htmlUrl = jObjectPullRequest.getString("html_url");
-			if(jObjectPullRequest.has("merged")){
+			if (jObjectPullRequest.has("merged")) {
 				merged = jObjectPullRequest.getBoolean("merged");
 			}
 		} catch (JSONException e) {
@@ -391,21 +418,28 @@ public class EventsJSONParser {
 	}
 
 	private static Forkee getForkee(JSONObject jObject) {
-		String full_name = "";
+		String name = "";
+		String fullName = "";
 		Forkee forkee = new Forkee();
 
 		try {
 			JSONObject jObjectForkee = jObject.getJSONObject("forkee");
-			full_name = jObjectForkee.getString("full_name");
+			if(jObjectForkee.has("name")){
+				name = jObjectForkee.getString("name");
+			}
+			if(jObjectForkee.has("full_name")){
+				fullName = jObjectForkee.getString("full_name");
+			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 
-		forkee.setFullName(full_name);
+		forkee.setName(name);
+		forkee.setFullName(fullName);
 
 		return forkee;
 	}
-	
+
 	private static Gist getGist(JSONObject jObject) {
 		String id = "";
 		Gist gist = new Gist();
@@ -421,7 +455,7 @@ public class EventsJSONParser {
 
 		return gist;
 	}
-	
+
 	private static Release getRelease(JSONObject jObject) {
 		String tagName = "";
 		Release release = new Release();
@@ -436,5 +470,21 @@ public class EventsJSONParser {
 		release.setTagName(tagName);
 
 		return release;
+	}
+	
+	private static Download getDownload(JSONObject jObject) {
+		String name = "";
+		Download download = new Download();
+
+		try {
+			JSONObject jObjectDownload = jObject.getJSONObject("download");
+			name = jObjectDownload.getString("name");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+		download.setName(name);
+
+		return download;
 	}
 }

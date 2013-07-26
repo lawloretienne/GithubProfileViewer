@@ -21,12 +21,11 @@ import android.widget.TextView;
 import com.sample.github.R;
 import com.sample.github.models.Actor;
 import com.sample.github.models.Event;
+import com.sample.github.models.Forkee;
 import com.sample.github.models.Issue;
 import com.sample.github.models.Page;
 import com.sample.github.models.Payload;
 import com.sample.github.models.Repo;
-
-
 
 public class EventsListAdapter extends BaseAdapter {
 
@@ -75,20 +74,13 @@ public class EventsListAdapter extends BaseAdapter {
 		String repoName = repo.getName();
 		String createdAt = event.getCreatedAt();
 
-		Typeface robotoLightTypeface = Typeface.createFromAsset(mContext.getAssets(),
-				"fonts/Roboto-Light.ttf");
-		mHolder.eventText.setTypeface(robotoLightTypeface);
-
 		CharSequence eventText = getEventText(login, eventType, repoName,
 				payload, createdAt);
+		
 		mHolder.eventText.setText(eventText);
 
 		
-		Typeface octiconTypeface = Typeface.createFromAsset(mContext.getAssets(),
-				"fonts/octicons-regular-webfont.ttf");
-		mHolder.eventIcon.setTypeface(octiconTypeface);
-		
-		
+
 		return convertView;
 
 	}
@@ -102,6 +94,14 @@ public class EventsListAdapter extends BaseAdapter {
 		ViewHolder holder = new ViewHolder();
 		holder.eventIcon = (TextView) convertView.findViewById(R.id.eventIcon);
 		holder.eventText = (TextView) convertView.findViewById(R.id.eventText);
+		
+		Typeface octiconTypeface = Typeface.createFromAsset(
+				mContext.getAssets(), "fonts/octicons-regular-webfont.ttf");
+		holder.eventIcon.setTypeface(octiconTypeface);
+		
+		Typeface robotoLightTypeface = Typeface.createFromAsset(
+				mContext.getAssets(), "fonts/Roboto-Light.ttf");
+		holder.eventText.setTypeface(robotoLightTypeface);	
 		return holder;
 	}
 
@@ -125,17 +125,17 @@ public class EventsListAdapter extends BaseAdapter {
 		action = TextUtils.concat(action, styleText(login), " ");
 		if (eventType.equals("IssuesEvent")) {
 			Issue issue = payload.getIssue();
-			if(payload.getAction().equals("opened")){
+			if (payload.getAction().equals("opened")) {
 				mHolder.eventIcon.setText("\uf026");
-			}else if(payload.getAction().equals("reopened")){
+			} else if (payload.getAction().equals("reopened")) {
 				mHolder.eventIcon.setText("\uf027");
-			}else if(payload.getAction().equals("closed")){
+			} else if (payload.getAction().equals("closed")) {
 				mHolder.eventIcon.setText("\uf028");
 			}
 			action = TextUtils.concat(action, payload.getAction(), " issue ",
 					styleText(repoName + "#" + issue.getNumber()));
 		} else if (eventType.equals("IssueCommentEvent")) {
-			mHolder.eventIcon.setText("\uf04f"); 
+			mHolder.eventIcon.setText("\uf04f");
 			action = TextUtils.concat(action, "commented on ");
 			Issue issue = payload.getIssue();
 			if (issue != null) {
@@ -155,7 +155,12 @@ public class EventsListAdapter extends BaseAdapter {
 			String ref = payload.getRef();
 			ref = ref.substring(ref.indexOf("refs/heads/") + 11, ref.length());
 			action = TextUtils.concat(action, "pushed to ", styleText(ref),
-					" at ", styleText(repoName));
+					" at ");
+			if (repoName.equals("/")) { // Legacy Event
+				action = TextUtils.concat(action, styleText(payload.getRepo()));
+			} else {
+				action = TextUtils.concat(action, styleText(repoName));
+			}
 		} else if (eventType.equals("PullRequestEvent")) {
 			mHolder.eventIcon.setText("\uf009");
 			if (payload.getAction().equals("closed")) {
@@ -177,27 +182,74 @@ public class EventsListAdapter extends BaseAdapter {
 		} else if (eventType.equals("ForkEvent")) {
 			mHolder.eventIcon.setText("\uf020");
 			action = TextUtils.concat(action, "forked ", styleText(repoName),
-					" to ", styleText(payload.getForkee().getFullName()));
+					" to ");
+			Forkee forkee = payload.getForkee();
+			if (!forkee.getName().equals("")) {
+				if (!(forkee.getFullName().equals(""))) {
+					action = TextUtils.concat(action,
+							styleText(forkee.getFullName()));
+				} else { // Legacy Event
+					action = TextUtils.concat(action, "deleted");
+				}
+			} else { // Legacy Event
+				String repoNameSubstring = repoName.substring(
+						repoName.indexOf('/'), repoName.length());
+				action = TextUtils.concat(action, styleText((String) TextUtils
+						.concat(login, repoNameSubstring)));
+			}
 		} else if (eventType.equals("CreateEvent")) {
-			action = TextUtils.concat(action, "created ", payload.getRefType(),
-					" ");
-			if (!(payload.getRef().equals("null"))) {
-				action = TextUtils.concat(action, styleText(payload.getRef()));
-			}
-			if (payload.getRefType().equals("branch")) {
-				mHolder.eventIcon.setText("\uf023");
-				action = TextUtils.concat(action, " at ", styleText(repoName));
-			}
-			if (payload.getRefType().equals("tag")) {
-				mHolder.eventIcon.setText("\uf054");
-				action = TextUtils.concat(action, " at ", styleText(repoName));
-			}
-			if (payload.getRefType().equals("repository")) {
-				mHolder.eventIcon.setText("\uf003");
-				repoName = repoName.substring(
-						repoName.indexOf(login) + login.length() + 1,
-						repoName.length());
-				action = TextUtils.concat(action, styleText(repoName));
+			if (payload.getRefType().equals("")) {// Legacy Event
+				if (payload.getObject().equals("branch")) {
+					mHolder.eventIcon.setText("\uf023");
+					action = TextUtils.concat(action, "created branch ",
+							styleText(payload.getObjectName()), " at ");
+					if (repoName.equals("/")) {
+						action = TextUtils.concat(action, "(deleted)");
+					} else {
+						action = TextUtils.concat(action, styleText(repoName));
+					}
+				} else if (payload.getObject().equals("repository")) {
+					mHolder.eventIcon.setText("\uf003");
+					action = TextUtils.concat(action, "created repository ");
+					if (repoName.equals("/")) {
+						action = TextUtils.concat(action, styleText("deleted"));
+					} else {
+						action = TextUtils.concat(action,
+								styleText(payload.getName()));
+					}
+				} else if (payload.getObject().equals("tag")) {
+					mHolder.eventIcon.setText("\uf054");
+					action = TextUtils.concat(action, "created tag ",
+							styleText(payload.getObjectName()), " at ");
+					if (repoName.equals("/")) {
+						action = TextUtils.concat(action, "(deleted)");
+					} else {
+						action = TextUtils.concat(action, styleText(repoName));
+					}
+				}
+			} else {
+				action = TextUtils.concat(action, "created ",
+						payload.getRefType(), " ");
+				if (!(payload.getRef().equals("null"))) {
+					action = TextUtils.concat(action,
+							styleText(payload.getRef()));
+				}
+
+				if (payload.getRefType().equals("branch")) {
+					mHolder.eventIcon.setText("\uf023");
+					action = TextUtils.concat(action, " at ",
+							styleText(repoName));
+				} else if (payload.getRefType().equals("tag")) {
+					mHolder.eventIcon.setText("\uf054");
+					action = TextUtils.concat(action, " at ",
+							styleText(repoName));
+				} else if (payload.getRefType().equals("repository")) {
+					mHolder.eventIcon.setText("\uf003");
+					int index = repoName.indexOf('/');
+					int repoLength = repoName.length();
+					repoName = repoName.substring(index + 1, repoLength);
+					action = TextUtils.concat(action, styleText(repoName));
+				}
 			}
 		} else if (eventType.equals("DeleteEvent")) {
 			mHolder.eventIcon.setText("\uf084");
@@ -210,29 +262,52 @@ public class EventsListAdapter extends BaseAdapter {
 		} else if (eventType.equals("WatchEvent")) {
 			mHolder.eventIcon.setText("\uf02a");
 			if (payload.getAction().equals("started")) {
-				action = TextUtils.concat(action, "starred ",
-						styleText(repoName));
+				action = TextUtils.concat(action, "starred ");
 			}
+			if (repoName.equals("/")) { // Legacy Event
+				action = TextUtils.concat(action, styleText(payload.getRepo()));
+			} else {
+				action = TextUtils.concat(action, styleText(repoName));
+			}
+			
 		} else if (eventType.equals("MemberEvent")) {
 			mHolder.eventIcon.setText("\uf01a");
 			action = TextUtils.concat(action, "added ", styleText(payload
 					.getMember().getLogin()), " to ", styleText(repoName));
 		} else if (eventType.equals("GistEvent")) {
+			mHolder.eventIcon.setText("\uf00e");
 			if (payload.getGist() != null) {
-				mHolder.eventIcon.setText("\uf00e");
-				if(payload.getAction().equals("update")){
+				if (payload.getAction().equals("update")) {
 					action = TextUtils.concat(action, "updated");
-				}else if(payload.getAction().equals("create")){
+				} else if (payload.getAction().equals("create")) {
 					action = TextUtils.concat(action, "created");
+				} else if (payload.getAction().equals("fork")) {
+					action = TextUtils.concat(action, "forked");
 				}
-				action = TextUtils.concat(action, styleText(" gist: " + payload.getGist().getId()));
+				action = TextUtils.concat(action, styleText(" gist: "
+						+ payload.getGist().getId()));
+			} else { // Legacy Event
+				if (payload.getAction().equals("create")) {
+					action = TextUtils.concat(action, "created ");
+				} else if (payload.getAction().equals("update")) {
+					action = TextUtils.concat(action, "updated ");
+				} else if (payload.getAction().equals("fork")) {
+					action = TextUtils.concat(action, "forked ");
+				}
+				action = TextUtils.concat(action, styleText(payload.getName()));
 			}
 		} else if (eventType.equals("GollumEvent")) {
 			mHolder.eventIcon.setText("\uf007");
 			ArrayList<Page> pages = payload.getPages();
-			Page page = pages.get(0);
-			action = TextUtils.concat(action, page.getAction(), " the ",
-					styleText(repoName), " wiki");
+			if (pages != null) {
+				Page page = pages.get(0);
+				action = TextUtils.concat(action, page.getAction(), " the ",
+						styleText(repoName), " wiki");
+			} else {
+				action = TextUtils.concat(action, payload.getAction(), " the ",
+						styleText(repoName), " wiki");
+			}
+
 		} else if (eventType.equals("PublicEvent")) {
 			mHolder.eventIcon.setText("\uf001");
 			action = TextUtils.concat(action, "open sourced ",
@@ -243,9 +318,12 @@ public class EventsListAdapter extends BaseAdapter {
 			if (payload.getComment() != null) {
 				action = TextUtils.concat(action, styleText(repoName + "@"
 						+ payload.getComment().getCommitId()));
+			} else { // Legacy Event
+				action = TextUtils.concat(action, styleText(repoName + "@"
+						+ payload.getCommit()));
 			}
 		} else if (eventType.equals("PullRequestReviewCommentEvent")) {
-			mHolder.eventIcon.setText("\uf04f"); 
+			mHolder.eventIcon.setText("\uf04f");
 			String pullRequestUrl = payload.getComment().getPullRequestUrl();
 			if (pullRequestUrl.length() > 0) {
 				String pullRequestUrlId = pullRequestUrl.substring(
@@ -253,10 +331,21 @@ public class EventsListAdapter extends BaseAdapter {
 						pullRequestUrl.length());
 				action = TextUtils.concat(action, "commented on pull request ",
 						styleText(repoName + "#" + pullRequestUrlId));
+			} else { // Legacy Event
+				action = TextUtils.concat(action, "commented on pull request ",
+						styleText(repoName + "#"));
 			}
 		} else if (eventType.equals("ReleaseEvent")) {
 			action = TextUtils.concat(action, "released ", styleText(payload
 					.getRelease().getTagName()), " at ", styleText(repoName));
+		} else if (eventType.equals("ForkApplyEvent")) {
+			mHolder.eventIcon.setText("\uf023");
+			action = TextUtils.concat(action, "applied fork commits to ",
+					styleText(repoName));
+		} else if (eventType.equals("DownloadEvent")) {
+			mHolder.eventIcon.setText("\uf00c");
+			action = TextUtils.concat(action, "uploaded ", payload
+					.getDownload().getName(), " to ", styleText(repoName));
 		}
 
 		action = TextUtils.concat(action, "\n", styleDate(createdAt));
@@ -265,8 +354,9 @@ public class EventsListAdapter extends BaseAdapter {
 
 	private Spannable styleText(String text) {
 		Spannable styledText = new SpannableString(text);
-		styledText.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.medium_turquoise)), 0,
-				text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+		styledText.setSpan(new ForegroundColorSpan(mContext.getResources()
+				.getColor(R.color.medium_turquoise)), 0, text.length(),
+				Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		styledText.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0,
 				text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		return styledText;
