@@ -15,23 +15,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfd438d2-a7e6-422e-84f3-0a545dcc0849" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontEditText.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontTextView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GitHub/res/values/attrs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHub/res/layout/login_activity.xml" afterPath="$PROJECT_DIR$/GitHub/res/layout/activity_login.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHub/res/layout/profile.xml" afterPath="$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHub/res/layout/profile_manager.xml" afterPath="$PROJECT_DIR$/GitHub/res/layout/activity_profile_manager.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHub/src/com/sample/github/EventsJSONParser.java" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/utils/EventsJSONParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHub/src/com/sample/github/LoginActivity.java" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/activities/LoginActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHub/src/com/sample/github/ProfileManager.java" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/activities/ProfileManagerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/AndroidManifest.xml" afterPath="$PROJECT_DIR$/GitHub/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/gen/com/sample/github/BuildConfig.java" afterPath="$PROJECT_DIR$/GitHub/gen/com/sample/github/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GitHub/libs/picasso-2.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/views/RoundedDrawable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/views/RoundedImageView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/picasso_2_1_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/GitHub.iml" afterPath="$PROJECT_DIR$/GitHub/GitHub.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/ProfileFragment.java" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/ProfileFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/ProfileFragmentPagerAdapter.java" afterPath="$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/ProfileFragmentPagerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/gen/com/sample/github/R.java" afterPath="$PROJECT_DIR$/GitHub/gen/com/sample/github/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/res/layout/event.xml" afterPath="$PROJECT_DIR$/GitHub/res/layout/event.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml" afterPath="$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="github-profile-viewer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,6 +79,83 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java" line="340" class="com.sample.github.adapters.EventsListAdapter" package="com.sample.github.adapters">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java" line="107" class="com.sample.github.fragments.EventsFragment" package="com.sample.github.fragments">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java" line="109" class="com.sample.github.fragments.EventsFragment" package="com.sample.github.fragments">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/ProfileManagerActivity.java" line="199" class="com.sample.github.activities.ProfileManagerActivity" package="com.sample.github.activities">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/ProfileManagerActivity.java" line="206" class="com.sample.github.activities.ProfileManagerActivity" package="com.sample.github.activities">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -95,50 +165,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EventsListAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java">
+      <file leaf-file-name="EventsFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="0" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-35.75862" vertical-offset="0" max-vertical-offset="6086">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileFragmentPagerAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/ProfileFragmentPagerAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+            <state line="26" column="13" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2788">
               <folding>
-                <element signature="e#794#795#0" expanded="true" />
-                <element signature="e#817#818#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventsFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java">
+      <file leaf-file-name="ProfileManagerActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/ProfileManagerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="25" selection-start="432" selection-end="432" vertical-scroll-proportion="-9.379311" vertical-offset="0" max-vertical-offset="2788">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileFragment.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/ProfileFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="31" selection-start="379" selection-end="379" vertical-scroll-proportion="0.4089347" vertical-offset="0" max-vertical-offset="4046">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomTypefaceSpan.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/CustomTypefaceSpan.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-              <folding />
+            <state line="199" column="0" selection-start="6161" selection-end="6161" vertical-scroll-proportion="0.0" vertical-offset="2607" max-vertical-offset="3213">
+              <folding>
+                <element signature="e#5753#5763#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,7 +190,7 @@
       <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="4" selection-start="3069" selection-end="3441" vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="2176">
+            <state line="92" column="4" selection-start="3069" selection-end="3441" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2720">
               <folding />
             </state>
           </provider>
@@ -155,7 +199,7 @@
       <file leaf-file-name="EventsJSONParser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/utils/EventsJSONParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="50" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8058">
+            <state line="32" column="50" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="8058">
               <folding />
             </state>
           </provider>
@@ -163,31 +207,51 @@
       </file>
       <file leaf-file-name="event.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GitHub/res/layout/event.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="68" selection-start="116" selection-end="180" vertical-scroll-proportion="-1.1333333" vertical-offset="0" max-vertical-offset="629">
+            <state line="2" column="68" selection-start="116" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="629">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="fragment_profile.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="34" selection-start="971" selection-end="971" vertical-scroll-proportion="-10.966666" vertical-offset="79" max-vertical-offset="3723">
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="android-designer">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LayoutInflater.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/view/LayoutInflater.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="39" selection-start="8625" selection-end="8625" vertical-scroll-proportion="-7.779661" vertical-offset="3043" max-vertical-offset="3689">
-              <folding>
-                <element signature="e#894#930#0" expanded="true" />
-                <element signature="e#2645#2670#0" expanded="true" />
-                <element signature="e#3648#3674#0" expanded="true" />
-                <element signature="e#4647#4669#0" expanded="true" />
-                <element signature="e#5682#5704#0" expanded="true" />
-                <element signature="e#6681#6704#0" expanded="true" />
-              </folding>
+            <state line="54" column="0" selection-start="2845" selection-end="2845" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1003">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventsListAdapter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="342" column="45" selection-start="12702" selection-end="12702" vertical-scroll-proportion="0.58428806" vertical-offset="5049" max-vertical-offset="6171">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomFontEditText.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontEditText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="9" selection-start="561" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1411">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,7 +259,7 @@
       <file leaf-file-name="attrs.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GitHub/res/values/attrs.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="59" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+            <state line="14" column="59" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
@@ -224,18 +288,19 @@
         <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontEditText.java" />
         <option value="$PROJECT_DIR$/GitHub/res/values/attrs.xml" />
         <option value="$PROJECT_DIR$/GitHub/res/layout/event.xml" />
-        <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java" />
         <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/ProfileFragmentPagerAdapter.java" />
         <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/utils/EventsJSONParser.java" />
         <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java" />
-        <option value="$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml" />
+        <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/views/RoundedImageView.java" />
         <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/ProfileFragment.java" />
+        <option value="$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml" />
+        <option value="$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1856" />
-    <option name="y" value="-4" />
+    <option name="x" value="1984" />
+    <option name="y" value="1076" />
     <option name="width" value="1857" />
     <option name="height" value="1085" />
   </component>
@@ -265,7 +330,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -462,9 +527,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github-profile-viewer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github-profile-viewer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GitHub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-support-v4.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,11 +577,17 @@
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sample.github.utils" />
       <recent name="com.sample.github.activities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/GitHub/libs" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.GitHub">
@@ -647,6 +750,23 @@
       <AnalysisUIOptions />
     </option>
   </component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cfd438d2-a7e6-422e-84f3-0a545dcc0849" name="Default" comment="" />
@@ -656,35 +776,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1856" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="1984" y="1076" width="1857" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24432133" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3291536" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24432133" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39916405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3291536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -704,11 +824,167 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="25" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="2805">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/ProfileFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1668" selection-end="1668" vertical-scroll-proportion="0.0" vertical-offset="657" max-vertical-offset="3502">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/views/RoundedImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="336" column="50" selection-start="10601" selection-end="10601" vertical-scroll-proportion="0.0" vertical-offset="5474" max-vertical-offset="5678">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/CustomTypefaceSpan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="4" selection-start="3069" selection-end="3441" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/utils/EventsJSONParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="50" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="8398">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/res/layout/event.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="68" selection-start="116" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="36" selection-start="891" selection-end="891" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="3706">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontEditText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="561" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="59" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="0" selection-start="2434" selection-end="2434" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6494">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/ProfileFragmentPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="25" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="2805">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/ProfileFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="0" selection-start="4675" selection-end="4675" vertical-scroll-proportion="0.0" vertical-offset="2495" max-vertical-offset="3468">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/CustomTypefaceSpan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="4" selection-start="3069" selection-end="3441" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="2720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/utils/EventsJSONParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="50" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="8398">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/res/layout/event.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="68" selection-start="116" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="36" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="3689">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="59" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GitHub/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="54" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="663">
           <folding>
-            <element signature="e#558#576#0" expanded="true" />
+            <element signature="e#558#576#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -720,49 +996,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/ProfileManagerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="42" selection-start="2323" selection-end="2323" vertical-scroll-proportion="54.517242" vertical-offset="2448" max-vertical-offset="3213">
-          <folding>
-            <element signature="e#5753#5763#0" expanded="true" />
-            <element signature="e#6233#6276#0" expanded="true" />
-            <element signature="e#6552#6604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GitHub/res/layout/activity_login.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="4" selection-start="880" selection-end="1176" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="918">
           <folding>
-            <element signature="e#335#368#0" expanded="true" />
-            <element signature="e#393#428#0" expanded="true" />
-            <element signature="e#454#489#0" expanded="true" />
-            <element signature="e#513#546#0" expanded="true" />
-            <element signature="e#760#805#0" expanded="true" />
-            <element signature="e#1075#1102#0" expanded="true" />
-            <element signature="e#1400#1449#0" expanded="true" />
-            <element signature="e#1782#1834#0" expanded="true" />
+            <element signature="e#335#368#0" expanded="false" />
+            <element signature="e#393#428#0" expanded="false" />
+            <element signature="e#454#489#0" expanded="false" />
+            <element signature="e#513#546#0" expanded="false" />
+            <element signature="e#760#805#0" expanded="false" />
+            <element signature="e#1075#1102#0" expanded="false" />
+            <element signature="e#1400#1449#0" expanded="false" />
+            <element signature="e#1782#1834#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontTextView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="4" selection-start="1377" selection-end="2127" vertical-scroll-proportion="0.0" vertical-offset="664" max-vertical-offset="1309">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontEditText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="42" selection-start="1977" selection-end="2032" vertical-scroll-proportion="0.0" vertical-offset="800" max-vertical-offset="1411">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,33 +1029,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-35.75862" vertical-offset="0" max-vertical-offset="6086">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/ProfileFragmentPagerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <folding>
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/utils/EventsJSONParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="50" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8058">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="25" selection-start="432" selection-end="432" vertical-scroll-proportion="-9.379311" vertical-offset="0" max-vertical-offset="2788">
           <folding />
         </state>
       </provider>
@@ -812,30 +1044,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GitHub/res/layout/event.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="68" selection-start="116" selection-end="180" vertical-scroll-proportion="-1.1333333" vertical-offset="0" max-vertical-offset="629">
+        <state line="2" column="68" selection-start="116" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="629">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml">
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="39" selection-start="8625" selection-end="8625" vertical-scroll-proportion="-7.779661" vertical-offset="3043" max-vertical-offset="3689">
-          <folding>
-            <element signature="e#894#930#0" expanded="true" />
-            <element signature="e#2645#2670#0" expanded="true" />
-            <element signature="e#3648#3674#0" expanded="true" />
-            <element signature="e#4647#4669#0" expanded="true" />
-            <element signature="e#5682#5704#0" expanded="true" />
-            <element signature="e#6681#6704#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/CustomTypefaceSpan.java">
@@ -845,9 +1060,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/views/CustomFontEditText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="561" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/views/RoundedImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="336" column="50" selection-start="10601" selection-end="10601" vertical-scroll-proportion="0.0" vertical-offset="4863" max-vertical-offset="5474">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/ProfileFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="379" selection-end="379" vertical-scroll-proportion="0.4089347" vertical-offset="0" max-vertical-offset="4046">
+        <state line="168" column="59" selection-start="4985" selection-end="4985" vertical-scroll-proportion="-6.6896553" vertical-offset="2050" max-vertical-offset="2907">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/res/layout/fragment_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="34" selection-start="971" selection-end="971" vertical-scroll-proportion="-10.966666" vertical-offset="79" max-vertical-offset="3723">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/view/LayoutInflater.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="2845" selection-end="2845" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/activities/ProfileManagerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="199" column="0" selection-start="6161" selection-end="6161" vertical-scroll-proportion="0.0" vertical-offset="2607" max-vertical-offset="3213">
+          <folding>
+            <element signature="e#5753#5763#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/fragments/EventsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2788">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/utils/EventsJSONParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="50" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8058">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GitHub/src/com/sample/github/adapters/EventsListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="342" column="45" selection-start="12702" selection-end="12702" vertical-scroll-proportion="0.58428806" vertical-offset="5049" max-vertical-offset="6171">
           <folding />
         </state>
       </provider>

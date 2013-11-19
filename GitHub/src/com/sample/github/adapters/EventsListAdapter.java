@@ -339,8 +339,13 @@ public class EventsListAdapter extends BaseAdapter {
 					styleText(repoName));
 		} else if (eventType.equals("DownloadEvent")) {
 			mHolder.eventIconTextView.setText("\uf00c");
-			action = TextUtils.concat(action, "uploaded ", payload
-					.getDownload().getName(), " to ", styleText(repoName));
+			action = TextUtils.concat(action, "uploaded ");
+            if(payload.getDownload()!=null ){
+                action = TextUtils.concat(action, payload.getDownload().getName());
+            } else {
+                action = TextUtils.concat(action, "a file");
+            }
+		    action = TextUtils.concat(action, " to ", styleText(repoName));
 		}
 
 		action = TextUtils.concat(action, "\n", styleDate(createdAt));

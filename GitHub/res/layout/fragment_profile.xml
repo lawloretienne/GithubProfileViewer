@@ -14,16 +14,18 @@
         android:paddingRight="10dp"
         android:paddingTop="30dp" >
 
-        <ImageView
+        <com.sample.github.views.RoundedImageView
             android:id="@+id/avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@drawable/avatar_border"
+            app:round_background="true"
+            app:corner_radius="100dp"
+            app:border_color="@color/black"
+            app:border_width="1dp"
             android:contentDescription="@string/avatar_content_description"
             android:scaleType="centerCrop"
-            android:src="@drawable/default_gravatar" >
-        </ImageView>
+            android:src="@drawable/default_gravatar" />
 
         <LinearLayout
             android:layout_width="match_parent"

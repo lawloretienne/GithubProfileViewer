@@ -1,6 +1,7 @@
 package com.sample.github.fragments;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
@@ -33,13 +34,16 @@ import android.widget.TextView;
 
 import com.sample.github.R;
 import com.sample.github.utils.ISO8601;
+import com.sample.github.views.RoundedImageView;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 public class ProfileFragment extends Fragment {
 
 	private final String DEBUG_TAG = getClass().getSimpleName().toString();
 	private TextView mName, mHtmlUrl, mCompany, mLocation,
              mEmail, mBlog, mCreatedAt, mFollowers, mFollowing, mBio;
-	private ImageView mAvatar;
+	private RoundedImageView mAvatar;
 	private ActionBar mActionBar;
 	private LinearLayout mCompanyLayout, mLocationLayout, mEmailLayout, mBlogLayout, mCreatedAtLayout;
 
@@ -150,15 +154,19 @@ public class ProfileFragment extends Fragment {
 			mBio.setVisibility(View.VISIBLE);
 		}
 
-		new DownloadAvatarTask().execute(avatarUrl);
+        Picasso.with(getActivity())
+                .load(avatarUrl)
+                .placeholder(R.drawable.default_gravatar)
+//                .centerCrop()
+                .into((Target) mAvatar);
 
-		return v;
+        return v;
 	}
 
     // region Helper Methods
     private void bindUIElements(View v)
     {
-        mAvatar = (ImageView) v.findViewById(R.id.avatar);
+        mAvatar = (RoundedImageView) v.findViewById(R.id.avatar);
         mName = (TextView) v.findViewById(R.id.name);
         mHtmlUrl = (TextView) v.findViewById(R.id.html_url);
         mCompanyLayout = (LinearLayout) v.findViewById(R.id.companyLayout);
@@ -190,44 +198,5 @@ public class ProfileFragment extends Fragment {
         return styledText;
     }
     // endregion
-
-    // region Inner Classes
-
-    private class DownloadAvatarTask extends AsyncTask<String, Void, Bitmap> {
-		@Override
-		protected Bitmap doInBackground(String... urls) {
-			return downloadAvatar(urls[0]);
-		}
-
-		// onPostExecute displays the results of the AsyncTask.
-		@Override
-		protected void onPostExecute(Bitmap result) {
-			if (result == null) {
-				Log.d(DEBUG_TAG, "Bitmap is null");
-			} else {
-				mAvatar.setImageBitmap(result);
-			}
-		}
-
-		private Bitmap downloadAvatar(String url) {
-			URL url_value;
-			Bitmap icon = null;
-			try {
-				url_value = new URL(url);
-				if (mAvatar != null) {
-					icon = BitmapFactory.decodeStream(url_value
-							.openConnection().getInputStream());
-				}
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return icon;
-
-		}
-	}
-
-	// endregion
 
 }
