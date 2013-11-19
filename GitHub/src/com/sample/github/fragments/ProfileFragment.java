@@ -37,56 +37,18 @@ import com.sample.github.utils.ISO8601;
 public class ProfileFragment extends Fragment {
 
 	private final String DEBUG_TAG = getClass().getSimpleName().toString();
-	private TextView mName, mHtmlUrl, mCompany, mCompanyIcon, mLocation,
-			mLocationIcon, mEmail, mEmailIcon, mBlog, mBlogIcon, mCreatedAt,
-			mCreatedAtIcon, mFollowers, mFollowing, mBio;
+	private TextView mName, mHtmlUrl, mCompany, mLocation,
+             mEmail, mBlog, mCreatedAt, mFollowers, mFollowing, mBio;
 	private ImageView mAvatar;
 	private ActionBar mActionBar;
-	private View mDivider1;
-	private Typeface mOcticonTypeface;
 	private LinearLayout mCompanyLayout, mLocationLayout, mEmailLayout, mBlogLayout, mCreatedAtLayout;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.profile, container, false);
+		View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
-		mAvatar = (ImageView) v.findViewById(R.id.avatar);
-		mName = (TextView) v.findViewById(R.id.name);
-		mHtmlUrl = (TextView) v.findViewById(R.id.html_url);
-		mDivider1 = (View) v.findViewById(R.id.divider1);
-		mCompanyLayout = (LinearLayout) v.findViewById(R.id.companyLayout);
-		mCompanyIcon = (TextView) v.findViewById(R.id.companyIcon);
-		mCompany = (TextView) v.findViewById(R.id.company);
-		mLocationLayout = (LinearLayout) v.findViewById(R.id.locationLayout);
-		mLocationIcon = (TextView) v.findViewById(R.id.locationIcon);
-		mLocation = (TextView) v.findViewById(R.id.location);
-		mEmailLayout = (LinearLayout) v.findViewById(R.id.emailLayout);
-		mEmailIcon = (TextView) v.findViewById(R.id.emailIcon);
-		mEmail = (TextView) v.findViewById(R.id.email);
-		mBlogLayout = (LinearLayout) v.findViewById(R.id.blogLayout);
-		mBlogIcon = (TextView) v.findViewById(R.id.blogIcon);
-		mBlog = (TextView) v.findViewById(R.id.blog);
-		mCreatedAtLayout = (LinearLayout) v.findViewById(R.id.createdAtLayout);
-		mCreatedAtIcon = (TextView) v.findViewById(R.id.createdAtIcon);
-		mCreatedAt = (TextView) v.findViewById(R.id.createdAt);
-		mFollowers = (TextView) v.findViewById(R.id.followers);
-		mFollowing = (TextView) v.findViewById(R.id.following);
-		mBio = (TextView) v.findViewById(R.id.bio);
+        bindUIElements(v);
 
-		mOcticonTypeface = Typeface.createFromAsset(getActivity().getAssets(),
-				"fonts/octicons-regular-webfont.ttf");
-
-		mCompanyIcon.setTypeface(mOcticonTypeface);
-		mLocationIcon.setTypeface(mOcticonTypeface);
-		mEmailIcon.setTypeface(mOcticonTypeface);
-		mBlogIcon.setTypeface(mOcticonTypeface);
-		mCreatedAtIcon.setTypeface(mOcticonTypeface);
-		
-		Typeface tf = Typeface.createFromAsset(getActivity().getAssets(),
-				"fonts/Roboto-Light.ttf");
-		mName.setTypeface(tf);
-		mHtmlUrl.setTypeface(tf);
-		mBio.setTypeface(tf);
 
 		Bundle b = (Bundle) getArguments();
 		String result = b.getString("result");
@@ -193,7 +155,45 @@ public class ProfileFragment extends Fragment {
 		return v;
 	}
 
-	private class DownloadAvatarTask extends AsyncTask<String, Void, Bitmap> {
+    // region Helper Methods
+    private void bindUIElements(View v)
+    {
+        mAvatar = (ImageView) v.findViewById(R.id.avatar);
+        mName = (TextView) v.findViewById(R.id.name);
+        mHtmlUrl = (TextView) v.findViewById(R.id.html_url);
+        mCompanyLayout = (LinearLayout) v.findViewById(R.id.companyLayout);
+        mCompany = (TextView) v.findViewById(R.id.company);
+        mLocationLayout = (LinearLayout) v.findViewById(R.id.locationLayout);
+        mLocation = (TextView) v.findViewById(R.id.location);
+        mEmailLayout = (LinearLayout) v.findViewById(R.id.emailLayout);
+        mEmail = (TextView) v.findViewById(R.id.email);
+        mBlogLayout = (LinearLayout) v.findViewById(R.id.blogLayout);
+        mBlog = (TextView) v.findViewById(R.id.blog);
+        mCreatedAtLayout = (LinearLayout) v.findViewById(R.id.createdAtLayout);
+        mCreatedAt = (TextView) v.findViewById(R.id.createdAt);
+        mFollowers = (TextView) v.findViewById(R.id.followers);
+        mFollowing = (TextView) v.findViewById(R.id.following);
+        mBio = (TextView) v.findViewById(R.id.bio);
+    }
+
+    private Spannable styleText(String text) {
+        Spannable styledText = new SpannableString(text);
+        styledText.setSpan(new ForegroundColorSpan(getActivity().getResources()
+                .getColor(R.color.grey)), 0, text.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        // styledText.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0,
+        // text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        styledText.setSpan(new RelativeSizeSpan(0.4f), 0, text.length(),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        return styledText;
+    }
+    // endregion
+
+    // region Inner Classes
+
+    private class DownloadAvatarTask extends AsyncTask<String, Void, Bitmap> {
 		@Override
 		protected Bitmap doInBackground(String... urls) {
 			return downloadAvatar(urls[0]);
@@ -228,18 +228,6 @@ public class ProfileFragment extends Fragment {
 		}
 	}
 
-	private Spannable styleText(String text) {
-		Spannable styledText = new SpannableString(text);
-		styledText.setSpan(new ForegroundColorSpan(getActivity().getResources()
-				.getColor(R.color.grey)), 0, text.length(),
-				Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-		// styledText.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), 0,
-		// text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-		styledText.setSpan(new RelativeSizeSpan(0.4f), 0, text.length(),
-				Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-		return styledText;
-	}
+	// endregion
 
 }

@@ -76,8 +76,8 @@ public final class R {
         public static final int emailIcon=0x7f0a0010;
         public static final int emailLayout=0x7f0a000f;
         public static final int eventEntry=0x7f0a0000;
-        public static final int eventIcon=0x7f0a0001;
-        public static final int eventText=0x7f0a0002;
+        public static final int event_icon_tv =0x7f0a0001;
+        public static final int event_details_tv =0x7f0a0002;
         public static final int followers=0x7f0a0018;
         public static final int following=0x7f0a0019;
         public static final int html_url=0x7f0a0007;
@@ -86,8 +86,8 @@ public final class R {
         public static final int locationLayout=0x7f0a000c;
         public static final int name=0x7f0a0006;
         public static final int pager=0x7f0a001b;
-        public static final int user_account=0x7f0a0003;
-        public static final int view_profile_button=0x7f0a0004;
+        public static final int user_account_et =0x7f0a0003;
+        public static final int view_profile_ib =0x7f0a0004;
     }
     public static final class integer {
         /**  Event Types 
@@ -97,9 +97,9 @@ public final class R {
     }
     public static final class layout {
         public static final int event=0x7f030000;
-        public static final int login_activity=0x7f030001;
-        public static final int profile=0x7f030002;
-        public static final int profile_manager=0x7f030003;
+        public static final int activity_login =0x7f030001;
+        public static final int fragment_profile =0x7f030002;
+        public static final int activity_profile_manager =0x7f030003;
     }
     public static final class menu {
         public static final int profile_manager=0x7f090000;

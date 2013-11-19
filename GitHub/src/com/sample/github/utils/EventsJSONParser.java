@@ -1,10 +1,4 @@
-package com.sample.github;
-
-import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+package com.sample.github.utils;
 
 import com.sample.github.models.Actor;
 import com.sample.github.models.Comment;
@@ -21,7 +15,12 @@ import com.sample.github.models.PullRequest;
 import com.sample.github.models.Release;
 import com.sample.github.models.Repo;
 import com.sample.github.models.Target;
-import com.sample.github.utils.ISO8601;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class EventsJSONParser {
 

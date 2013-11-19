@@ -3,7 +3,6 @@ package com.sample.github.adapters;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -29,14 +28,18 @@ import com.sample.github.models.Repo;
 
 public class EventsListAdapter extends BaseAdapter {
 
-	protected LayoutInflater mInflater;
-	protected Context mContext;
-	protected ContentResolver mContentResolver;
-	protected ViewHolder mHolder;
-	private final String DEBUG_TAG = getClass().getSimpleName().toString();
+    // region Constants
+    private final String DEBUG_TAG = getClass().getSimpleName().toString();
+    // endregion
 
-	private List<Event> mEvents = new ArrayList<Event>();
+    // region MemberVariables
+	private LayoutInflater mInflater;
+    private Context mContext;
+    private ViewHolder mHolder;
+    private List<Event> mEvents = new ArrayList<Event>();
+    // endregion
 
+    // region Constructors
 	public EventsListAdapter(Context context, ArrayList<Event> events) {
 		mContext = context;
 		mEvents = events;
@@ -47,7 +50,9 @@ public class EventsListAdapter extends BaseAdapter {
 
 		mHolder = new ViewHolder();
 	}
+    // endregion
 
+    @Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 
 		if (convertView == null) {
@@ -77,46 +82,36 @@ public class EventsListAdapter extends BaseAdapter {
 		CharSequence eventText = getEventText(login, eventType, repoName,
 				payload, createdAt);
 		
-		mHolder.eventText.setText(eventText);
-
-		
+		mHolder.eventDetailsTextView.setText(eventText);
 
 		return convertView;
 
 	}
 
-	protected class ViewHolder {
-		TextView eventIcon;
-		TextView eventText;
-	}
-
-	private ViewHolder setupViewHolder(View convertView) {
-		ViewHolder holder = new ViewHolder();
-		holder.eventIcon = (TextView) convertView.findViewById(R.id.eventIcon);
-		holder.eventText = (TextView) convertView.findViewById(R.id.eventText);
-		
-		Typeface octiconTypeface = Typeface.createFromAsset(
-				mContext.getAssets(), "fonts/octicons-regular-webfont.ttf");
-		holder.eventIcon.setTypeface(octiconTypeface);
-		
-		Typeface robotoLightTypeface = Typeface.createFromAsset(
-				mContext.getAssets(), "fonts/Roboto-Light.ttf");
-		holder.eventText.setTypeface(robotoLightTypeface);	
-		return holder;
-	}
-
+    @Override
 	public int getCount() {
 		return mEvents.size();
 	}
 
+    @Override
 	public Object getItem(int position) {
 		return mEvents.get(position);
 	}
 
+    @Override
 	// Use the array index as a unique id.
 	public long getItemId(int position) {
 		return position;
 	}
+
+    // region  Helper Methods
+
+    private ViewHolder setupViewHolder(View convertView) {
+        ViewHolder holder = new ViewHolder();
+        holder.eventIconTextView = (TextView) convertView.findViewById(R.id.event_icon_tv);
+        holder.eventDetailsTextView = (TextView) convertView.findViewById(R.id.event_details_tv);
+        return holder;
+    }
 
 	// Retrieves the event description based on the event attributes
 	private CharSequence getEventText(String login, String eventType,
@@ -126,16 +121,16 @@ public class EventsListAdapter extends BaseAdapter {
 		if (eventType.equals("IssuesEvent")) {
 			Issue issue = payload.getIssue();
 			if (payload.getAction().equals("opened")) {
-				mHolder.eventIcon.setText("\uf026");
+				mHolder.eventIconTextView.setText("\uf026");
 			} else if (payload.getAction().equals("reopened")) {
-				mHolder.eventIcon.setText("\uf027");
+				mHolder.eventIconTextView.setText("\uf027");
 			} else if (payload.getAction().equals("closed")) {
-				mHolder.eventIcon.setText("\uf028");
+				mHolder.eventIconTextView.setText("\uf028");
 			}
 			action = TextUtils.concat(action, payload.getAction(), " issue ",
 					styleText(repoName + "#" + issue.getNumber()));
 		} else if (eventType.equals("IssueCommentEvent")) {
-			mHolder.eventIcon.setText("\uf04f");
+			mHolder.eventIconTextView.setText("\uf04f");
 			action = TextUtils.concat(action, "commented on ");
 			Issue issue = payload.getIssue();
 			if (issue != null) {
@@ -151,7 +146,7 @@ public class EventsListAdapter extends BaseAdapter {
 						.concat(action, "issue ", styleText(repoName));
 			}
 		} else if (eventType.equals("PushEvent")) {
-			mHolder.eventIcon.setText("\uf01f");
+			mHolder.eventIconTextView.setText("\uf01f");
 			String ref = payload.getRef();
 			ref = ref.substring(ref.indexOf("refs/heads/") + 11, ref.length());
 			action = TextUtils.concat(action, "pushed to ", styleText(ref),
@@ -162,7 +157,7 @@ public class EventsListAdapter extends BaseAdapter {
 				action = TextUtils.concat(action, styleText(repoName));
 			}
 		} else if (eventType.equals("PullRequestEvent")) {
-			mHolder.eventIcon.setText("\uf009");
+			mHolder.eventIconTextView.setText("\uf009");
 			if (payload.getAction().equals("closed")) {
 				if (payload.getPullRequest().getMerged() == true) {
 					action = TextUtils.concat(action, "merged pull request ");
@@ -176,11 +171,11 @@ public class EventsListAdapter extends BaseAdapter {
 			action = TextUtils.concat(action, styleText(repoName + "#"
 					+ payload.getNumber()));
 		} else if (eventType.equals("FollowEvent")) {
-			mHolder.eventIcon.setText("\uf01c");
+			mHolder.eventIconTextView.setText("\uf01c");
 			action = TextUtils.concat(action, "started following ",
 					styleText(payload.getTarget().getLogin()));
 		} else if (eventType.equals("ForkEvent")) {
-			mHolder.eventIcon.setText("\uf020");
+			mHolder.eventIconTextView.setText("\uf020");
 			action = TextUtils.concat(action, "forked ", styleText(repoName),
 					" to ");
 			Forkee forkee = payload.getForkee();
@@ -200,7 +195,7 @@ public class EventsListAdapter extends BaseAdapter {
 		} else if (eventType.equals("CreateEvent")) {
 			if (payload.getRefType().equals("")) {// Legacy Event
 				if (payload.getObject().equals("branch")) {
-					mHolder.eventIcon.setText("\uf023");
+					mHolder.eventIconTextView.setText("\uf023");
 					action = TextUtils.concat(action, "created branch ",
 							styleText(payload.getObjectName()), " at ");
 					if (repoName.equals("/")) {
@@ -209,7 +204,7 @@ public class EventsListAdapter extends BaseAdapter {
 						action = TextUtils.concat(action, styleText(repoName));
 					}
 				} else if (payload.getObject().equals("repository")) {
-					mHolder.eventIcon.setText("\uf003");
+					mHolder.eventIconTextView.setText("\uf003");
 					action = TextUtils.concat(action, "created repository ");
 					if (repoName.equals("/")) {
 						action = TextUtils.concat(action, styleText("deleted"));
@@ -218,7 +213,7 @@ public class EventsListAdapter extends BaseAdapter {
 								styleText(payload.getName()));
 					}
 				} else if (payload.getObject().equals("tag")) {
-					mHolder.eventIcon.setText("\uf054");
+					mHolder.eventIconTextView.setText("\uf054");
 					action = TextUtils.concat(action, "created tag ",
 							styleText(payload.getObjectName()), " at ");
 					if (repoName.equals("/")) {
@@ -236,15 +231,15 @@ public class EventsListAdapter extends BaseAdapter {
 				}
 
 				if (payload.getRefType().equals("branch")) {
-					mHolder.eventIcon.setText("\uf023");
+					mHolder.eventIconTextView.setText("\uf023");
 					action = TextUtils.concat(action, " at ",
 							styleText(repoName));
 				} else if (payload.getRefType().equals("tag")) {
-					mHolder.eventIcon.setText("\uf054");
+					mHolder.eventIconTextView.setText("\uf054");
 					action = TextUtils.concat(action, " at ",
 							styleText(repoName));
 				} else if (payload.getRefType().equals("repository")) {
-					mHolder.eventIcon.setText("\uf003");
+					mHolder.eventIconTextView.setText("\uf003");
 					int index = repoName.indexOf('/');
 					int repoLength = repoName.length();
 					repoName = repoName.substring(index + 1, repoLength);
@@ -252,7 +247,7 @@ public class EventsListAdapter extends BaseAdapter {
 				}
 			}
 		} else if (eventType.equals("DeleteEvent")) {
-			mHolder.eventIcon.setText("\uf084");
+			mHolder.eventIconTextView.setText("\uf084");
 			action = TextUtils.concat(action, "deleted ", payload.getRefType(),
 					" ");
 			if (!(payload.getRef().equals("null"))) {
@@ -260,7 +255,7 @@ public class EventsListAdapter extends BaseAdapter {
 			}
 			action = TextUtils.concat(action, "at ", styleText(repoName));
 		} else if (eventType.equals("WatchEvent")) {
-			mHolder.eventIcon.setText("\uf02a");
+			mHolder.eventIconTextView.setText("\uf02a");
 			if (payload.getAction().equals("started")) {
 				action = TextUtils.concat(action, "starred ");
 			}
@@ -271,11 +266,11 @@ public class EventsListAdapter extends BaseAdapter {
 			}
 			
 		} else if (eventType.equals("MemberEvent")) {
-			mHolder.eventIcon.setText("\uf01a");
+			mHolder.eventIconTextView.setText("\uf01a");
 			action = TextUtils.concat(action, "added ", styleText(payload
 					.getMember().getLogin()), " to ", styleText(repoName));
 		} else if (eventType.equals("GistEvent")) {
-			mHolder.eventIcon.setText("\uf00e");
+			mHolder.eventIconTextView.setText("\uf00e");
 			if (payload.getGist() != null) {
 				if (payload.getAction().equals("update")) {
 					action = TextUtils.concat(action, "updated");
@@ -297,7 +292,7 @@ public class EventsListAdapter extends BaseAdapter {
 				action = TextUtils.concat(action, styleText(payload.getName()));
 			}
 		} else if (eventType.equals("GollumEvent")) {
-			mHolder.eventIcon.setText("\uf007");
+			mHolder.eventIconTextView.setText("\uf007");
 			ArrayList<Page> pages = payload.getPages();
 			if (pages != null) {
 				Page page = pages.get(0);
@@ -309,11 +304,11 @@ public class EventsListAdapter extends BaseAdapter {
 			}
 
 		} else if (eventType.equals("PublicEvent")) {
-			mHolder.eventIcon.setText("\uf001");
+			mHolder.eventIconTextView.setText("\uf001");
 			action = TextUtils.concat(action, "open sourced ",
 					styleText(repoName));
 		} else if (eventType.equals("CommitCommentEvent")) {
-			mHolder.eventIcon.setText("\uf04f");
+			mHolder.eventIconTextView.setText("\uf04f");
 			action = TextUtils.concat(action, "commented on commit ");
 			if (payload.getComment() != null) {
 				action = TextUtils.concat(action, styleText(repoName + "@"
@@ -323,7 +318,7 @@ public class EventsListAdapter extends BaseAdapter {
 						+ payload.getCommit()));
 			}
 		} else if (eventType.equals("PullRequestReviewCommentEvent")) {
-			mHolder.eventIcon.setText("\uf04f");
+			mHolder.eventIconTextView.setText("\uf04f");
 			String pullRequestUrl = payload.getComment().getPullRequestUrl();
 			if (pullRequestUrl.length() > 0) {
 				String pullRequestUrlId = pullRequestUrl.substring(
@@ -339,11 +334,11 @@ public class EventsListAdapter extends BaseAdapter {
 			action = TextUtils.concat(action, "released ", styleText(payload
 					.getRelease().getTagName()), " at ", styleText(repoName));
 		} else if (eventType.equals("ForkApplyEvent")) {
-			mHolder.eventIcon.setText("\uf023");
+			mHolder.eventIconTextView.setText("\uf023");
 			action = TextUtils.concat(action, "applied fork commits to ",
 					styleText(repoName));
 		} else if (eventType.equals("DownloadEvent")) {
-			mHolder.eventIcon.setText("\uf00c");
+			mHolder.eventIconTextView.setText("\uf00c");
 			action = TextUtils.concat(action, "uploaded ", payload
 					.getDownload().getName(), " to ", styleText(repoName));
 		}
@@ -370,5 +365,13 @@ public class EventsListAdapter extends BaseAdapter {
 				date.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		return styledDate;
 	}
+    // endregion
+
+    // region Inner Classes
+    private class ViewHolder {
+        TextView eventIconTextView;
+        TextView eventDetailsTextView;
+    }
+    // endregion
 
 }

@@ -1,5 +1,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.sample.github"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -30,23 +31,23 @@
             android:orientation="vertical"
             android:padding="10dp" >
 
-            <TextView
+            <com.sample.github.views.CustomFontTextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="26sp"
-                android:textStyle="bold" >
-            </TextView>
+                android:textStyle="bold"
+                app:textFont="Roboto_Regular"/>
 
-            <TextView
+            <com.sample.github.views.CustomFontTextView
                 android:id="@+id/html_url"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:autoLink="web"
-                android:textSize="16sp" >
-            </TextView>
+                android:textSize="16sp"
+                app:textFont="Roboto_Light"/>
 
             <View
                 android:id="@+id/divider1"
@@ -58,21 +59,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/companyIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="3dp"
                     android:text="@string/octicon_company"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Octicons_Regular"/>
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/company"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Roboto_Light"/>
             </LinearLayout>
 
             <LinearLayout
@@ -81,21 +82,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/locationIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="3dp"
                     android:text="@string/octicon_location"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Octicons_Regular"/>
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Roboto_Light"/>
             </LinearLayout>
 
             <LinearLayout
@@ -104,22 +105,22 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/emailIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="3dp"
                     android:text="@string/octicon_mail"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Octicons_Regular"/>
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autoLink="email"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Roboto_Light"/>
             </LinearLayout>
 
             <LinearLayout
@@ -128,21 +129,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/blogIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="3dp"
                     android:text="@string/octicon_link"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Octicons_Regular"/>
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/blog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Roboto_Light"/>
             </LinearLayout>
 
             <LinearLayout
@@ -151,21 +152,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/createdAtIcon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="3dp"
                     android:text="@string/octicon_clock"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Octicons_Regular"/>
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/createdAt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp" >
-                </TextView>
+                    android:textSize="16sp"
+                    app:textFont="Roboto_Light"/>
             </LinearLayout>
 
             <View style="@style/Divider" />
@@ -175,36 +176,36 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/followers"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="36sp"
-                    android:textStyle="bold" >
-                </TextView>
+                    android:textStyle="bold"
+                    app:textFont="Roboto_Regular"/>
 
-                <TextView
+                <com.sample.github.views.CustomFontTextView
                     android:id="@+id/following"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textSize="36sp"
-                    android:textStyle="bold" >
-                </TextView>
+                    android:textStyle="bold"
+                    app:textFont="Roboto_Regular"/>
             </LinearLayout>
 
             <View style="@style/Divider" />
 
-            <TextView
+            <com.sample.github.views.CustomFontTextView
                 android:id="@+id/bio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="16sp" >
-            </TextView>
+                android:textSize="16sp"
+                app:textFont="Roboto_Light"/>
         </LinearLayout>
     </LinearLayout>
 

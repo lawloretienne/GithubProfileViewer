@@ -18,7 +18,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
-import com.sample.github.EventsJSONParser;
+import com.sample.github.utils.EventsJSONParser;
 import com.sample.github.R;
 import com.sample.github.adapters.EventsListAdapter;
 import com.sample.github.models.Event;
@@ -26,13 +26,19 @@ import com.sample.github.utils.HTTPUtils;
 
 public class EventsFragment extends ListFragment {
 
+    // region Constants
 	private final String DEBUG_TAG = getClass().getSimpleName().toString();
-	private EventsListAdapter mAdapter;
+	// endregion
+
+    // region Member Variables
+    private EventsListAdapter mAdapter;
 	private MenuItem mRefreshItem;
 	private String mEventsUrl, mReceivedEventsUrl;
 	private Resources mResources;
 	private int mEventsType;
+    // endregion
 
+    // region Lifecycle Methods
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
@@ -71,22 +77,25 @@ public class EventsFragment extends ListFragment {
 
 	}
 
-	public void onListItemClick(ListView l, View v, int position, long id) {
-		super.onListItemClick(l, v, position, id);
-	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
 	}
+    // endregion
 
-	@Override
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+    }
+
+
+    @Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		// Add an action bar item for refreshing list of events.
 		mRefreshItem = menu.add("Refresh");
 		mRefreshItem.setIcon(R.drawable.ic_menu_refresh);
 		mRefreshItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-
 	}
 
 	@Override
@@ -106,11 +115,16 @@ public class EventsFragment extends ListFragment {
 		}
 	}
 
+    // region Helper Methods
+
 	//Populate the events list
 	protected void populateList(ArrayList<Event> items) {
 		mAdapter = new EventsListAdapter(getActivity(), items);
 		setListAdapter(mAdapter);
 	}
+    // endregion
+
+    // region Inner Classes
 
 	private class EventsDownload extends AsyncTask<String, Void, String> {
 		@Override
@@ -142,4 +156,5 @@ public class EventsFragment extends ListFragment {
 		}
 	}
 
+    // endregion
 }

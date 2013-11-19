@@ -8,14 +8,19 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class ProfileFragmentPagerAdapter extends FragmentPagerAdapter {
-	ActionBar mActionBar;
-	private List<Fragment> mFragments;
 
+	// region Member Variables
+    private ActionBar mActionBar;
+	private List<Fragment> mFragments;
+    // endregion
+
+    // region Constructors
 	public ProfileFragmentPagerAdapter(FragmentManager fm,
 			List<Fragment> fragments) {
 		super(fm);
 		mFragments = fragments;
 	}
+    // endregion
 
 	@Override
 	public int getCount() {

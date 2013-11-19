@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<declare-styleable name="RoundedImageView">
+    <attr name="corner_radius" format="dimension"/>
+    <attr name="border_width" format="dimension"/>
+    <attr name="border_color" format="color"/>
+    <attr name="round_background" format="boolean"/>
+    <attr name="is_oval" format="boolean"/>
+    <attr name="android:scaleType"/>
+</declare-styleable>
+
+<declare-styleable name="CustomFontTextView">
+    <attr name="textFont" format="enum">
+        <enum name="OpenSans_Regular"           value="0"/>
+        <enum name="OpenSands_Bold"             value="1"/>
+        <enum name="OpenSans_Italic"            value="2"/>
+        <enum name="OpenSans_BoldItalic"        value="3"/>
+        <enum name="OpenSans_Semibold"          value="4"/>
+        <enum name="OpenSans_SemiboldItalic"    value="5"/>
+        <enum name="Roboto_Light"               value="6"/>
+        <enum name="Roboto_Regular"             value="7"/>
+        <enum name="Octicons_Regular"           value="8"/>
+    </attr>
+</declare-styleable>
+
+</resources>

@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.sample.github"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,15 +18,17 @@
         android:src="@drawable/github_background" >
     </ImageView>
 
-    <EditText
-        android:id="@+id/user_account"
+    <com.sample.github.views.CustomFontEditText
+        android:id="@+id/user_account_et"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/user_account_hint" >
-    </EditText>
+        android:hint="@string/user_account_hint"
+        android:padding="10dp"
+        app:textFont="Roboto_Light"
+    />
 
     <ImageButton
-        android:id="@+id/view_profile_button"
+        android:id="@+id/view_profile_ib"
         style="@style/ImageButtonBlack"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
