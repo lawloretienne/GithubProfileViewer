@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/home/etienne/workspace/GitProjects/GitHubProfileViewer/GitHubProfileViewer/build/intermediates/pre-dexed/debug/classes-b3b6cc73cd55b1ac4e3d6393d19847ad8ecbd3c6.jar"
+        jar="/home/etienne/workspace/GitProjects/GitHubProfileViewer/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/home/etienne/workspace/GitProjects/GitHubProfileViewer/GitHubProfileViewer/build/intermediates/pre-dexed/debug/guava-15.0-9ef73a7bb593c1cd76987edad7c19f9562b7e3b8.jar"
+        jar="/home/etienne/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ed727a8d9f247e2050281cb083f1c77b09dcb5cd"/>
+    <item
+        dex="/home/etienne/workspace/GitProjects/GitHubProfileViewer/GitHubProfileViewer/build/intermediates/pre-dexed/debug/support-v4-19.1.0-5d6ee1e0601af2702f3727f8fc289b958ecf9308.jar"
+        jar="/home/etienne/android-studio/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/home/etienne/workspace/GitProjects/GitHubProfileViewer/GitHubProfileViewer/build/intermediates/pre-dexed/debug/picasso-2.3.2-8d093f19bc448a6e7f148bec3d8af6d67a71c46e.jar"
+        jar="/home/etienne/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.3.2/d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27/picasso-2.3.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27"/>
+
+</pre-dex-items>

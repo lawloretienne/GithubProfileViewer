@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GitHub/GitHub.iml" filepath="$PROJECT_DIR$/GitHub/GitHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GitHubProfileViewer.iml" filepath="$PROJECT_DIR$/GitHubProfileViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GitHubProfileViewer/GitHubProfileViewer-GitHubProfileViewer.iml" filepath="$PROJECT_DIR$/GitHubProfileViewer/GitHubProfileViewer-GitHubProfileViewer.iml" />
     </modules>
   </component>
 </project>
