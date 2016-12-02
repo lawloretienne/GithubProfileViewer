@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomFontTextView">
+        <attr name="textFont" format="enum">
+            <enum name="noto_sans_bold" value="0" />
+            <enum name="noto_sans_bold_italic" value="1" />
+            <enum name="noto_sans_italic" value="2" />
+            <enum name="noto_sans_regular" value="3" />
+            <enum name="octicons" value="4" />
+            <enum name="octicons_regular" value="5" />
+        </attr>
+    </declare-styleable>
+
+</resources>

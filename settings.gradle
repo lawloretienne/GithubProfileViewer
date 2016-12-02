@@ -1,1 +1,1 @@
-include ':GitHubProfileViewer'
+include ':app'

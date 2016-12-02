@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_200">
+
+    <include layout="@layout/content_layout" />
+
+    <include layout="@layout/events_empty_layout" />
+
+    <include layout="@layout/loading_layout" />
+
+    <include layout="@layout/error_layout" />
+
+</FrameLayout>

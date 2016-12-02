@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.GithubProfileViewer.ProfileActivity" parent="Theme.GithubProfileViewer">
+        <!-- specify enter and exit transitions -->
+        <item name="android:windowEnterTransition">@transition/slide_from_right</item>
+    </style>
+
+</resources>

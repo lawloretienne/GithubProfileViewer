@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GitHub Profile Viewer</string>
+    <string name="view_profile">View Profile</string>
+    <string name="profile">Profile</string>
+    <string name="info">Info</string>
+    <string name="repositories">Repositories</string>
+    <string name="events">Events</string>
+    <string name="reload">Reload</string>
+    <string name="check_your_network_connection">Can\'t load data. Check your network connection.</string>
+    <string name="content_desc">Content Description</string>
+    <string name="no_available_events">No available events</string>
+    <string name="username">Username</string>
+    <string name="no_available_repositories">No available repositories</string>
+
+</resources>

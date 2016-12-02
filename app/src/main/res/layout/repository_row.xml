@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <com.sample.github.ui.CustomFontTextView
+        android:id="@+id/name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textSize="18sp"
+        app:textFont="noto_sans_bold" />
+
+    <com.sample.github.ui.CustomFontTextView
+        android:id="@+id/description_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_text"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:textFont="noto_sans_regular" />
+
+    <LinearLayout
+        android:id="@+id/tags_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <com.sample.github.ui.CustomFontTextView
+            android:id="@+id/language_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:drawablePadding="4dp"
+            android:layout_marginRight="8dp"
+            android:drawableLeft="@drawable/ic_circle_wrapped"
+            app:textFont="noto_sans_regular" />
+
+        <com.sample.github.ui.CustomFontTextView
+            android:id="@+id/stargazers_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:drawablePadding="4dp"
+            android:drawableLeft="@drawable/ic_star_wrapped"
+            android:layout_marginRight="8dp"
+            app:textFont="noto_sans_regular" />
+
+        <com.sample.github.ui.CustomFontTextView
+            android:id="@+id/forks_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:drawablePadding="4dp"
+            android:drawableLeft="@drawable/ic_fork_wrapped"
+            app:textFont="noto_sans_regular" />
+
+    </LinearLayout>
+
+    <com.sample.github.ui.CustomFontTextView
+        android:id="@+id/pushed_at_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/secondary_text"
+        android:textSize="16sp"
+        app:textFont="noto_sans_regular" />
+
+</LinearLayout>

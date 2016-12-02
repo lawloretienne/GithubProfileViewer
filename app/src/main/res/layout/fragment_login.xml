@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/login_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:paddingBottom="64dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="360dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/username_til"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="56dp"
+                        android:layout_marginRight="56dp"
+                        android:layout_marginTop="16dp"
+                        android:textColorHint="@color/grey_500">
+
+                        <com.sample.github.ui.CustomFontEditText
+                            android:id="@+id/username_et"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/username"
+                            android:singleLine="true"
+                            android:textColor="@color/secondary_text"
+                            android:textColorHint="@color/primary_text"
+                            app:textFont="noto_sans_regular" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/view_profile_ll"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:background="@color/grey_400"
+            android:gravity="right|center_vertical">
+
+            <com.sample.github.ui.CustomFontButton
+                android:id="@+id/view_profile_btn"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_marginRight="16dp"
+                android:enabled="false"
+                android:text="@string/view_profile"
+                android:textAllCaps="true"
+                android:textColor="@color/grey_500"
+                android:textSize="16sp"
+                app:textFont="noto_sans_bold" />
+
+            <com.github.silvestrpredko.dotprogressbar.DotProgressBar
+                android:id="@+id/dot_progress_bar"
+                android:layout_width="64dp"
+                android:layout_height="12dp"
+                android:layout_marginRight="16dp"
+                android:visibility="gone"
+                android:layout_gravity="right|center_vertical"
+                app:amount="5"
+                app:duration="@android:integer/config_mediumAnimTime"
+                app:endColor="@color/inverse_primary_text"
+                app:startColor="@color/inverse_tertiary_text" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

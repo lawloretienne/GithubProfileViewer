@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="timber-4.3.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.3.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.3.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.timber/timber/4.3.0/2171e0eaf3f44ab113a4699574dafc6c8dbad98d/timber-4.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

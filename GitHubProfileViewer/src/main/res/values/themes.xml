@@ -1,8 +1,0 @@
-<resources>
-
-    <style name="Black" parent="@style/AppTheme">
-        <item name="android:buttonStyle">@style/ButtonBlack</item>
-        <item name="android:imageButtonStyle">@style/ImageButtonBlack</item>
-    </style>
-
-</resources>
