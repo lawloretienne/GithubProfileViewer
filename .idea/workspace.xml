@@ -23,268 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="998d53a5-0a68-4b1e-a007-5320282ae3b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/fonts/NotoSans-Bold.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/fonts/NotoSans-BoldItalic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/fonts/NotoSans-Italic.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/fonts/NotoSans-Regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_error_view_cloud.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/ic_error_view_cloud.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_error_view_cloud.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/ic_error_view_cloud.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/adapter_rxjava_2_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/butterknife_7_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/circleimageview_2_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/converter_gson_2_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/customtabs_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/design_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/dot_progress_bar_0_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/leakcanary_android_no_op_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/logging_interceptor_3_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/multidex_instrumentation_1_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_urlconnection_3_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/okio_1_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/picasso_2_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_animators_2_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/retrofit_2_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/rxandroid_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/rxbinding_0_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/rxjava_1_1_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_compat_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/timber_4_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/transition_25_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/trestle_0_0_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GithubProfileViewer.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/GithubProfileViewerApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/activities/LoginActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/activities/ProfileActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/FragmentHostPagerAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/customtabs/CustomTabActivityHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/customtabs/CustomTabsHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/customtabs/KeepAliveService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/customtabs/ServiceConnection.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/customtabs/ServiceConnectionCallback.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/BaseFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/InfoFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/LoginFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/ProfileHostFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/RepositoriesFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/GithubService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/ServiceGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Actor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Comment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Deployment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/DeploymentStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Event.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Gist.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Issue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Page.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/PageBuild.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Payload.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/PullRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Release.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/Repository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/ui/CustomFontButton.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/ui/CutLayout.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/CustomFontUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/CustomTabUtility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DateUtility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DisplayUtility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DrawableUtility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/FontCache.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/FormValidationUtility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/NetworkLogUtility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/TrestleUtility.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_in_right.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_out_left.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_circle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_circle_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_clock.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_clock_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_company.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_company_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_events_large.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_fork.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_fork_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_link.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_link_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_location.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_location_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_mail.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_mail_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_repositories_large.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_star.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_star_wrapped.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/view_dropshadow.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v21/fragment_profile_host.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/adapter_footer.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/error_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/event_row.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/events_empty_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_events.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_info.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_host.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_repositories.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/loading_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login_toolbar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/repositories_empty_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/repository_row.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_with_tabs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/transition/slide_from_right.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/defaults.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/material_design_colors.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Black.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-BlackItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Bold.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-BoldCondensed.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-BoldCondensedItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-BoldItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Condensed.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-CondensedItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Italic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Light.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-LightItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Medium.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-MediumItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-Thin.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Roboto-ThinItalic.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/CustomTypefaceSpan.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/TabListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/activities/LoginActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/activities/ProfileManagerActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/adapters/EventsListAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/adapters/ProfileFragmentPagerAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/fragments/EventsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/fragments/ProfileFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Actor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Comment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Download.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Event.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Forkee.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Gist.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Issue.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Member.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Org.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Page.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Payload.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/PullRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Release.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Repo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/models/Target.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/utils/EventsJSONParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/utils/HTTPUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/utils/ISO8601.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/utils/NetworkUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/utils/Toaster.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/views/RoundedDrawable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/views/RoundedImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/libs/android-support-v4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/libs/picasso-2.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/btn_default_disabled_focused_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/btn_default_disabled_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/btn_default_focused_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/btn_default_normal_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/btn_default_pressed_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/clock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/default_gravatar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/github_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/github_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/ic_menu_refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/mail.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/map_pin_stroke.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-hdpi/view_profile_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/btn_default_disabled_focused_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/btn_default_disabled_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/btn_default_focused_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/btn_default_normal_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/btn_default_pressed_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/clock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/default_gravatar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/github_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/ic_menu_refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-mdpi/octocat_sad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/btn_default_disabled_focused_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/btn_default_disabled_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/btn_default_focused_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/btn_default_normal_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/btn_default_pressed_holo_light_black.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/clock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/default_gravatar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/github_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/github_logo_transparent.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/ic_menu_refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/mail.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xhdpi/map_pin_stroke.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable/avatar_border.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/drawable/btn_default_holo_light_black.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/layout/activity_login.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/layout/event.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/layout/fragment_profile.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/menu/profile_manager.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values-v11/styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values-v14/styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/integers.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/.gitignore" afterPath="$PROJECT_DIR$/app/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/proguard-rules.pro" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/Octicons.ttf" afterPath="$PROJECT_DIR$/app/src/main/assets/fonts/Octicons.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/assets/fonts/octicons-regular-webfont.ttf" afterPath="$PROJECT_DIR$/app/src/main/assets/fonts/Octicons-Regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/views/CustomFontEditText.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/ui/CustomFontEditText.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/java/com/sample/github/views/CustomFontTextView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/ui/CustomFontTextView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/layout/activity_profile_manager.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values-sw600dp/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-sw600dp/dimens.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values-sw720dp-land/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-sw720dp-land/dimens.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/arrays.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/themes.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/attrs.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/GitHubProfileViewer/src/main/res/values/themes.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="GitHubProfileViewer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -374,7 +114,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login_toolbar.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login_toolbar.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/login_toolbar.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -384,6 +124,55 @@
           </provider>
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="135">
+                <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="116" column="39" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="material_design_colors.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/material_design_colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="249" column="17" selection-start-line="249" selection-start-column="17" selection-end-line="249" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -3269,8 +3058,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/themes.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/themes.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/models/response/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_clock.xml" />
@@ -3320,6 +3107,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/repositories_empty_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -3372,158 +3161,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout-v21" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GithubProfileViewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="github" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3969,7 +3606,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1916" y="-157" width="1916" height="1057" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18623266" sideWeight="0.5063291" order="2" side_tool="true" content_ui="tabs" />
@@ -3986,14 +3623,14 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3995749" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995749" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4765208" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837406" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32837406" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18623266" sideWeight="0.49367088" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18623266" sideWeight="0.49367088" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -4112,38 +3749,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="150" column="4" selection-start-line="150" selection-start-column="4" selection-end-line="150" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/material_design_colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -4594,6 +4199,14 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/login_toolbar.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -4603,6 +4216,39 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="116" column="39" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/material_design_colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="249" column="17" selection-start-line="249" selection-start-column="17" selection-end-line="249" selection-end-column="17" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
