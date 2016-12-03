@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -127,14 +128,14 @@ public class EventsAdapter extends BaseAdapter<Event> {
     protected void displayLoadMoreFooter() {
         if(footerViewHolder!= null){
             footerViewHolder.errorRelativeLayout.setVisibility(View.GONE);
-            footerViewHolder.loadingRelativeLayout.setVisibility(View.VISIBLE);
+            footerViewHolder.loadingFrameLayout.setVisibility(View.VISIBLE);
         }
     }
 
     @Override
     protected void displayErrorFooter() {
         if(footerViewHolder!= null){
-            footerViewHolder.loadingRelativeLayout.setVisibility(View.GONE);
+            footerViewHolder.loadingFrameLayout.setVisibility(View.GONE);
             footerViewHolder.errorRelativeLayout.setVisibility(View.VISIBLE);
         }
     }
@@ -816,8 +817,8 @@ public class EventsAdapter extends BaseAdapter<Event> {
 
     public static class FooterViewHolder extends RecyclerView.ViewHolder {
         // region Views
-        @Bind(R.id.loading_rl)
-        RelativeLayout loadingRelativeLayout;
+        @Bind(R.id.loading_fl)
+        FrameLayout loadingFrameLayout;
         @Bind(R.id.error_rl)
         RelativeLayout errorRelativeLayout;
         @Bind(R.id.pb)
