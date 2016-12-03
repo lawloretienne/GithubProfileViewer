@@ -194,7 +194,7 @@ public class InfoFragment extends BaseFragment {
     private void setUpCreatedAt(){
         String createdAt = user.getCreatedAt();
         if(!TextUtils.isEmpty(createdAt)){
-            createdTextView.setText(String.format("Joined on %s", DateUtility.getFormattedRegularDate(createdAt)));
+            createdTextView.setText(String.format("Joined on %s", DateUtility.getFormattedDate(createdAt)));
             createdTextView.setVisibility(View.VISIBLE);
         } else {
             createdTextView.setVisibility(View.GONE);

@@ -279,7 +279,6 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
     public void onItemClick(int position, View view) {
         Event event = eventsAdapter.getItem(position);
         if(event != null){
-
         }
     }
     // endregion

@@ -37,90 +37,32 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Created by etiennelawlor on 3/21/15.
  */
-public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-    // region Constants
-    private static final int HEADER = 0;
-    private static final int ITEM = 1;
-    private static final int FOOTER = 2;
-    // endregion
+public class EventsAdapter extends BaseAdapter<Event> {
 
     // region Member Variables
-    private List<Event> events;
-    private OnItemClickListener onItemClickListener;
-    private OnReloadClickListener onReloadClickListener;
     private FooterViewHolder footerViewHolder;
     private Typeface boldFont;
-    private boolean isFooterAdded = false;
-    // endregion
-
-    // region Interfaces
-    public interface OnItemClickListener {
-        void onItemClick(int position, View view);
-    }
-
-    public interface OnReloadClickListener {
-        void onReloadClick();
-    }
     // endregion
 
     // region Constructors
     public EventsAdapter(Context context) {
+        super();
         boldFont = FontCache.getTypeface("NotoSans-Bold.ttf", context);
-        events = new ArrayList<>();
     }
     // endregion
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        RecyclerView.ViewHolder viewHolder = null;
-
-        switch (viewType) {
-            case HEADER:
-//                viewHolder = createHeaderViewHolder(parent);
-                break;
-            case ITEM:
-                viewHolder = createEventViewHolder(parent);
-                break;
-            case FOOTER:
-                viewHolder = createFooterViewHolder(parent);
-                break;
-            default:
-                break;
-        }
-
-        return viewHolder;
-    }
-
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-        switch (getItemViewType(position)) {
-            case HEADER:
-//                bindHeaderViewHolder(viewHolder);
-                break;
-            case ITEM:
-                bindEventViewHolder(viewHolder, position);
-                break;
-            case FOOTER:
-                bindFooterViewHolder(viewHolder);
-            default:
-                break;
-        }
-    }
-
-    @Override
-    public int getItemCount() {
-        return events.size();
-    }
-
-    @Override
     public int getItemViewType(int position) {
-        return (position == events.size()-1 && isFooterAdded) ? FOOTER : ITEM;
+        return (isLastPosition(position) && isFooterAdded) ? FOOTER : ITEM;
     }
 
-    // region Helper Methods
+    @Override
+    protected RecyclerView.ViewHolder createHeaderViewHolder(ViewGroup parent) {
+        return null;
+    }
 
-    private RecyclerView.ViewHolder createEventViewHolder(ViewGroup parent) {
+    @Override
+    protected RecyclerView.ViewHolder createItemViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_row, parent, false);
 
         final EventViewHolder holder = new EventViewHolder(v);
@@ -140,7 +82,8 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         return holder;
     }
 
-    private RecyclerView.ViewHolder createFooterViewHolder(ViewGroup parent) {
+    @Override
+    protected RecyclerView.ViewHolder createFooterViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_footer, parent, false);
 
         final FooterViewHolder holder = new FooterViewHolder(v);
@@ -156,10 +99,16 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         return holder;
     }
 
-    private void bindEventViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+    @Override
+    protected void bindHeaderViewHolder(RecyclerView.ViewHolder viewHolder) {
+
+    }
+
+    @Override
+    protected void bindItemViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final EventViewHolder holder = (EventViewHolder) viewHolder;
 
-        final Event event = events.get(position);
+        final Event event = items.get(position);
 
         if (event != null) {
             setUpAvatar(holder.avatarCircleImageView, event);
@@ -168,88 +117,35 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
     }
 
-    private void bindFooterViewHolder(RecyclerView.ViewHolder viewHolder) {
+    @Override
+    protected void bindFooterViewHolder(RecyclerView.ViewHolder viewHolder) {
         FooterViewHolder holder = (FooterViewHolder) viewHolder;
         footerViewHolder = holder;
     }
 
-    public void add(Event item) {
-        events.add(item);
-        notifyItemInserted(events.size() - 1);
-    }
-
-    public void addAll(List<Event> events) {
-        for (Event event : events) {
-            add(event);
+    @Override
+    protected void displayLoadMoreFooter() {
+        if(footerViewHolder!= null){
+            footerViewHolder.errorRelativeLayout.setVisibility(View.GONE);
+            footerViewHolder.loadingRelativeLayout.setVisibility(View.VISIBLE);
         }
     }
 
-    private void remove(Event item) {
-        int position = events.indexOf(item);
-        if (position > -1) {
-            events.remove(position);
-            notifyItemRemoved(position);
+    @Override
+    protected void displayErrorFooter() {
+        if(footerViewHolder!= null){
+            footerViewHolder.loadingRelativeLayout.setVisibility(View.GONE);
+            footerViewHolder.errorRelativeLayout.setVisibility(View.VISIBLE);
         }
     }
 
-    public void clear() {
-        isFooterAdded = false;
-        while (getItemCount() > 0) {
-            remove(getItem(0));
-        }
-    }
-
-    public boolean isEmpty() {
-        return getItemCount() == 0;
-    }
-
-    public void addFooter(){
+    @Override
+    public void addFooter() {
         isFooterAdded = true;
         add(new Event());
     }
 
-    public void removeFooter() {
-        isFooterAdded = false;
-
-        int position = events.size() - 1;
-        Event item = getItem(position);
-
-        if (item != null) {
-            events.remove(position);
-            notifyItemRemoved(position);
-        }
-    }
-
-    public void updateFooter(FooterType footerType){
-        switch (footerType) {
-            case LOAD_MORE:
-                if(footerViewHolder!= null){
-                    footerViewHolder.errorRelativeLayout.setVisibility(View.GONE);
-                    footerViewHolder.loadingRelativeLayout.setVisibility(View.VISIBLE);
-                }
-                break;
-            case ERROR:
-                if(footerViewHolder!= null){
-                    footerViewHolder.loadingRelativeLayout.setVisibility(View.GONE);
-                    footerViewHolder.errorRelativeLayout.setVisibility(View.VISIBLE);
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
-    public Event getItem(int position) {
-        return events.get(position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
-
-    public void setOnReloadClickListener(OnReloadClickListener onReloadClickListener) {
-        this.onReloadClickListener = onReloadClickListener;
-    }
+    // region Helper Methods
 
     private void setUpAvatar(ImageView iv, Event event){
         Actor actor = event.getActor();
@@ -271,7 +167,7 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private void setUpCreatedAt(TextView tv, Event event) {
         String createdAt = event.getCreatedAt();
         if(!TextUtils.isEmpty(createdAt)){
-            tv.setText(DateUtility.getFormattedMagicDate(createdAt));
+            tv.setText(DateUtility.getFormattedDate(createdAt));
         }
     }
 
@@ -937,12 +833,6 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
         // endregion
     }
-
-    public enum FooterType {
-        LOAD_MORE,
-        ERROR
-    }
-
     // endregion
 
 }

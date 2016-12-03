@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sample.github.R;
+import com.sample.github.network.models.response.Event;
 import com.sample.github.network.models.response.Repository;
 import com.sample.github.utilities.DateUtility;
 import com.sample.github.utilities.DrawableUtility;
@@ -33,96 +34,37 @@ import butterknife.ButterKnife;
 /**
  * Created by etiennelawlor on 3/21/15.
  */
-public class RepositoriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-    // region Constants
-    private static final int HEADER = 0;
-    private static final int ITEM = 1;
-    private static final int FOOTER = 2;
-    // endregion
+public class RepositoriesAdapter extends BaseAdapter<Repository> {
 
     // region Member Variables
-    private List<Repository> repositories;
-    private OnItemClickListener onItemClickListener;
-    private OnReloadClickListener onReloadClickListener;
     private FooterViewHolder footerViewHolder;
     private String[] languagesArray;
     private String[] languageColorsArray;
-    private boolean isFooterAdded = false;
     private Map<String, String> languageColorMap = new HashMap<>();
-    // endregion
-
-    // region Interfaces
-    public interface OnItemClickListener {
-        void onItemClick(int position, View view);
-    }
-
-    public interface OnReloadClickListener {
-        void onReloadClick();
-    }
     // endregion
 
     // region Constructors
     public RepositoriesAdapter(Context context) {
-
+        super();
         languagesArray = context.getResources().getStringArray(R.array.languages);
         languageColorsArray = context.getResources().getStringArray(R.array.language_colors);
 
         setUpLanguageColorMap();
-        repositories = new ArrayList<>();
     }
     // endregion
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        RecyclerView.ViewHolder viewHolder = null;
-
-        switch (viewType) {
-            case HEADER:
-//                viewHolder = createHeaderViewHolder(parent);
-                break;
-            case ITEM:
-                viewHolder = createRepositoryViewHolder(parent);
-                break;
-            case FOOTER:
-                viewHolder = createFooterViewHolder(parent);
-                break;
-            default:
-                break;
-        }
-
-        return viewHolder;
-    }
-
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-        switch (getItemViewType(position)) {
-            case HEADER:
-//                bindHeaderViewHolder(viewHolder);
-                break;
-            case ITEM:
-                bindRepositoryViewHolder(viewHolder, position);
-                break;
-            case FOOTER:
-                bindFooterViewHolder(viewHolder);
-            default:
-                break;
-        }
-    }
-
-    @Override
-    public int getItemCount() {
-        return repositories.size();
-    }
-
-    @Override
     public int getItemViewType(int position) {
-        return (position == repositories.size()-1 && isFooterAdded) ? FOOTER : ITEM;
+        return (isLastPosition(position) && isFooterAdded) ? FOOTER : ITEM;
     }
 
-    // region Helper Methods
+    @Override
+    protected RecyclerView.ViewHolder createHeaderViewHolder(ViewGroup parent) {
+        return null;
+    }
 
-    private RecyclerView.ViewHolder createRepositoryViewHolder(ViewGroup parent) {
+    @Override
+    protected RecyclerView.ViewHolder createItemViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.repository_row, parent, false);
 
         final RepositoryViewHolder holder = new RepositoryViewHolder(v);
@@ -142,7 +84,8 @@ public class RepositoriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return holder;
     }
 
-    private RecyclerView.ViewHolder createFooterViewHolder(ViewGroup parent) {
+    @Override
+    protected RecyclerView.ViewHolder createFooterViewHolder(ViewGroup parent) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_footer, parent, false);
 
         final FooterViewHolder holder = new FooterViewHolder(v);
@@ -158,10 +101,16 @@ public class RepositoriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return holder;
     }
 
-    private void bindRepositoryViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+    @Override
+    protected void bindHeaderViewHolder(RecyclerView.ViewHolder viewHolder) {
+
+    }
+
+    @Override
+    protected void bindItemViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final RepositoryViewHolder holder = (RepositoryViewHolder) viewHolder;
 
-        final Repository repository = repositories.get(position);
+        final Repository repository = items.get(position);
 
         if (repository != null) {
             setUpName(holder.nameTextView, repository);
@@ -174,89 +123,35 @@ public class RepositoriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    private void bindFooterViewHolder(RecyclerView.ViewHolder viewHolder) {
+    @Override
+    protected void bindFooterViewHolder(RecyclerView.ViewHolder viewHolder) {
         FooterViewHolder holder = (FooterViewHolder) viewHolder;
         footerViewHolder = holder;
     }
 
-    public void add(Repository item) {
-        repositories.add(item);
-        notifyItemInserted(repositories.size() - 1);
-    }
-
-    public void addAll(List<Repository> repositories) {
-        for (Repository repository : repositories) {
-            add(repository);
+    @Override
+    protected void displayLoadMoreFooter() {
+        if(footerViewHolder!= null){
+            footerViewHolder.errorRelativeLayout.setVisibility(View.GONE);
+            footerViewHolder.loadingRelativeLayout.setVisibility(View.VISIBLE);
         }
     }
 
-    private void remove(Repository item) {
-        int position = repositories.indexOf(item);
-        if (position > -1) {
-            repositories.remove(position);
-            notifyItemRemoved(position);
+    @Override
+    protected void displayErrorFooter() {
+        if(footerViewHolder!= null){
+            footerViewHolder.loadingRelativeLayout.setVisibility(View.GONE);
+            footerViewHolder.errorRelativeLayout.setVisibility(View.VISIBLE);
         }
     }
 
-    public void clear() {
-        isFooterAdded = false;
-        while (getItemCount() > 0) {
-            remove(getItem(0));
-        }
-    }
-
-    public boolean isEmpty() {
-        return getItemCount() == 0;
-    }
-
-    public void addFooter(){
+    @Override
+    public void addFooter() {
         isFooterAdded = true;
         add(new Repository());
     }
 
-    public void removeFooter() {
-        isFooterAdded = false;
-
-        int position = repositories.size() - 1;
-        Repository item = getItem(position);
-
-        if (item != null) {
-            repositories.remove(position);
-            notifyItemRemoved(position);
-        }
-    }
-
-    public void updateFooter(FooterType footerType){
-        switch (footerType) {
-            case LOAD_MORE:
-                if(footerViewHolder!= null){
-                    footerViewHolder.errorRelativeLayout.setVisibility(View.GONE);
-                    footerViewHolder.loadingRelativeLayout.setVisibility(View.VISIBLE);
-                }
-                break;
-            case ERROR:
-                if(footerViewHolder!= null){
-                    footerViewHolder.loadingRelativeLayout.setVisibility(View.GONE);
-                    footerViewHolder.errorRelativeLayout.setVisibility(View.VISIBLE);
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
-    public Repository getItem(int position) {
-        return repositories.get(position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
-
-    public void setOnReloadClickListener(OnReloadClickListener onReloadClickListener) {
-        this.onReloadClickListener = onReloadClickListener;
-    }
-
+    // region Helper Methods
     private void setUpName(TextView tv, Repository repository) {
         String name = repository.getName();
         if(!TextUtils.isEmpty(name)){
@@ -322,9 +217,9 @@ public class RepositoriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             long days = DateUtility.getDaysFromTimestamp(pushedAt);
             String formattedPushedAt;
             if(days > 30L){
-                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedMagicDate(pushedAt));
+                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedDate(pushedAt));
             } else {
-                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedMagicDate(pushedAt));
+                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedDate(pushedAt));
             }
 
             tv.setText(formattedPushedAt);
@@ -397,12 +292,6 @@ public class RepositoriesAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             ButterKnife.bind(this, view);
         }
         // endregion
-    }
-
-
-    public enum FooterType {
-        LOAD_MORE,
-        ERROR
     }
 
     // endregion
