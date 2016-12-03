@@ -110,7 +110,7 @@ public class RepositoriesAdapter extends BaseAdapter<Repository> {
     protected void bindItemViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final RepositoryViewHolder holder = (RepositoryViewHolder) viewHolder;
 
-        final Repository repository = items.get(position);
+        final Repository repository = getItem(position);
 
         if (repository != null) {
             setUpName(holder.nameTextView, repository);

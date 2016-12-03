@@ -108,7 +108,7 @@ public class EventsAdapter extends BaseAdapter<Event> {
     protected void bindItemViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         final EventViewHolder holder = (EventViewHolder) viewHolder;
 
-        final Event event = items.get(position);
+        final Event event = getItem(position);
 
         if (event != null) {
             setUpAvatar(holder.avatarCircleImageView, event);

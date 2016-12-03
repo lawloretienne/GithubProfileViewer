@@ -23,21 +23,7 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="998d53a5-0a68-4b1e-a007-5320282ae3b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/BaseAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/default_colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/InfoFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/InfoFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DateUtility.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DateUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/event_row.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/event_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-    </list>
+    <list default="true" id="998d53a5-0a68-4b1e-a007-5320282ae3b8" name="Default" comment="" />
     <ignored path="GitHubProfileViewer.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -118,15 +104,16 @@
           <file leaf-file-name="BaseAdapter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/BaseAdapter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state relative-caret-position="-90">
+                  <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
                   <folding>
+                    <element signature="imports" expanded="true" />
                     <element signature="e#1020#1021#0" expanded="true" />
                     <element signature="e#1061#1062#0" expanded="true" />
                     <element signature="e#3036#3037#0" expanded="true" />
                     <element signature="e#3078#3079#0" expanded="true" />
-                    <marker date="1480797779000" expanded="true" signature="44:192" ph="..." />
-                    <marker date="1480797779000" expanded="true" signature="2270:4721" ph="Helper Methods" />
+                    <element signature="e#3766#3767#0" expanded="true" />
+                    <element signature="e#3817#3818#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -135,19 +122,27 @@
           <file leaf-file-name="EventsFragment.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+                <state relative-caret-position="112">
+                  <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RepositoriesAdapter.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="RepositoriesAdapter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="321" column="36" selection-start-line="321" selection-start-column="36" selection-end-line="321" selection-end-column="36" />
-                  <folding />
+                <state relative-caret-position="153">
+                  <caret line="257" column="34" selection-start-line="257" selection-start-column="34" selection-end-line="257" selection-end-column="34" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1920#1921#0" expanded="true" />
+                    <element signature="e#1947#1948#0" expanded="true" />
+                    <element signature="e#2268#2689#0" expanded="true" />
+                    <element signature="e#2688#2689#0" expanded="true" />
+                    <element signature="e#3038#3282#0" expanded="true" />
+                    <element signature="e#3281#3282#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -165,142 +160,42 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="DateUtility.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DateUtility.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="324" selection-end-column="1" />
+                  <folding>
+                    <element signature="docComment;class#DateUtility#0" expanded="false" />
+                    <element signature="method#getFormattedDate#0;class#DateUtility#0" expanded="false" />
+                    <element signature="method#getDaysFromTimestamp#0;class#DateUtility#0" expanded="false" />
+                    <element signature="method#isSameYear#0;class#DateUtility#0" expanded="false" />
+                    <element signature="method#getDateDiff#0;class#DateUtility#0" expanded="false" />
+                    <element signature="method#getDate#0;class#DateUtility#0" expanded="false" />
+                    <element signature="e#3198#3340#0" expanded="false" />
+                    <element signature="e#7097#7157#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="BaseAdapter.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/BaseAdapter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="class#OnItemClickListener#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="class#OnReloadClickListener#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#onCreateViewHolder#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#onBindViewHolder#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#add#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#addAll#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#remove#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#clear#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#removeFooter#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#updateFooter#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#setOnItemClickListener#0;class#BaseAdapter#0" expanded="false" />
-                    <element signature="method#setOnReloadClickListener#0;class#BaseAdapter#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="event_row.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/event_row.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-                  <folding />
-                </state>
-              </provider>
-              <provider editor-type-id="android-designer2">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EventsAdapter2.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter2.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="297">
-                  <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#1923#1924#0" expanded="true" />
-                    <element signature="e#1950#1951#0" expanded="true" />
-                    <element signature="e#2256#2677#0" expanded="true" />
-                    <element signature="e#2676#2677#0" expanded="true" />
-                    <element signature="method#createFooterViewHolder#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="e#3026#3270#0" expanded="true" />
-                    <element signature="e#3269#3270#0" expanded="true" />
-                    <element signature="method#bindHeaderViewHolder#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#displayLoadMoreFooter#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#displayErrorFooter#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#setUpAvatar#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getPushEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getIssuesEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getIssueCommentEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getCreateEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getDeleteEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getWatchEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getMemberEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getForkEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getGollumEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getCommitCommentEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getPullRequestReviewCommentEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getReleaseEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getPullRequestEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getPublicEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                    <element signature="method#getEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="List.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/java/util/List.class">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="463">
-                  <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="DateUtility.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DateUtility.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InfoFragment.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/InfoFragment.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="454">
-                  <caret line="196" column="90" selection-start-line="196" selection-start-column="90" selection-end-line="196" selection-end-column="90" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="EventsAdapter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="201">
-                  <caret line="273" column="35" selection-start-line="273" selection-start-column="35" selection-end-line="273" selection-end-column="35" />
+                <state relative-caret-position="630">
+                  <caret line="86" column="83" selection-start-line="86" selection-start-column="83" selection-end-line="86" selection-end-column="83" />
                   <folding>
-                    <element signature="docComment;class#EventsAdapter#0" expanded="false" />
-                    <element signature="class#OnItemClickListener#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="class#OnReloadClickListener#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#EventsAdapter#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#onCreateViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#onBindViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#getItemViewType#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#createEventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#createFooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#bindEventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#bindFooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#add#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#addAll#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#remove#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#clear#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#addFooter#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#removeFooter#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#updateFooter#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#setOnItemClickListener#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#setOnReloadClickListener#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="method#setUpAvatar#0;class#EventsAdapter#0" expanded="false" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1920#1921#0" expanded="true" />
+                    <element signature="e#1947#1948#0" expanded="true" />
+                    <element signature="e#2253#2674#0" expanded="true" />
+                    <element signature="e#2673#2674#0" expanded="true" />
+                    <element signature="e#3023#3267#0" expanded="true" />
+                    <element signature="e#3266#3267#0" expanded="true" />
                     <element signature="method#getPushEventInfo#0;class#EventsAdapter#0" expanded="false" />
                     <element signature="method#getIssuesEventInfo#0;class#EventsAdapter#0" expanded="false" />
                     <element signature="method#getIssueCommentEventInfo#0;class#EventsAdapter#0" expanded="false" />
@@ -316,28 +211,21 @@
                     <element signature="method#getPullRequestEventInfo#0;class#EventsAdapter#0" expanded="false" />
                     <element signature="method#getPublicEventInfo#0;class#EventsAdapter#0" expanded="false" />
                     <element signature="method#getEventInfo#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="e#27925#27992#0" expanded="false" />
-                    <element signature="class#EventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="e#31111#31126#0" expanded="false" />
-                    <element signature="e#31375#31397#0" expanded="false" />
-                    <element signature="method#EventViewHolder#0;class#EventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="class#FooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="e#31630#31645#0" expanded="false" />
-                    <element signature="e#31942#31964#0" expanded="false" />
-                    <element signature="method#FooterViewHolder#0;class#FooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-                    <element signature="class#FooterType#0;class#EventsAdapter#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DateUtils.class" pinned="false" current-in-tab="false">
-            <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/text/format/DateUtils.class">
+          <file leaf-file-name="adapter_footer.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_footer.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+                <state relative-caret-position="135">
+                  <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
                   <folding />
                 </state>
+              </provider>
+              <provider editor-type-id="android-designer2">
+                <state />
               </provider>
             </entry>
           </file>
@@ -3225,7 +3113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_mail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_mail_wrapped.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_location.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_location_wrapped.xml" />
@@ -3270,18 +3157,19 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/network/GithubService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/BaseAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/event_row.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter2.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/InfoFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DateUtility.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter2.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_footer.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1916" />
-    <option name="y" value="-157" />
+    <option name="x" value="-1823" />
+    <option name="y" value="-126" />
     <option name="width" value="1916" />
     <option name="height" value="1057" />
   </component>
@@ -3755,8 +3643,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1916" y="-157" width="1916" height="1057" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1823" y="-126" width="1916" height="1057" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18623266" sideWeight="0.5063291" order="2" side_tool="true" content_ui="tabs" />
@@ -3776,7 +3664,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4765208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837406" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32837406" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18623266" sideWeight="0.49367088" order="0" side_tool="false" content_ui="combo" />
@@ -3866,19 +3754,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java</url>
-          <line>300</line>
+          <line>195</line>
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java</url>
-          <line>310</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java</url>
-          <line>278</line>
+          <line>173</line>
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
@@ -3899,14 +3787,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/prod/debug/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -4040,17 +3920,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_footer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -4287,28 +4156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/BaseAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#OnItemClickListener#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="class#OnReloadClickListener#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#onCreateViewHolder#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#onBindViewHolder#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#add#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#addAll#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#remove#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#clear#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#removeFooter#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#updateFooter#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#setOnItemClickListener#0;class#BaseAdapter#0" expanded="false" />
-            <element signature="method#setOnReloadClickListener#0;class#BaseAdapter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/repository_row.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -4339,22 +4186,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="321" column="36" selection-start-line="321" selection-start-column="36" selection-end-line="321" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/InfoFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -4363,32 +4194,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/prod/debug/com/sample/github/adapters/EventsAdapter$EventViewHolder$$ViewBinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="92" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="273" column="35" selection-start-line="273" selection-start-column="35" selection-end-line="273" selection-end-column="35" />
+        <state relative-caret-position="75">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
           <folding>
             <element signature="docComment;class#EventsAdapter#0" expanded="false" />
-            <element signature="class#OnItemClickListener#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="class#OnReloadClickListener#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#EventsAdapter#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#onCreateViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#onBindViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#getItemViewType#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#createEventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#createFooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#bindEventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#bindFooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#add#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#addAll#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#remove#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#clear#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#addFooter#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#removeFooter#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#updateFooter#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#setOnItemClickListener#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#setOnReloadClickListener#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="method#setUpAvatar#0;class#EventsAdapter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/fragments/EventsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/BaseAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#3036#3037#0" expanded="true" />
+            <element signature="e#3078#3079#0" expanded="true" />
+            <element signature="e#3766#3767#0" expanded="true" />
+            <element signature="e#3817#3818#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="86" column="83" selection-start-line="86" selection-start-column="83" selection-end-line="86" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1920#1921#0" expanded="true" />
+            <element signature="e#1947#1948#0" expanded="true" />
+            <element signature="e#2253#2674#0" expanded="true" />
+            <element signature="e#2673#2674#0" expanded="true" />
+            <element signature="e#3023#3267#0" expanded="true" />
+            <element signature="e#3266#3267#0" expanded="true" />
             <element signature="method#getPushEventInfo#0;class#EventsAdapter#0" expanded="false" />
             <element signature="method#getIssuesEventInfo#0;class#EventsAdapter#0" expanded="false" />
             <element signature="method#getIssueCommentEventInfo#0;class#EventsAdapter#0" expanded="false" />
@@ -4404,61 +4263,51 @@
             <element signature="method#getPullRequestEventInfo#0;class#EventsAdapter#0" expanded="false" />
             <element signature="method#getPublicEventInfo#0;class#EventsAdapter#0" expanded="false" />
             <element signature="method#getEventInfo#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="e#27925#27992#0" expanded="false" />
-            <element signature="class#EventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="e#31111#31126#0" expanded="false" />
-            <element signature="e#31375#31397#0" expanded="false" />
-            <element signature="method#EventViewHolder#0;class#EventViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="class#FooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="e#31630#31645#0" expanded="false" />
-            <element signature="e#31942#31964#0" expanded="false" />
-            <element signature="method#FooterViewHolder#0;class#FooterViewHolder#0;class#EventsAdapter#0" expanded="false" />
-            <element signature="class#FooterType#0;class#EventsAdapter#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/EventsAdapter2.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/adapter_footer.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="236" column="0" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/adapters/RepositoriesAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="257" column="34" selection-start-line="257" selection-start-column="34" selection-end-line="257" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-            <element signature="e#2256#2677#0" expanded="true" />
-            <element signature="e#2676#2677#0" expanded="true" />
-            <element signature="method#createFooterViewHolder#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="e#3026#3270#0" expanded="true" />
-            <element signature="e#3269#3270#0" expanded="true" />
-            <element signature="method#bindHeaderViewHolder#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#displayLoadMoreFooter#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#displayErrorFooter#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#setUpAvatar#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getPushEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getIssuesEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getIssueCommentEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getCreateEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getDeleteEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getWatchEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getMemberEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getForkEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getGollumEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getCommitCommentEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getPullRequestReviewCommentEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getReleaseEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getPullRequestEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getPublicEventInfo#0;class#EventsAdapter2#0" expanded="false" />
-            <element signature="method#getEventInfo#0;class#EventsAdapter2#0" expanded="false" />
+            <element signature="e#1920#1921#0" expanded="true" />
+            <element signature="e#1947#1948#0" expanded="true" />
+            <element signature="e#2268#2689#0" expanded="true" />
+            <element signature="e#2688#2689#0" expanded="true" />
+            <element signature="e#3038#3282#0" expanded="true" />
+            <element signature="e#3281#3282#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/sample/github/utilities/DateUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="75">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="324" selection-end-column="1" />
+          <folding>
+            <element signature="docComment;class#DateUtility#0" expanded="false" />
+            <element signature="method#getFormattedDate#0;class#DateUtility#0" expanded="false" />
+            <element signature="method#getDaysFromTimestamp#0;class#DateUtility#0" expanded="false" />
+            <element signature="method#isSameYear#0;class#DateUtility#0" expanded="false" />
+            <element signature="method#getDateDiff#0;class#DateUtility#0" expanded="false" />
+            <element signature="method#getDate#0;class#DateUtility#0" expanded="false" />
+            <element signature="e#3198#3340#0" expanded="false" />
+            <element signature="e#7097#7157#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
