@@ -28,10 +28,8 @@ import com.sample.github.utilities.DisplayUtility;
 import com.sample.github.utilities.FontCache;
 import com.sample.github.utilities.FormValidationUtility;
 import com.sample.github.utilities.NetworkLogUtility;
+import com.sample.github.utilities.NetworkUtility;
 import com.sample.github.utilities.TrestleUtility;
-
-import java.net.ConnectException;
-import java.net.UnknownHostException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -137,7 +135,7 @@ public class LoginFragment extends BaseFragment {
             dotProgressBar.setVisibility(View.GONE);
             viewProfileButton.setVisibility(View.VISIBLE);
 
-            if(t instanceof ConnectException || t instanceof UnknownHostException){
+            if(NetworkUtility.isKnownException(t)){
                 Snackbar.make(getActivity().findViewById(android.R.id.content),
                         TrestleUtility.getFormattedText(getString(R.string.check_your_network_connection), font, 16),
                         Snackbar.LENGTH_LONG)

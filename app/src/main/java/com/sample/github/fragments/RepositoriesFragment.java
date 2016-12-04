@@ -20,9 +20,8 @@ import com.sample.github.network.models.response.Repository;
 import com.sample.github.network.models.response.User;
 import com.sample.github.utilities.CustomTabUtility;
 import com.sample.github.utilities.NetworkLogUtility;
+import com.sample.github.utilities.NetworkUtility;
 
-import java.net.ConnectException;
-import java.net.UnknownHostException;
 import java.util.List;
 
 import butterknife.Bind;
@@ -144,7 +143,7 @@ public class RepositoriesFragment extends BaseFragment implements RepositoriesAd
                 isLoading = false;
                 progressBar.setVisibility(View.GONE);
 
-                if(t instanceof ConnectException || t instanceof UnknownHostException){
+                if(NetworkUtility.isKnownException(t)){
                     errorTextView.setText("Can't load data.\nCheck your network connection.");
                     errorLinearLayout.setVisibility(View.VISIBLE);
                 }
@@ -190,7 +189,7 @@ public class RepositoriesFragment extends BaseFragment implements RepositoriesAd
             NetworkLogUtility.logFailure(call, t);
 
             if (!call.isCanceled()) {
-                if(t instanceof ConnectException || t instanceof UnknownHostException){
+                if(NetworkUtility.isKnownException(t)){
                     repositoriesAdapter.updateFooter(RepositoriesAdapter.FooterType.ERROR);
                 }
             }

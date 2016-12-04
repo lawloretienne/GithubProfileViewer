@@ -18,9 +18,8 @@ import com.sample.github.network.ServiceGenerator;
 import com.sample.github.network.models.response.Event;
 import com.sample.github.network.models.response.User;
 import com.sample.github.utilities.NetworkLogUtility;
+import com.sample.github.utilities.NetworkUtility;
 
-import java.net.ConnectException;
-import java.net.UnknownHostException;
 import java.util.List;
 
 import butterknife.Bind;
@@ -142,7 +141,7 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
                 isLoading = false;
                 progressBar.setVisibility(View.GONE);
 
-                if(t instanceof ConnectException || t instanceof UnknownHostException){
+                if(NetworkUtility.isKnownException(t)){
                     errorTextView.setText("Can't load data.\nCheck your network connection.");
                     errorLinearLayout.setVisibility(View.VISIBLE);
                 }
@@ -188,7 +187,7 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
             NetworkLogUtility.logFailure(call, t);
 
             if (!call.isCanceled()) {
-                if(t instanceof ConnectException || t instanceof UnknownHostException){
+                if(NetworkUtility.isKnownException(t)){
                     eventsAdapter.updateFooter(EventsAdapter.FooterType.ERROR);
                 }
             }

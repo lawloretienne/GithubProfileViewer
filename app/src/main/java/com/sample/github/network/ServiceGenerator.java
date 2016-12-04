@@ -23,6 +23,8 @@ import timber.log.Timber;
  */
 public class ServiceGenerator {
 
+    // Connect, Read, & Write Timeouts are all 10 seconds by default
+
     // region Constants
     private static final int DISK_CACHE_SIZE = 10 * 1024 * 1024; // 10MB
     // endregion
@@ -37,9 +39,6 @@ public class ServiceGenerator {
     public static <S> S createService(Class<S> serviceClass, String baseUrl) {
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .readTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS)
                 .cache(getCache())
                 .addInterceptor(new Interceptor() {
                     @Override
