@@ -75,10 +75,16 @@ public class DateUtility {
         long days = getDateDiff(calendar.getTime(), Calendar.getInstance().getTime(), TimeUnit.DAYS);
 
         if (days < 7) {
-            CharSequence relativeTime = DateUtils.getRelativeTimeSpanString(calendar.getTimeInMillis(), System.currentTimeMillis(),
-                    DateUtils.SECOND_IN_MILLIS);
+            long seconds = getDateDiff(calendar.getTime(), Calendar.getInstance().getTime(), TimeUnit.SECONDS);
 
-            customDate = relativeTime.toString();
+            if(seconds < 60){
+                customDate = "Just now";
+            } else {
+                CharSequence relativeTime = DateUtils.getRelativeTimeSpanString(calendar.getTimeInMillis(), System.currentTimeMillis(),
+                        DateUtils.SECOND_IN_MILLIS);
+
+                customDate = relativeTime.toString();
+            }
         } else if (days >= 7 && days < 30){
             customDate = String.format("%d days ago", days);
         } else if (days >= 30 && isSameYear(calendar, Calendar.getInstance())){
@@ -155,7 +161,6 @@ public class DateUtility {
 
         return customDate;
     }
-
 
 //    public static String getRegularDate(Calendar future) {
 //
