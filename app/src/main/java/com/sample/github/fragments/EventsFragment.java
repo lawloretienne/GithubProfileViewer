@@ -171,8 +171,9 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
 
             List<Event> events = response.body();
 
-            if(events != null && events.size()>0){
-                eventsAdapter.addAll(events);
+            if(events != null){
+                if(events.size()>0)
+                    eventsAdapter.addAll(events);
 
                 if (events.size() >= PAGE_SIZE) {
                     eventsAdapter.addFooter();
