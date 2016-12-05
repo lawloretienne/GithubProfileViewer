@@ -120,8 +120,9 @@ public class RepositoriesFragment extends BaseFragment implements RepositoriesAd
 
             List<Repository> repositories = response.body();
 
-            if(repositories != null && repositories.size()>0){
-                repositoriesAdapter.addAll(repositories);
+            if(repositories != null){
+                if(repositories.size()>0)
+                    repositoriesAdapter.addAll(repositories);
 
                 if (repositories.size() >= PAGE_SIZE) {
                     repositoriesAdapter.addFooter();
