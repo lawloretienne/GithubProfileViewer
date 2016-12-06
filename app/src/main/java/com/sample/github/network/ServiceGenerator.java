@@ -23,50 +23,41 @@ import timber.log.Timber;
  */
 public class ServiceGenerator {
 
-    // Connect, Read, & Write Timeouts are all 10 seconds by default
-
     // region Constants
     private static final int DISK_CACHE_SIZE = 10 * 1024 * 1024; // 10MB
     // endregion
 
-    private static Retrofit.Builder retrofitBuilder =
-            new Retrofit.Builder();
+    private static Retrofit.Builder retrofitBuilder
+            = new Retrofit.Builder()
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create());
+
+    private static OkHttpClient defaultOkHttpClient
+            = new OkHttpClient.Builder()
+            .cache(getCache())
+            .build();
 
     // No need to instantiate this class.
     private ServiceGenerator() {
     }
 
     public static <S> S createService(Class<S> serviceClass, String baseUrl) {
+        return createService(serviceClass, baseUrl, null);
+    }
 
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .cache(getCache())
-                .addInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        Request originalRequest = chain.request();
+    public static <S> S createService(Class<S> serviceClass, String baseUrl, Interceptor networkInterceptor) {
+        OkHttpClient.Builder okHttpClientBuilder = defaultOkHttpClient.newBuilder();
 
-                        return chain.proceed(originalRequest);
-                    }
-                })
-                .addNetworkInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Chain chain) throws IOException {
-                        if (chain != null) {
-                            Request originalRequest = chain.request();
+        if(networkInterceptor != null){
+            okHttpClientBuilder.addNetworkInterceptor(networkInterceptor);
+        }
 
-                            return chain.proceed(originalRequest);
-                        }
-
-                        return null;
-                    }
-                })
-                .addInterceptor(getHttpLoggingInterceptor()) // Add only for debugging purposes
+        OkHttpClient modifiedOkHttpClient = okHttpClientBuilder
+                .addInterceptor(getHttpLoggingInterceptor())
                 .build();
 
-        retrofitBuilder.client(okHttpClient);
+        retrofitBuilder.client(modifiedOkHttpClient);
         retrofitBuilder.baseUrl(baseUrl);
-        retrofitBuilder.addCallAdapterFactory(RxJavaCallAdapterFactory.create());
-        retrofitBuilder.addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = retrofitBuilder.build();
         return retrofit.create(serviceClass);

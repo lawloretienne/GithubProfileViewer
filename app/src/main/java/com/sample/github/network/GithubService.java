@@ -23,8 +23,12 @@ public interface GithubService {
     Call<User> getUser(@Path("username") String username);
 
     @GET("{username}/repos?sort=pushed&direction=desc")
-    Call<List<Repository>> getRepositories(@Path("username") String username, @Query("page") int page, @Query("per_page") int per_page);
+    Call<List<Repository>> getRepositories(@Path("username") String username,
+                                           @Query("page") int page,
+                                           @Query("per_page") int per_page);
 
     @GET("{username}/events")
-    Call<List<Event>> getEvents(@Path("username") String username, @Query("page") int page, @Query("per_page") int per_page);
+    Call<List<Event>> getEvents(@Path("username") String username,
+                                @Query("page") int page,
+                                @Query("per_page") int per_page);
 }
