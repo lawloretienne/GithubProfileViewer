@@ -13,6 +13,9 @@ import com.sample.github.network.models.response.User;
 import com.sample.github.utilities.DateUtility;
 import com.squareup.picasso.Picasso;
 
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -194,7 +197,14 @@ public class InfoFragment extends BaseFragment {
     private void setUpCreatedAt(){
         String createdAt = user.getCreatedAt();
         if(!TextUtils.isEmpty(createdAt)){
-            createdTextView.setText(String.format("Joined on %s", DateUtility.getFormattedDate(createdAt)));
+            long days = DateUtility.getTimeUnitDiff(DateUtility.getCalendar(createdAt), Calendar.getInstance(), TimeUnit.DAYS);
+            String formattedCreatedAt;
+            if(days > 30L){
+                formattedCreatedAt = String.format("Joined on %s", DateUtility.getFormattedTime(DateUtility.getCalendar(createdAt), DateUtility.FORMAT_RELATIVE));
+            } else {
+                formattedCreatedAt = String.format("Joined %s", DateUtility.getFormattedTime(DateUtility.getCalendar(createdAt), DateUtility.FORMAT_RELATIVE));
+            }
+            createdTextView.setText(formattedCreatedAt);
             createdTextView.setVisibility(View.VISIBLE);
         } else {
             createdTextView.setVisibility(View.GONE);

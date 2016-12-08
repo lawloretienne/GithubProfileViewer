@@ -24,10 +24,12 @@ import com.sample.github.utilities.DrawableUtility;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -215,12 +217,12 @@ public class RepositoriesAdapter extends BaseAdapter<Repository> {
     private void setUpPushedAt(TextView tv, Repository repository) {
         String pushedAt = repository.getPushedAt();
         if(!TextUtils.isEmpty(pushedAt)){
-            long days = DateUtility.getDaysFromTimestamp(pushedAt);
+            long days = DateUtility.getTimeUnitDiff(DateUtility.getCalendar(pushedAt), Calendar.getInstance(), TimeUnit.DAYS);
             String formattedPushedAt;
             if(days > 30L){
-                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedDate(pushedAt));
+                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedTime(DateUtility.getCalendar(pushedAt), DateUtility.FORMAT_RELATIVE));
             } else {
-                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedDate(pushedAt));
+                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedTime(DateUtility.getCalendar(pushedAt), DateUtility.FORMAT_RELATIVE));
             }
 
             tv.setText(formattedPushedAt);
