@@ -25,6 +25,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class InfoFragment extends BaseFragment {
 
+    // region Constants
+    public static final String PATTERN = "yyyy-MM-dd'T'hh:mm:ss'Z'";
+    // endregion
+
     // region Views
     @Bind(R.id.header_iv)
     ImageView headerImageView;
@@ -197,12 +201,13 @@ public class InfoFragment extends BaseFragment {
     private void setUpCreatedAt(){
         String createdAt = user.getCreatedAt();
         if(!TextUtils.isEmpty(createdAt)){
-            long days = DateUtility.getTimeUnitDiff(DateUtility.getCalendar(createdAt), Calendar.getInstance(), TimeUnit.DAYS);
+            Calendar calendar = DateUtility.getCalendar(createdAt, PATTERN);
+            long days = DateUtility.getTimeUnitDiff(calendar, Calendar.getInstance(), TimeUnit.DAYS);
             String formattedCreatedAt;
             if(days > 30L){
-                formattedCreatedAt = String.format("Joined on %s", DateUtility.getFormattedTime(DateUtility.getCalendar(createdAt), DateUtility.FORMAT_RELATIVE));
+                formattedCreatedAt = String.format("Joined on %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
             } else {
-                formattedCreatedAt = String.format("Joined %s", DateUtility.getFormattedTime(DateUtility.getCalendar(createdAt), DateUtility.FORMAT_RELATIVE));
+                formattedCreatedAt = String.format("Joined %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
             }
             createdTextView.setText(formattedCreatedAt);
             createdTextView.setVisibility(View.VISIBLE);

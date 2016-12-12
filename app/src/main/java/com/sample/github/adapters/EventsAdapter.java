@@ -168,7 +168,7 @@ public class EventsAdapter extends BaseAdapter<Event> {
     private void setUpCreatedAt(TextView tv, Event event) {
         String createdAt = event.getCreatedAt();
         if(!TextUtils.isEmpty(createdAt)){
-            tv.setText(DateUtility.getFormattedTime(DateUtility.getCalendar(createdAt), DateUtility.FORMAT_RELATIVE));
+            tv.setText(DateUtility.getFormattedDateAndTime(DateUtility.getCalendar(createdAt, PATTERN), DateUtility.FORMAT_RELATIVE));
         }
     }
 

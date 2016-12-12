@@ -17,16 +17,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sample.github.R;
-import com.sample.github.network.models.response.Event;
 import com.sample.github.network.models.response.Repository;
 import com.sample.github.utilities.DateUtility;
 import com.sample.github.utilities.DrawableUtility;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -217,12 +214,13 @@ public class RepositoriesAdapter extends BaseAdapter<Repository> {
     private void setUpPushedAt(TextView tv, Repository repository) {
         String pushedAt = repository.getPushedAt();
         if(!TextUtils.isEmpty(pushedAt)){
-            long days = DateUtility.getTimeUnitDiff(DateUtility.getCalendar(pushedAt), Calendar.getInstance(), TimeUnit.DAYS);
+            Calendar calendar = DateUtility.getCalendar(pushedAt, PATTERN);
+            long days = DateUtility.getTimeUnitDiff(calendar, Calendar.getInstance(), TimeUnit.DAYS);
             String formattedPushedAt;
             if(days > 30L){
-                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedTime(DateUtility.getCalendar(pushedAt), DateUtility.FORMAT_RELATIVE));
+                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
             } else {
-                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedTime(DateUtility.getCalendar(pushedAt), DateUtility.FORMAT_RELATIVE));
+                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
             }
 
             tv.setText(formattedPushedAt);
