@@ -45,11 +45,21 @@ public class DateUtility {
         return (year1 == year2);
     }
 
-    public static boolean isSameDay(Calendar cal1, Calendar cal2){
-        int dayOfYear1 = cal1.get(Calendar.DAY_OF_YEAR);
-        int dayOfYear2 = cal2.get(Calendar.DAY_OF_YEAR);
+    public static boolean isToday(Calendar calendar){
+        return DateUtils.isToday(calendar.getTimeInMillis());
+    }
 
-        return (isSameYear(cal1, cal2) && dayOfYear1 == dayOfYear2);
+    public static boolean isTomorrow(Calendar calendar){
+        Calendar cal = (Calendar) calendar.clone();
+        cal.add(Calendar.DAY_OF_YEAR, -1);
+        return DateUtils.isToday(cal.getTimeInMillis());
+    }
+
+    public static boolean isSameDayOfWeek(Calendar cal1, Calendar cal2){
+        int dayOfWeek1 = cal1.get(Calendar.DAY_OF_WEEK);
+        int dayOfWeek2 = cal2.get(Calendar.DAY_OF_WEEK);
+
+        return (dayOfWeek1 == dayOfWeek2);
     }
 
     public static long getTimeUnitDiff(Calendar cal1, Calendar cal2, TimeUnit timeUnit) {
@@ -82,8 +92,13 @@ public class DateUtility {
                     getFormattedDate(calendar),
                     getFormattedTime(calendar));
         } else if(days>-7 && days<7){
-            if(isSameDay(calendar, Calendar.getInstance())){
+            if(isToday(calendar)){
                 formattedAbsoluteDateAndTime = getFormattedTime(calendar);
+            } else if(isSameDayOfWeek(calendar, Calendar.getInstance())){
+                formattedAbsoluteDateAndTime = String.format("%s %s %s",
+                        getDayOfWeek(calendar.get(Calendar.DAY_OF_WEEK)),
+                        getFormattedDate(calendar),
+                        getFormattedTime(calendar));
             } else {
                 formattedAbsoluteDateAndTime = String.format("%s %s", getDayOfWeek(calendar.get(Calendar.DAY_OF_WEEK)), getFormattedTime(calendar));
             }
