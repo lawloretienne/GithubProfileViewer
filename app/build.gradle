@@ -79,5 +79,5 @@ dependencies {
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0' // RxBinding
     compile 'jp.wasabeef:recyclerview-animators:2.0.0'  // Latest version 2.2.3 is buggy
     compile 'de.hdodenhof:circleimageview:2.1.0'
-    compile 'com.github.silvestrpredko:dot-progress-bar:0.1.4'
+    compile 'com.github.silvestrpredko:dot-progress-bar:1.1'
 }
