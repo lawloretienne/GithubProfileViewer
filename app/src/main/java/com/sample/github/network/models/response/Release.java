@@ -22,7 +22,7 @@ public class Release {
     @SerializedName("zipball_url")
     public String zipballUrl;
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("tag_name")
     public String tagName;
     @SerializedName("target_commitish")
@@ -32,9 +32,9 @@ public class Release {
     @SerializedName("body")
     public String body;
     @SerializedName("draft")
-    public Boolean draft;
+    public boolean draft;
     @SerializedName("prerelease")
-    public Boolean prerelease;
+    public boolean prerelease;
     @SerializedName("created_at")
     public String createdAt;
     @SerializedName("published_at")
@@ -69,7 +69,7 @@ public class Release {
         return zipballUrl;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -89,11 +89,11 @@ public class Release {
         return body;
     }
 
-    public Boolean getDraft() {
+    public boolean getDraft() {
         return draft;
     }
 
-    public Boolean getPrerelease() {
+    public boolean getPrerelease() {
         return prerelease;
     }
 
@@ -137,7 +137,7 @@ public class Release {
         this.zipballUrl = zipballUrl;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -157,11 +157,11 @@ public class Release {
         this.body = body;
     }
 
-    public void setDraft(Boolean draft) {
+    public void setDraft(boolean draft) {
         this.draft = draft;
     }
 
-    public void setPrerelease(Boolean prerelease) {
+    public void setPrerelease(boolean prerelease) {
         this.prerelease = prerelease;
     }
 

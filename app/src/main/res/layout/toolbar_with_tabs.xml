@@ -23,6 +23,6 @@
         app:tabIndicatorHeight="2dp"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@android:color/white"
-        app:tabTextColor="@color/inverse_tertiary_text" />
+        app:tabTextColor="@color/tertiary_text_light" />
 
 </android.support.design.widget.AppBarLayout>

@@ -3,7 +3,7 @@
 
     <color name="primary">@color/brown_500</color>
     <color name="primary_dark">@color/brown_700</color>
-    <color name="accent">@color/deep_orange_500</color>
+    <color name="accent">@color/deep_orange_A400</color>
 
     <color name="ninty_percent_tranparency_brown_500">#E6795548</color>
 

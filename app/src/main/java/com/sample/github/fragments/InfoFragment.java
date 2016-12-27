@@ -16,8 +16,9 @@ import com.squareup.picasso.Picasso;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -30,28 +31,29 @@ public class InfoFragment extends BaseFragment {
     // endregion
 
     // region Views
-    @Bind(R.id.header_iv)
+    @BindView(R.id.header_iv)
     ImageView headerImageView;
-    @Bind(R.id.avatar_civ)
+    @BindView(R.id.avatar_civ)
     CircleImageView avatarCircleImageView;
-    @Bind(R.id.name_tv)
+    @BindView(R.id.name_tv)
     TextView nameTextView;
-    @Bind(R.id.login_tv)
+    @BindView(R.id.login_tv)
     TextView loginTextView;
-    @Bind(R.id.company_tv)
+    @BindView(R.id.company_tv)
     TextView companyTextView;
-    @Bind(R.id.location_tv)
+    @BindView(R.id.location_tv)
     TextView locationTextView;
-    @Bind(R.id.email_tv)
+    @BindView(R.id.email_tv)
     TextView emailTextView;
-    @Bind(R.id.blog_tv)
+    @BindView(R.id.blog_tv)
     TextView blogTextView;
-    @Bind(R.id.created_at_tv)
+    @BindView(R.id.created_at_tv)
     TextView createdTextView;
     // endregion
 
     // region Member Variables
     private User user;
+    private Unbinder unbinder;
     // endregion
 
     // region Constructors
@@ -93,7 +95,7 @@ public class InfoFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_info, container, false);
-        ButterKnife.bind(this, rootView);
+        unbinder = ButterKnife.bind(this, rootView);
 
         return rootView;
     }
@@ -117,7 +119,7 @@ public class InfoFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         removeListeners();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
     // endregion
 

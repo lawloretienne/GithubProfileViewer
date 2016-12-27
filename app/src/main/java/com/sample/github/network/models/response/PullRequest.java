@@ -10,7 +10,7 @@ public class PullRequest {
 
     // region Fields
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("url")
     public String url;
     @SerializedName("html_url")
@@ -32,7 +32,7 @@ public class PullRequest {
     @SerializedName("statuses_url")
     public String statusesUrl;
     @SerializedName("number")
-    public Integer number;
+    public int number;
     @SerializedName("state")
     public String state;
     @SerializedName("title")
@@ -42,7 +42,7 @@ public class PullRequest {
     @SerializedName("assignee")
     public User assignee;
     @SerializedName("locked")
-    public Boolean locked;
+    public boolean locked;
     @SerializedName("created_at")
     public String createdAt;
     @SerializedName("updated_at")
@@ -52,12 +52,12 @@ public class PullRequest {
     @SerializedName("merged_at")
     public String mergedAt;
     @SerializedName("merged")
-    public Boolean merged;
+    public boolean merged;
     // endregion
 
     // region Getters
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -101,7 +101,7 @@ public class PullRequest {
         return statusesUrl;
     }
 
-    public Integer getNumber() {
+    public int getNumber() {
         return number;
     }
 
@@ -121,7 +121,7 @@ public class PullRequest {
         return assignee;
     }
 
-    public Boolean getLocked() {
+    public boolean getLocked() {
         return locked;
     }
 
@@ -141,7 +141,7 @@ public class PullRequest {
         return mergedAt;
     }
 
-    public Boolean getMerged() {
+    public boolean getMerged() {
         return merged;
     }
 
@@ -149,7 +149,7 @@ public class PullRequest {
 
     // region Setters
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -193,7 +193,7 @@ public class PullRequest {
         this.statusesUrl = statusesUrl;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -213,7 +213,7 @@ public class PullRequest {
         this.assignee = assignee;
     }
 
-    public void setLocked(Boolean locked) {
+    public void setLocked(boolean locked) {
         this.locked = locked;
     }
 
@@ -233,7 +233,7 @@ public class PullRequest {
         this.mergedAt = mergedAt;
     }
 
-    public void setMerged(Boolean merged) {
+    public void setMerged(boolean merged) {
         this.merged = merged;
     }
 

@@ -43,6 +43,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/prodDebug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/prodDebug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/prodDebug/shaders" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/prod/debug" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/prod/debug" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/prod/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testProdDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testProdDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/testProdDebug/assets" type="java-test-resource" />
@@ -51,13 +58,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/testProdDebug/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testProdDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/testProdDebug/shaders" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/r/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/androidTest/prod/debug" isTestSource="true" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/androidTest/prod/debug" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/res/resValues/androidTest/prod/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/prod/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/prod/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/prod/assets" type="java-resource" />
@@ -145,6 +145,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.silvestrpredko/dot-progress-bar/1.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.jakewharton.rxbinding/rxbinding/0.4.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.jakewharton.timber/timber/4.3.0/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.4.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android-no-op/1.5/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/2.1.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.1/jars" />
@@ -166,7 +167,6 @@
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="okio-1.9.0" level="project" />
-    <orderEntry type="library" exported="" name="butterknife-7.0.1" level="project" />
     <orderEntry type="library" exported="" name="design-25.0.1" level="project" />
     <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
     <orderEntry type="library" exported="" name="transition-25.0.1" level="project" />
@@ -197,7 +197,9 @@
     <orderEntry type="library" exported="" name="support-media-compat-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="timber-4.3.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="butterknife-annotations-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-25.1.0" level="project" />
+    <orderEntry type="library" exported="" name="butterknife-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-25.0.1" level="project" />
     <orderEntry type="library" exported="" name="dot-progress-bar-1.1" level="project" />
   </component>

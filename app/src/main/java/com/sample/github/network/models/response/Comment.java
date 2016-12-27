@@ -14,13 +14,13 @@ public class Comment {
     @SerializedName("url")
     public String url;
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("body")
     public String body;
     @SerializedName("position")
-    public Integer position;
+    public int position;
     @SerializedName("line")
-    public Integer line;
+    public int line;
     @SerializedName("commit_id")
     public String commitId;
     @SerializedName("user")
@@ -43,7 +43,7 @@ public class Comment {
         return url;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -51,11 +51,11 @@ public class Comment {
         return body;
     }
 
-    public Integer getPosition() {
+    public int getPosition() {
         return position;
     }
 
-    public Integer getLine() {
+    public int getLine() {
         return line;
     }
 
@@ -91,7 +91,7 @@ public class Comment {
         this.url = url;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -99,11 +99,11 @@ public class Comment {
         this.body = body;
     }
 
-    public void setPosition(Integer position) {
+    public void setPosition(int position) {
         this.position = position;
     }
 
-    public void setLine(Integer line) {
+    public void setLine(int line) {
         this.line = line;
     }
 

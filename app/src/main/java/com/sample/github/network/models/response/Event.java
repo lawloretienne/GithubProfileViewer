@@ -1,12 +1,17 @@
 package com.sample.github.network.models.response;
 
 import com.google.gson.annotations.SerializedName;
+import com.sample.github.utilities.DateUtility;
 
 /**
  * Created by etiennelawlor on 11/30/16.
  */
 
 public class Event {
+
+    // region Constants
+    public static final String PATTERN = "yyyy-MM-dd'T'hh:mm:ss'Z'";
+    // endregion
 
     // region Fields
     @SerializedName("id")
@@ -20,7 +25,7 @@ public class Event {
     @SerializedName("payload")
     public Payload payload;
     @SerializedName("public")
-    public Boolean _public;
+    public boolean _public;
     @SerializedName("created_at")
     public String createdAt;
     // endregion
@@ -47,12 +52,16 @@ public class Event {
         return payload;
     }
 
-    public Boolean get_public() {
+    public boolean get_public() {
         return _public;
     }
 
     public String getCreatedAt() {
         return createdAt;
+    }
+
+    public String getFormattedCreatedAt() {
+        return DateUtility.getFormattedDateAndTime(DateUtility.getCalendar(createdAt, PATTERN), DateUtility.FORMAT_RELATIVE);
     }
 
     // endregion
@@ -79,7 +88,7 @@ public class Event {
         this.payload = payload;
     }
 
-    public void set_public(Boolean _public) {
+    public void set_public(boolean _public) {
         this._public = _public;
     }
 

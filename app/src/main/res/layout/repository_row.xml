@@ -10,7 +10,7 @@
         android:id="@+id/name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/primary_text_dark"
         android:textSize="18sp"
         app:textFont="noto_sans_bold" />
 
@@ -18,7 +18,7 @@
         android:id="@+id/description_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/secondary_text"
+        android:textColor="@color/secondary_text_dark"
         android:textSize="16sp"
         android:layout_marginTop="8dp"
         app:textFont="noto_sans_regular" />
@@ -34,7 +34,7 @@
             android:id="@+id/language_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/secondary_text"
+            android:textColor="@color/secondary_text_dark"
             android:textSize="16sp"
             android:gravity="center_vertical"
             android:drawablePadding="4dp"
@@ -46,7 +46,7 @@
             android:id="@+id/stargazers_count_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/secondary_text"
+            android:textColor="@color/secondary_text_dark"
             android:textSize="16sp"
             android:gravity="center_vertical"
             android:drawablePadding="4dp"
@@ -58,7 +58,7 @@
             android:id="@+id/forks_count_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/secondary_text"
+            android:textColor="@color/secondary_text_dark"
             android:textSize="16sp"
             android:gravity="center_vertical"
             android:drawablePadding="4dp"
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="@color/secondary_text"
+        android:textColor="@color/secondary_text_dark"
         android:textSize="16sp"
         app:textFont="noto_sans_regular" />
 

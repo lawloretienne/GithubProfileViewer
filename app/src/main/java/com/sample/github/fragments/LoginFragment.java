@@ -31,9 +31,10 @@ import com.sample.github.utilities.NetworkLogUtility;
 import com.sample.github.utilities.NetworkUtility;
 import com.sample.github.utilities.TrestleUtility;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -54,17 +55,17 @@ public class LoginFragment extends BaseFragment {
     // endregion
 
     // region Views
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.username_til)
+    @BindView(R.id.username_til)
     TextInputLayout usernameTextInputLayout;
-    @Bind(R.id.username_et)
+    @BindView(R.id.username_et)
     EditText usernameEditText;
-    @Bind(R.id.view_profile_ll)
+    @BindView(R.id.view_profile_ll)
     LinearLayout viewProfileLinearLayout;
-    @Bind(R.id.view_profile_btn)
+    @BindView(R.id.view_profile_btn)
     Button viewProfileButton;
-    @Bind(R.id.dot_progress_bar)
+    @BindView(R.id.dot_progress_bar)
     DotProgressBar dotProgressBar;
     // endregion
 
@@ -73,6 +74,7 @@ public class LoginFragment extends BaseFragment {
     private Observable<CharSequence> usernameChangeObservable;
     private CompositeSubscription compositeSubscription;
     private GithubService githubService;
+    private Unbinder unbinder;
     // endregion
 
     // region Listeners
@@ -188,7 +190,7 @@ public class LoginFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_login, container, false);
-        ButterKnife.bind(this, rootView);
+        unbinder = ButterKnife.bind(this, rootView);
 
         return rootView;
     }
@@ -214,7 +216,7 @@ public class LoginFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         removeListeners();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     @Override

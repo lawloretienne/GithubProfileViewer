@@ -10,7 +10,7 @@ public class Actor {
 
     // region Fields
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("login")
     public String login;
     @SerializedName("display_login")
@@ -25,7 +25,7 @@ public class Actor {
 
     // region Getters
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -53,7 +53,7 @@ public class Actor {
 
     // region Setters
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

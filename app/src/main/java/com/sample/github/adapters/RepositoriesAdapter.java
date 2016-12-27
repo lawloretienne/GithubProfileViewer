@@ -18,17 +18,12 @@ import android.widget.TextView;
 
 import com.sample.github.R;
 import com.sample.github.network.models.response.Repository;
-import com.sample.github.utilities.DateUtility;
 import com.sample.github.utilities.DrawableUtility;
 
-import java.text.NumberFormat;
-import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -36,11 +31,14 @@ import butterknife.ButterKnife;
  */
 public class RepositoriesAdapter extends BaseAdapter<Repository> {
 
+    // region Static Variables
+    private static Map<String, String> languageColorMap = new HashMap<>();
+    // endregion
+
     // region Member Variables
     private FooterViewHolder footerViewHolder;
     private String[] languagesArray;
     private String[] languageColorsArray;
-    private Map<String, String> languageColorMap = new HashMap<>();
     // endregion
 
     // region Constructors
@@ -113,13 +111,7 @@ public class RepositoriesAdapter extends BaseAdapter<Repository> {
         final Repository repository = getItem(position);
 
         if (repository != null) {
-            setUpName(holder.nameTextView, repository);
-            setUpDescription(holder.descriptionTextView, repository);
-            setUpLanguage(holder.languageTextView, repository);
-            setUpStargazersCount(holder.stargazersCountTextView, repository);
-            setUpForksCount(holder.forksCountTextView, repository);
-            setUpPushedAt(holder.pushedAtTextView, repository);
-            setUpTags(holder.tagsLinearLayout, repository);
+            holder.bind(repository);
         }
     }
 
@@ -152,93 +144,6 @@ public class RepositoriesAdapter extends BaseAdapter<Repository> {
     }
 
     // region Helper Methods
-    private void setUpName(TextView tv, Repository repository) {
-        String name = repository.getName();
-        if(!TextUtils.isEmpty(name)){
-            tv.setText(name);
-        }
-    }
-
-    private void setUpDescription(TextView tv, Repository repository) {
-        String description = repository.getDescription();
-        if(!TextUtils.isEmpty(description)){
-            tv.setText(description);
-            tv.setVisibility(View.VISIBLE);
-        } else {
-            tv.setVisibility(View.GONE);
-        }
-    }
-
-    private void setUpLanguage(TextView tv, Repository repository) {
-        String language = repository.getLanguage();
-        if(!TextUtils.isEmpty(language)){
-            tv.setText(language);
-            Drawable drawable = ContextCompat.getDrawable(tv.getContext(), R.drawable.ic_circle_wrapped);
-
-            String color = languageColorMap.get(language);
-            if(!TextUtils.isEmpty(color)){
-                int tint = Color.parseColor(color);
-                drawable = DrawableUtility.tintDrawable(drawable, tint);
-            } else {
-                drawable = DrawableUtility.tintDrawable(drawable, ContextCompat.getColor(tv.getContext(), R.color.primary));
-            }
-
-            tv.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-
-            tv.setVisibility(View.VISIBLE);
-        } else {
-            tv.setVisibility(View.GONE);
-        }
-    }
-
-    private void setUpStargazersCount(TextView tv, Repository repository) {
-        int stargazersCount = repository.getStargazersCount();
-        if(stargazersCount != 0){
-            tv.setText(String.format("%s", NumberFormat.getNumberInstance(Locale.US).format(stargazersCount)));
-            tv.setVisibility(View.VISIBLE);
-        } else {
-            tv.setVisibility(View.GONE);
-        }
-    }
-
-    private void setUpForksCount(TextView tv, Repository repository) {
-        int forksCount = repository.getForksCount();
-        if(forksCount != 0){
-            tv.setText(String.format("%s", NumberFormat.getNumberInstance(Locale.US).format(forksCount)));
-            tv.setVisibility(View.VISIBLE);
-        } else {
-            tv.setVisibility(View.GONE);
-        }
-    }
-
-    private void setUpPushedAt(TextView tv, Repository repository) {
-        String pushedAt = repository.getPushedAt();
-        if(!TextUtils.isEmpty(pushedAt)){
-            Calendar calendar = DateUtility.getCalendar(pushedAt, PATTERN);
-            long days = DateUtility.getTimeUnitDiff(calendar, Calendar.getInstance(), TimeUnit.DAYS);
-            String formattedPushedAt;
-            if(days > 30L){
-                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
-            } else {
-                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
-            }
-
-            tv.setText(formattedPushedAt);
-        }
-    }
-
-    private void setUpTags(LinearLayout ll, Repository repository){
-        String language = repository.getLanguage();
-        int stargazersCount = repository.getStargazersCount();
-        int forksCount = repository.getForksCount();
-
-        if(TextUtils.isEmpty(language) && stargazersCount == 0 && forksCount == 0){
-            ll.setVisibility(View.GONE);
-        } else {
-            ll.setVisibility(View.VISIBLE);
-        }
-    }
-
     private void setUpLanguageColorMap(){
         int arrayLength = languagesArray.length;
         for(int i = 0; i<arrayLength; i++){
@@ -251,19 +156,19 @@ public class RepositoriesAdapter extends BaseAdapter<Repository> {
 
     public static class RepositoryViewHolder extends RecyclerView.ViewHolder {
         // region Views
-        @Bind(R.id.name_tv)
+        @BindView(R.id.name_tv)
         TextView nameTextView;
-        @Bind(R.id.description_tv)
+        @BindView(R.id.description_tv)
         TextView descriptionTextView;
-        @Bind(R.id.language_tv)
+        @BindView(R.id.language_tv)
         TextView languageTextView;
-        @Bind(R.id.stargazers_count_tv)
+        @BindView(R.id.stargazers_count_tv)
         TextView stargazersCountTextView;
-        @Bind(R.id.forks_count_tv)
+        @BindView(R.id.forks_count_tv)
         TextView forksCountTextView;
-        @Bind(R.id.pushed_at_tv)
+        @BindView(R.id.pushed_at_tv)
         TextView pushedAtTextView;
-        @Bind(R.id.tags_ll)
+        @BindView(R.id.tags_ll)
         LinearLayout tagsLinearLayout;
         // endregion
 
@@ -273,17 +178,107 @@ public class RepositoriesAdapter extends BaseAdapter<Repository> {
             ButterKnife.bind(this, view);
         }
         // endregion
+
+        // region Helper Methods
+        private void bind(Repository repository){
+            setUpName(nameTextView, repository);
+            setUpDescription(descriptionTextView, repository);
+            setUpLanguage(languageTextView, repository);
+            setUpStargazersCount(stargazersCountTextView, repository);
+            setUpForksCount(forksCountTextView, repository);
+            setUpPushedAt(pushedAtTextView, repository);
+            setUpTags(tagsLinearLayout, repository);
+        }
+
+        private void setUpName(TextView tv, Repository repository) {
+            String name = repository.getName();
+            if(!TextUtils.isEmpty(name)){
+                tv.setText(name);
+            }
+        }
+
+        private void setUpDescription(TextView tv, Repository repository) {
+            String description = repository.getDescription();
+            if(!TextUtils.isEmpty(description)){
+                tv.setText(description);
+                tv.setVisibility(View.VISIBLE);
+            } else {
+                tv.setVisibility(View.GONE);
+            }
+        }
+
+        private void setUpLanguage(TextView tv, Repository repository) {
+            String language = repository.getLanguage();
+            if(!TextUtils.isEmpty(language)){
+                tv.setText(language);
+                Drawable drawable = ContextCompat.getDrawable(tv.getContext(), R.drawable.ic_circle_wrapped);
+
+                String color = languageColorMap.get(language);
+                if(!TextUtils.isEmpty(color)){
+                    int tint = Color.parseColor(color);
+                    drawable = DrawableUtility.tintDrawable(drawable, tint);
+                } else {
+                    drawable = DrawableUtility.tintDrawable(drawable, ContextCompat.getColor(tv.getContext(), R.color.primary));
+                }
+
+                tv.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+
+                tv.setVisibility(View.VISIBLE);
+            } else {
+                tv.setVisibility(View.GONE);
+            }
+        }
+
+        private void setUpStargazersCount(TextView tv, Repository repository) {
+            String formattedStargazersCount = repository.getFormattedStargazersCount();
+            if(!TextUtils.isEmpty(formattedStargazersCount)){
+                tv.setText(formattedStargazersCount);
+                tv.setVisibility(View.VISIBLE);
+            } else {
+                tv.setVisibility(View.GONE);
+            }
+        }
+
+        private void setUpForksCount(TextView tv, Repository repository) {
+            String formattedForksCount = repository.getFormattedForksCount();
+            if(!TextUtils.isEmpty(formattedForksCount)){
+                tv.setText(formattedForksCount);
+                tv.setVisibility(View.VISIBLE);
+            } else {
+                tv.setVisibility(View.GONE);
+            }
+        }
+
+        private void setUpPushedAt(TextView tv, Repository repository) {
+            String formattedPushedAt = repository.getFormattedPushedAt();
+            if(!TextUtils.isEmpty(formattedPushedAt)){
+                tv.setText(formattedPushedAt);
+            }
+        }
+
+        private void setUpTags(LinearLayout ll, Repository repository){
+            String language = repository.getLanguage();
+            int stargazersCount = repository.getStargazersCount();
+            int forksCount = repository.getForksCount();
+
+            if(TextUtils.isEmpty(language) && stargazersCount == 0 && forksCount == 0){
+                ll.setVisibility(View.GONE);
+            } else {
+                ll.setVisibility(View.VISIBLE);
+            }
+        }
+        // endregion
     }
 
     public static class FooterViewHolder extends RecyclerView.ViewHolder {
         // region Views
-        @Bind(R.id.loading_fl)
+        @BindView(R.id.loading_fl)
         FrameLayout loadingFrameLayout;
-        @Bind(R.id.error_rl)
+        @BindView(R.id.error_rl)
         RelativeLayout errorRelativeLayout;
-        @Bind(R.id.pb)
+        @BindView(R.id.pb)
         ProgressBar progressBar;
-        @Bind(R.id.reload_btn)
+        @BindView(R.id.reload_btn)
         Button reloadButton;
         // endregion
 

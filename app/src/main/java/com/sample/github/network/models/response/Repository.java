@@ -1,6 +1,12 @@
 package com.sample.github.network.models.response;
 
 import com.google.gson.annotations.SerializedName;
+import com.sample.github.utilities.DateUtility;
+
+import java.text.NumberFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by etiennelawlor on 11/30/16.
@@ -8,9 +14,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class Repository {
 
+    // region Constants
+    public static final String PATTERN = "yyyy-MM-dd'T'hh:mm:ss'Z'";
+    // endregion
+
     // region Fields
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("name")
     public String name;
     @SerializedName("full_name")
@@ -18,13 +28,13 @@ public class Repository {
     @SerializedName("owner")
     public User owner;
     @SerializedName("private")
-    public Boolean _private;
+    public boolean _private;
     @SerializedName("html_url")
     public String htmlUrl;
     @SerializedName("description")
     public String description;
     @SerializedName("fork")
-    public Boolean fork;
+    public boolean fork;
     @SerializedName("url")
     public String url;
     @SerializedName("forks_url")
@@ -116,40 +126,40 @@ public class Repository {
     @SerializedName("homepage")
     public Object homepage;
     @SerializedName("size")
-    public Integer size;
+    public int size;
     @SerializedName("stargazers_count")
-    public Integer stargazersCount;
+    public int stargazersCount;
     @SerializedName("watchers_count")
-    public Integer watchersCount;
+    public int watchersCount;
     @SerializedName("language")
     public String language;
     @SerializedName("has_issues")
-    public Boolean hasIssues;
+    public boolean hasIssues;
     @SerializedName("has_downloads")
-    public Boolean hasDownloads;
+    public boolean hasDownloads;
     @SerializedName("has_wiki")
-    public Boolean hasWiki;
+    public boolean hasWiki;
     @SerializedName("has_pages")
-    public Boolean hasPages;
+    public boolean hasPages;
     @SerializedName("forks_count")
-    public Integer forksCount;
+    public int forksCount;
     @SerializedName("mirror_url")
     public Object mirrorUrl;
     @SerializedName("open_issues_count")
-    public Integer openIssuesCount;
+    public int openIssuesCount;
     @SerializedName("forks")
-    public Integer forks;
+    public int forks;
     @SerializedName("open_issues")
-    public Integer openIssues;
+    public int openIssues;
     @SerializedName("watchers")
-    public Integer watchers;
+    public int watchers;
     @SerializedName("default_branch")
     public String defaultBranch;
     // endregion
 
     // region Getters
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -165,7 +175,7 @@ public class Repository {
         return owner;
     }
 
-    public Boolean get_private() {
+    public boolean is_private() {
         return _private;
     }
 
@@ -177,7 +187,7 @@ public class Repository {
         return description;
     }
 
-    public Boolean getFork() {
+    public boolean isFork() {
         return fork;
     }
 
@@ -361,15 +371,15 @@ public class Repository {
         return homepage;
     }
 
-    public Integer getSize() {
+    public int getSize() {
         return size;
     }
 
-    public Integer getStargazersCount() {
+    public int getStargazersCount() {
         return stargazersCount;
     }
 
-    public Integer getWatchersCount() {
+    public int getWatchersCount() {
         return watchersCount;
     }
 
@@ -377,23 +387,23 @@ public class Repository {
         return language;
     }
 
-    public Boolean getHasIssues() {
+    public boolean isHasIssues() {
         return hasIssues;
     }
 
-    public Boolean getHasDownloads() {
+    public boolean isHasDownloads() {
         return hasDownloads;
     }
 
-    public Boolean getHasWiki() {
+    public boolean isHasWiki() {
         return hasWiki;
     }
 
-    public Boolean getHasPages() {
+    public boolean isHasPages() {
         return hasPages;
     }
 
-    public Integer getForksCount() {
+    public int getForksCount() {
         return forksCount;
     }
 
@@ -401,19 +411,19 @@ public class Repository {
         return mirrorUrl;
     }
 
-    public Integer getOpenIssuesCount() {
+    public int getOpenIssuesCount() {
         return openIssuesCount;
     }
 
-    public Integer getForks() {
+    public int getForks() {
         return forks;
     }
 
-    public Integer getOpenIssues() {
+    public int getOpenIssues() {
         return openIssues;
     }
 
-    public Integer getWatchers() {
+    public int getWatchers() {
         return watchers;
     }
 
@@ -421,11 +431,39 @@ public class Repository {
         return defaultBranch;
     }
 
+    public String getFormattedStargazersCount(){
+        String formattedStargazersCount = "";
+        if(stargazersCount != 0) {
+            formattedStargazersCount = NumberFormat.getNumberInstance(Locale.US).format(stargazersCount);
+        }
+        return formattedStargazersCount;
+    }
+
+    public String getFormattedForksCount(){
+        String formattedForksCount = "";
+        if(forksCount != 0) {
+            formattedForksCount = NumberFormat.getNumberInstance(Locale.US).format(forksCount);
+        }
+        return formattedForksCount;
+    }
+
+    public String getFormattedPushedAt(){
+        Calendar calendar = DateUtility.getCalendar(pushedAt, PATTERN);
+        long days = DateUtility.getTimeUnitDiff(calendar, Calendar.getInstance(), TimeUnit.DAYS);
+        String formattedPushedAt;
+        if(days > 30L){
+            formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
+        } else {
+            formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
+        }
+        return formattedPushedAt;
+    }
+
     // endregion
 
     // region Setters
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -441,7 +479,7 @@ public class Repository {
         this.owner = owner;
     }
 
-    public void set_private(Boolean _private) {
+    public void set_private(boolean _private) {
         this._private = _private;
     }
 
@@ -453,7 +491,7 @@ public class Repository {
         this.description = description;
     }
 
-    public void setFork(Boolean fork) {
+    public void setFork(boolean fork) {
         this.fork = fork;
     }
 
@@ -637,15 +675,15 @@ public class Repository {
         this.homepage = homepage;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
-    public void setStargazersCount(Integer stargazersCount) {
+    public void setStargazersCount(int stargazersCount) {
         this.stargazersCount = stargazersCount;
     }
 
-    public void setWatchersCount(Integer watchersCount) {
+    public void setWatchersCount(int watchersCount) {
         this.watchersCount = watchersCount;
     }
 
@@ -653,23 +691,23 @@ public class Repository {
         this.language = language;
     }
 
-    public void setHasIssues(Boolean hasIssues) {
+    public void setHasIssues(boolean hasIssues) {
         this.hasIssues = hasIssues;
     }
 
-    public void setHasDownloads(Boolean hasDownloads) {
+    public void setHasDownloads(boolean hasDownloads) {
         this.hasDownloads = hasDownloads;
     }
 
-    public void setHasWiki(Boolean hasWiki) {
+    public void setHasWiki(boolean hasWiki) {
         this.hasWiki = hasWiki;
     }
 
-    public void setHasPages(Boolean hasPages) {
+    public void setHasPages(boolean hasPages) {
         this.hasPages = hasPages;
     }
 
-    public void setForksCount(Integer forksCount) {
+    public void setForksCount(int forksCount) {
         this.forksCount = forksCount;
     }
 
@@ -677,25 +715,26 @@ public class Repository {
         this.mirrorUrl = mirrorUrl;
     }
 
-    public void setOpenIssuesCount(Integer openIssuesCount) {
+    public void setOpenIssuesCount(int openIssuesCount) {
         this.openIssuesCount = openIssuesCount;
     }
 
-    public void setForks(Integer forks) {
+    public void setForks(int forks) {
         this.forks = forks;
     }
 
-    public void setOpenIssues(Integer openIssues) {
+    public void setOpenIssues(int openIssues) {
         this.openIssues = openIssues;
     }
 
-    public void setWatchers(Integer watchers) {
+    public void setWatchers(int watchers) {
         this.watchers = watchers;
     }
 
     public void setDefaultBranch(String defaultBranch) {
         this.defaultBranch = defaultBranch;
     }
+
 
     // endregion
 

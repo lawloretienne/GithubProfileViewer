@@ -54,13 +54,13 @@ public class Payload {
     @SerializedName("build")
     public PageBuild build;
     @SerializedName("number")
-    public Integer number;
+    public int number;
     @SerializedName("pull_request")
     public PullRequest pullRequest;
     @SerializedName("size")
-    public Integer size;
+    public int size;
     @SerializedName("distinct_size")
-    public Integer distinctSize;
+    public int distinctSize;
 //    @SerializedName("commits")
 //    public List<Commit> commits;
     @SerializedName("release")
@@ -161,7 +161,7 @@ public class Payload {
         return build;
     }
 
-    public Integer getNumber() {
+    public int getNumber() {
         return number;
     }
 
@@ -169,11 +169,11 @@ public class Payload {
         return pullRequest;
     }
 
-    public Integer getSize() {
+    public int getSize() {
         return size;
     }
 
-    public Integer getDistinctSize() {
+    public int getDistinctSize() {
         return distinctSize;
     }
 
@@ -289,7 +289,7 @@ public class Payload {
         this.build = build;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -297,11 +297,11 @@ public class Payload {
         this.pullRequest = pullRequest;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(int size) {
         this.size = size;
     }
 
-    public void setDistinctSize(Integer distinctSize) {
+    public void setDistinctSize(int distinctSize) {
         this.distinctSize = distinctSize;
     }
 

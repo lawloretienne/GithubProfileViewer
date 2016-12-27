@@ -20,13 +20,13 @@ public class Gist {
     @SerializedName("description")
     public String description;
     @SerializedName("public")
-    public Boolean _public;
+    public boolean _public;
     @SerializedName("owner")
     public User owner;
     @SerializedName("truncated")
-    public Boolean truncated;
+    public boolean truncated;
     @SerializedName("comments")
-    public Integer comments;
+    public int comments;
     @SerializedName("comments_url")
     public String commentsUrl;
     @SerializedName("html_url")
@@ -63,7 +63,7 @@ public class Gist {
         return description;
     }
 
-    public Boolean get_public() {
+    public boolean get_public() {
         return _public;
     }
 
@@ -71,11 +71,11 @@ public class Gist {
         return owner;
     }
 
-    public Boolean getTruncated() {
+    public boolean getTruncated() {
         return truncated;
     }
 
-    public Integer getComments() {
+    public int getComments() {
         return comments;
     }
 
@@ -127,7 +127,7 @@ public class Gist {
         this.description = description;
     }
 
-    public void set_public(Boolean _public) {
+    public void set_public(boolean _public) {
         this._public = _public;
     }
 
@@ -135,11 +135,11 @@ public class Gist {
         this.owner = owner;
     }
 
-    public void setTruncated(Boolean truncated) {
+    public void setTruncated(boolean truncated) {
         this.truncated = truncated;
     }
 
-    public void setComments(Integer comments) {
+    public void setComments(int comments) {
         this.comments = comments;
     }
 

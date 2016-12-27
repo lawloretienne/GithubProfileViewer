@@ -22,9 +22,10 @@ import com.sample.github.utilities.NetworkUtility;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,17 +41,17 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
     // endregion
 
     // region Views
-    @Bind(R.id.rv)
+    @BindView(R.id.rv)
     RecyclerView recyclerView;
-    @Bind(R.id.pb)
+    @BindView(R.id.pb)
     ProgressBar progressBar;
-    @Bind(R.id.error_ll)
+    @BindView(R.id.error_ll)
     LinearLayout errorLinearLayout;
-    @Bind(R.id.error_tv)
+    @BindView(R.id.error_tv)
     TextView errorTextView;
-    @Bind(R.id.reload_btn)
+    @BindView(R.id.reload_btn)
     Button reloadButton;
-    @Bind(android.R.id.empty)
+    @BindView(android.R.id.empty)
     LinearLayout emptyLinearLayout;
     // endregion
 
@@ -60,6 +61,7 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
     private LinearLayoutManager layoutManager;
     private User user;
     private String username;
+    private Unbinder unbinder;
     private int currentPage = 1;
     private boolean isLoading = false;
     private boolean isLastPage = false;
@@ -242,7 +244,7 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_events, container, false);
-        ButterKnife.bind(this, rootView);
+        unbinder = ButterKnife.bind(this, rootView);
 
         return rootView;
     }
@@ -271,7 +273,7 @@ public class EventsFragment extends BaseFragment implements EventsAdapter.OnItem
     public void onDestroyView() {
         super.onDestroyView();
         currentPage = 1;
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
     // endregion
 

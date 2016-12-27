@@ -24,7 +24,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
                     android:scaleType="centerCrop"
-                    android:background="@color/secondary_text"/>
+                    android:background="@color/secondary_text_dark"/>
 
             </FrameLayout>
 
@@ -50,7 +50,7 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     app:civ_border_width="8dp"
-                    app:civ_border_color="@color/inverse_tertiary_text"/>
+                    app:civ_border_color="@color/tertiary_text_light"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:singleLine="true"
                         android:ellipsize="end"
-                        android:textColor="@color/primary_text"
+                        android:textColor="@color/primary_text_dark"
                         android:textSize="24sp"
                         app:textFont="noto_sans_regular" />
 
@@ -73,7 +73,7 @@
                         android:id="@+id/login_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/secondary_text"
+                        android:textColor="@color/secondary_text_dark"
                         android:textSize="20sp"
                         app:textFont="noto_sans_regular" />
 
@@ -91,7 +91,7 @@
                     android:id="@+id/company_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/secondary_text"
+                    android:textColor="@color/secondary_text_dark"
                     android:drawableLeft="@drawable/ic_company_wrapped"
                     android:drawablePadding="8dp"
                     android:textSize="16sp"
@@ -104,7 +104,7 @@
                     android:layout_marginTop="16dp"
                     android:drawableLeft="@drawable/ic_location_wrapped"
                     android:drawablePadding="8dp"
-                    android:textColor="@color/secondary_text"
+                    android:textColor="@color/secondary_text_dark"
                     android:textSize="16sp"
                     app:textFont="noto_sans_regular" />
 
@@ -115,7 +115,7 @@
                     android:layout_marginTop="16dp"
                     android:drawableLeft="@drawable/ic_mail_wrapped"
                     android:drawablePadding="8dp"
-                    android:textColor="@color/secondary_text"
+                    android:textColor="@color/secondary_text_dark"
                     android:textSize="16sp"
                     app:textFont="noto_sans_regular" />
 
@@ -126,7 +126,7 @@
                     android:layout_marginTop="16dp"
                     android:drawableLeft="@drawable/ic_link_wrapped"
                     android:drawablePadding="8dp"
-                    android:textColor="@color/secondary_text"
+                    android:textColor="@color/secondary_text_dark"
                     android:textSize="16sp"
                     app:textFont="noto_sans_regular" />
 
@@ -137,7 +137,7 @@
                     android:layout_marginTop="16dp"
                     android:drawableLeft="@drawable/ic_clock_wrapped"
                     android:drawablePadding="8dp"
-                    android:textColor="@color/secondary_text"
+                    android:textColor="@color/secondary_text_dark"
                     android:textSize="16sp"
                     app:textFont="noto_sans_regular" />
 

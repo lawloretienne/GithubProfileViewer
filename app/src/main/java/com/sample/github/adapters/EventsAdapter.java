@@ -31,7 +31,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -42,7 +42,7 @@ public class EventsAdapter extends BaseAdapter<Event> {
 
     // region Member Variables
     private FooterViewHolder footerViewHolder;
-    private Typeface boldFont;
+    private static Typeface boldFont;
     // endregion
 
     // region Constructors
@@ -112,9 +112,7 @@ public class EventsAdapter extends BaseAdapter<Event> {
         final Event event = getItem(position);
 
         if (event != null) {
-            setUpAvatar(holder.avatarCircleImageView, event);
-            setUpEventInfo(holder.eventInfoTextView, event);
-            setUpCreatedAt(holder.createdAtTextView, event);
+            holder.bind(event);
         }
     }
 
@@ -146,594 +144,108 @@ public class EventsAdapter extends BaseAdapter<Event> {
         add(new Event());
     }
 
-    // region Helper Methods
+    // region Inner Classes
 
-    private void setUpAvatar(ImageView iv, Event event){
-        Actor actor = event.getActor();
-        if(actor != null){
-            String avatarUrl = actor.getAvatarUrl();
-            if(!TextUtils.isEmpty(avatarUrl)){
-                Picasso.with(iv.getContext())
-                        .load(avatarUrl)
-                        .placeholder(R.color.grey_300)
-                        .into(iv);
-            }
+    public static class EventViewHolder extends RecyclerView.ViewHolder {
+        // region Views
+        @BindView(R.id.avatar_civ)
+        CircleImageView avatarCircleImageView;
+        @BindView(R.id.event_info_tv)
+        TextView eventInfoTextView;
+        @BindView(R.id.created_at_tv)
+        TextView createdAtTextView;
+        // endregion
+
+        // region Constructors
+        public EventViewHolder(View view) {
+            super(view);
+            ButterKnife.bind(this, view);
         }
-    }
+        // endregion
 
-    private void setUpEventInfo(TextView tv, Event event) {
-        tv.setText(getEventInfo(event));
-    }
-
-    private void setUpCreatedAt(TextView tv, Event event) {
-        String createdAt = event.getCreatedAt();
-        if(!TextUtils.isEmpty(createdAt)){
-            tv.setText(DateUtility.getFormattedDateAndTime(DateUtility.getCalendar(createdAt, PATTERN), DateUtility.FORMAT_RELATIVE));
-        }
-    }
-
-    private CharSequence getPushEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        String ref = payload.getRef();
-        ref = ref.substring(ref.indexOf("refs/heads/") + 11, ref.length());
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" pushed to ")
-                .build());
-        spans.add(new Span.Builder(ref)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" at ")
-                .build());
-
-        if (repostioryName.equals("/")) { // Legacy Event
-            eventInfo = String.format("Legacy %s", event.getType());
-        } else {
-            spans.add(new Span.Builder(repostioryName)
-                    .typeface(boldFont)
-                    .build());
-            eventInfo = Trestle.getFormattedText(spans);
+        // region Helper Methods
+        private void bind(Event event){
+            setUpAvatar(avatarCircleImageView, event);
+            setUpEventInfo(eventInfoTextView, event);
+            setUpCreatedAt(createdAtTextView, event);
         }
 
-        return eventInfo;
-    }
-
-    private CharSequence getIssuesEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        Issue issue = payload.getIssue();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(String.format(" %s ", payload.getAction()))
-                .build());
-        spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
-                .typeface(boldFont)
-                .build());
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getIssueCommentEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        Issue issue = payload.getIssue();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" commented on ")
-                .build());
-
-        if (issue != null) {
-            PullRequest pullRequest = issue.getPullRequest();
-            if(pullRequest != null){
-                if (pullRequest.getHtmlUrl().equals("null")) {
-                    spans.add(new Span.Builder("issue ")
-                            .build());
-                    spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
-                            .typeface(boldFont)
-                            .build());
-                } else {
-                    spans.add(new Span.Builder("pull request ")
-                            .build());
-                    spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
-                            .typeface(boldFont)
-                            .build());
+        private void setUpAvatar(ImageView iv, Event event){
+            Actor actor = event.getActor();
+            if(actor != null){
+                String avatarUrl = actor.getAvatarUrl();
+                if(!TextUtils.isEmpty(avatarUrl)){
+                    Picasso.with(iv.getContext())
+                            .load(avatarUrl)
+                            .placeholder(R.color.grey_300)
+                            .into(iv);
                 }
-            } else {
-                spans.add(new Span.Builder("issue ")
-                        .build());
-                spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
-                        .typeface(boldFont)
-                        .build());
             }
-        } else {
-            spans.add(new Span.Builder("issue ")
-                    .build());
-            spans.add(new Span.Builder(repostioryName)
-                    .typeface(boldFont)
-                    .build());
         }
 
-        eventInfo = Trestle.getFormattedText(spans);
+        private void setUpEventInfo(TextView tv, Event event) {
+            tv.setText(getEventInfo(event));
+        }
 
-        return eventInfo;
-    }
-
-    private CharSequence getCreateEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        if (payload.getRefType().equals("")) { // Legacy Event
-            eventInfo = String.format("Legacy %s", event.getType());
-        } else {
-            spans.add(new Span.Builder(login)
-                    .typeface(boldFont)
-                    .build());
-            spans.add(new Span.Builder(String.format(" created %s ", payload.getRefType()))
-                    .build());
-
-            if (!(payload.getRef() == null)) {
-                spans.add(new Span.Builder(payload.getRef())
-                        .typeface(boldFont)
-                        .build());
+        private void setUpCreatedAt(TextView tv, Event event) {
+            String formattedCreatedAt = event.getFormattedCreatedAt();
+            if(!TextUtils.isEmpty(formattedCreatedAt)){
+                tv.setText(formattedCreatedAt);
             }
+        }
 
-            switch (payload.getRefType()) {
-                case "branch":
-                    spans.add(new Span.Builder(" at ")
-                            .build());
-                    spans.add(new Span.Builder(repostioryName)
-                            .typeface(boldFont)
-                            .build());
+        private CharSequence getEventInfo(Event event) {
+
+            CharSequence eventInfo;
+
+            String eventType = event.getType();
+            switch (eventType){
+                case "PushEvent":
+                    eventInfo = getPushEventInfo(event);
                     break;
-                case "tag":
-                    spans.add(new Span.Builder(" at ")
-                            .build());
-                    spans.add(new Span.Builder(repostioryName)
-                            .typeface(boldFont)
-                            .build());
+                case "IssuesEvent":
+                    eventInfo = getIssuesEventInfo(event);
                     break;
-                case "repository":
-                    int index = repostioryName.indexOf('/');
-                    int repoLength = repostioryName.length();
-                    repostioryName = repostioryName.substring(index + 1, repoLength);
-                    spans.add(new Span.Builder(repostioryName)
-                            .typeface(boldFont)
-                            .build());
+                case "IssueCommentEvent":
+                    eventInfo = getIssueCommentEventInfo(event);
+                    break;
+                case "CreateEvent":
+                    eventInfo = getCreateEventInfo(event);
+                    break;
+                case "DeleteEvent":
+                    eventInfo = getDeleteEventInfo(event);
+                    break;
+                case "WatchEvent":
+                    eventInfo = getWatchEventInfo(event);
+                    break;
+                case "MemberEvent":
+                    eventInfo = getMemberEventInfo(event);
+                    break;
+                case "ForkEvent":
+                    eventInfo = getForkEventInfo(event);
+                    break;
+                case "GollumEvent":
+                    eventInfo = getGollumEventInfo(event);
+                    break;
+                case "CommitCommentEvent":
+                    eventInfo = getCommitCommentEventInfo(event);
+                    break;
+                case "PullRequestReviewCommentEvent":
+                    eventInfo = getPullRequestReviewCommentEventInfo(event);
+                    break;
+                case "ReleaseEvent":
+                    eventInfo = getReleaseEventInfo(event);
+                    break;
+                case "PullRequestEvent":
+                    eventInfo = getPullRequestEventInfo(event);
+                    break;
+                case "PublicEvent":
+                    eventInfo = getPublicEventInfo(event);
+                    break;
+                default:
+                    eventInfo = eventType;
                     break;
             }
-            eventInfo = Trestle.getFormattedText(spans);
-        }
-
-        return eventInfo;
-    }
-
-    private CharSequence getDeleteEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(String.format(" deleted %s ", payload.getRefType()))
-                .build());
-
-        if (!(payload.getRef().equals("null"))) {
-            spans.add(new Span.Builder(String.format("%s ", payload.getRef()))
-                    .typeface(boldFont)
-                    .build());
-        }
-        spans.add(new Span.Builder("at ")
-                .build());
-        spans.add(new Span.Builder(repostioryName)
-                .typeface(boldFont)
-                .build());
-
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getWatchEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        if (payload.getAction().equals("started")) {
-            spans.add(new Span.Builder(" starred ")
-                    .build());
-        }
-        if (repostioryName.equals("/")) { // Legacy Event
-            eventInfo = String.format("Legacy %s", event.getType());
-        } else {
-            spans.add(new Span.Builder(repostioryName)
-                    .typeface(boldFont)
-                    .build());
-            eventInfo = Trestle.getFormattedText(spans);
-        }
-
-        return eventInfo;
-    }
-
-    private CharSequence getMemberEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" added ")
-                .build());
-        spans.add(new Span.Builder(payload.getMember().getLogin())
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" to ")
-                .build());
-        spans.add(new Span.Builder(repostioryName)
-                .typeface(boldFont)
-                .build());
-
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getForkEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" forked ")
-                .build());
-        spans.add(new Span.Builder(repostioryName)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" to ")
-                .build());
-
-        Repository forkee = payload.getForkee();
-        if (!forkee.getName().equals("")) {
-            if (!(forkee.getFullName().equals(""))) {
-                spans.add(new Span.Builder(forkee.getFullName())
-                        .typeface(boldFont)
-                        .build());
-            } else { // Legacy Event
-                spans.add(new Span.Builder("deleted")
-                        .build());
-            }
-        } else { // Legacy Event
-            String repoNameSubstring = repostioryName.substring(
-                    repostioryName.indexOf('/'), repostioryName.length());
-            spans.add(new Span.Builder(String.format("%s%s", login, repoNameSubstring))
-                    .typeface(boldFont)
-                    .build());
-        }
-
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getGollumEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-
-        List<Page> pages = payload.getPages();
-        if (pages != null) {
-            Page page = pages.get(0);
-            spans.add(new Span.Builder(String.format(" %s the ", page.getAction()))
-                    .build());
-            spans.add(new Span.Builder(repostioryName)
-                    .typeface(boldFont)
-                    .build());
-            spans.add(new Span.Builder(" wiki")
-                    .build());
-        } else {
-            spans.add(new Span.Builder(String.format(" %s the ", payload.getAction()))
-                    .build());
-            spans.add(new Span.Builder(repostioryName)
-                    .typeface(boldFont)
-                    .build());
-            spans.add(new Span.Builder(" wiki")
-                    .build());
-        }
-
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getCommitCommentEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" commented on commit ")
-                .build());
-
-        if (payload.getComment() != null) {
-            spans.add(new Span.Builder(String.format("%s@%s", repostioryName, payload.getComment().getCommitId()))
-                    .typeface(boldFont)
-                    .build());
-
-            eventInfo = Trestle.getFormattedText(spans);
-        } else { // Legacy Event
-            eventInfo = String.format("Legacy %s", event.getType());
-        }
-
-        return eventInfo;
-    }
-
-    private CharSequence getPullRequestReviewCommentEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-
-        String pullRequestUrl = payload.getComment().getPullRequestUrl();
-        if (pullRequestUrl.length() > 0) {
-            String pullRequestUrlId = pullRequestUrl.substring(
-                    pullRequestUrl.indexOf("/pulls/") + 7,
-                    pullRequestUrl.length());
-            spans.add(new Span.Builder(" commented on pull request ")
-                    .build());
-            spans.add(new Span.Builder(String.format("%s#%s", repostioryName, pullRequestUrlId))
-                    .typeface(boldFont)
-                    .build());
-        } else { // Legacy Event
-            spans.add(new Span.Builder(" commented on pull request ")
-                    .build());
-            spans.add(new Span.Builder(String.format("%s#", repostioryName))
-                    .typeface(boldFont)
-                    .build());
-        }
-
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getReleaseEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" released ")
-                .build());
-        spans.add(new Span.Builder(payload.getRelease().getTagName())
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" at ")
-                .build());
-        spans.add(new Span.Builder(repostioryName)
-                .typeface(boldFont)
-                .build());
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getPullRequestEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-
-        if (payload.getAction().equals("closed")) {
-            if (payload.getPullRequest().getMerged()) {
-                spans.add(new Span.Builder(" merged pull request ")
-                        .build());
-            } else {
-                spans.add(new Span.Builder(" closed pull request ")
-                        .build());
-            }
-        } else {
-            spans.add(new Span.Builder(String.format(" %s pull request ", payload.getAction()))
-                    .build());
-        }
-
-        spans.add(new Span.Builder(String.format("%s#%d", repostioryName, payload.getNumber()))
-                .typeface(boldFont)
-                .build());
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getPublicEventInfo(Event event){
-        CharSequence eventInfo;
-
-        Actor actor = event.getActor();
-        Repository repository = event.getRepo();
-        String login = actor.getLogin();
-        String repostioryName = repository.getName();
-        Payload payload = event.getPayload();
-
-        List<Span> spans = new ArrayList<>();
-
-        spans.add(new Span.Builder(login)
-                .typeface(boldFont)
-                .build());
-        spans.add(new Span.Builder(" open sourced ")
-                .build());
-
-        spans.add(new Span.Builder(repostioryName)
-                .typeface(boldFont)
-                .build());
-        eventInfo = Trestle.getFormattedText(spans);
-
-        return eventInfo;
-    }
-
-    private CharSequence getEventInfo(Event event) {
-
-        CharSequence eventInfo;
-
-        String eventType = event.getType();
-        switch (eventType){
-            case "PushEvent":
-                eventInfo = getPushEventInfo(event);
-                break;
-            case "IssuesEvent":
-                eventInfo = getIssuesEventInfo(event);
-                break;
-            case "IssueCommentEvent":
-                eventInfo = getIssueCommentEventInfo(event);
-                break;
-            case "CreateEvent":
-                eventInfo = getCreateEventInfo(event);
-                break;
-            case "DeleteEvent":
-                eventInfo = getDeleteEventInfo(event);
-                break;
-            case "WatchEvent":
-                eventInfo = getWatchEventInfo(event);
-                break;
-            case "MemberEvent":
-                eventInfo = getMemberEventInfo(event);
-                break;
-            case "ForkEvent":
-                eventInfo = getForkEventInfo(event);
-                break;
-            case "GollumEvent":
-                eventInfo = getGollumEventInfo(event);
-                break;
-            case "CommitCommentEvent":
-                eventInfo = getCommitCommentEventInfo(event);
-                break;
-            case "PullRequestReviewCommentEvent":
-                eventInfo = getPullRequestReviewCommentEventInfo(event);
-                break;
-            case "ReleaseEvent":
-                eventInfo = getReleaseEventInfo(event);
-                break;
-            case "PullRequestEvent":
-                eventInfo = getPullRequestEventInfo(event);
-                break;
-            case "PublicEvent":
-                eventInfo = getPublicEventInfo(event);
-                break;
-            default:
-                eventInfo = eventType;
-                break;
-        }
 
 //        action = TextUtils.concat(action, styleText(login), " ");
 //         else if (eventType.equals("FollowEvent")) {
@@ -791,39 +303,530 @@ public class EventsAdapter extends BaseAdapter<Event> {
 //
 //        }
 
-        return eventInfo;
-    }
-    // endregion
+            return eventInfo;
+        }
 
-    // region Inner Classes
+        private CharSequence getPushEventInfo(Event event){
+            CharSequence eventInfo;
 
-    public static class EventViewHolder extends RecyclerView.ViewHolder {
-        // region Views
-        @Bind(R.id.avatar_civ)
-        CircleImageView avatarCircleImageView;
-        @Bind(R.id.event_info_tv)
-        TextView eventInfoTextView;
-        @Bind(R.id.created_at_tv)
-        TextView createdAtTextView;
-        // endregion
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
 
-        // region Constructors
-        public EventViewHolder(View view) {
-            super(view);
-            ButterKnife.bind(this, view);
+            List<Span> spans = new ArrayList<>();
+
+            String ref = payload.getRef();
+            ref = ref.substring(ref.indexOf("refs/heads/") + 11, ref.length());
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" pushed to ")
+                    .build());
+            spans.add(new Span.Builder(ref)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" at ")
+                    .build());
+
+            if (repostioryName.equals("/")) { // Legacy Event
+                eventInfo = String.format("Legacy %s", event.getType());
+            } else {
+                spans.add(new Span.Builder(repostioryName)
+                        .typeface(boldFont)
+                        .build());
+                eventInfo = Trestle.getFormattedText(spans);
+            }
+
+            return eventInfo;
+        }
+
+        private CharSequence getIssuesEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            Issue issue = payload.getIssue();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(String.format(" %s ", payload.getAction()))
+                    .build());
+            spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
+                    .typeface(boldFont)
+                    .build());
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getIssueCommentEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            Issue issue = payload.getIssue();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" commented on ")
+                    .build());
+
+            if (issue != null) {
+                PullRequest pullRequest = issue.getPullRequest();
+                if(pullRequest != null){
+                    if (pullRequest.getHtmlUrl().equals("null")) {
+                        spans.add(new Span.Builder("issue ")
+                                .build());
+                        spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
+                                .typeface(boldFont)
+                                .build());
+                    } else {
+                        spans.add(new Span.Builder("pull request ")
+                                .build());
+                        spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
+                                .typeface(boldFont)
+                                .build());
+                    }
+                } else {
+                    spans.add(new Span.Builder("issue ")
+                            .build());
+                    spans.add(new Span.Builder(String.format("%s#%d", repostioryName, issue.getNumber()))
+                            .typeface(boldFont)
+                            .build());
+                }
+            } else {
+                spans.add(new Span.Builder("issue ")
+                        .build());
+                spans.add(new Span.Builder(repostioryName)
+                        .typeface(boldFont)
+                        .build());
+            }
+
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getCreateEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            if (payload.getRefType().equals("")) { // Legacy Event
+                eventInfo = String.format("Legacy %s", event.getType());
+            } else {
+                spans.add(new Span.Builder(login)
+                        .typeface(boldFont)
+                        .build());
+                spans.add(new Span.Builder(String.format(" created %s ", payload.getRefType()))
+                        .build());
+
+                if (!(payload.getRef() == null)) {
+                    spans.add(new Span.Builder(payload.getRef())
+                            .typeface(boldFont)
+                            .build());
+                }
+
+                switch (payload.getRefType()) {
+                    case "branch":
+                        spans.add(new Span.Builder(" at ")
+                                .build());
+                        spans.add(new Span.Builder(repostioryName)
+                                .typeface(boldFont)
+                                .build());
+                        break;
+                    case "tag":
+                        spans.add(new Span.Builder(" at ")
+                                .build());
+                        spans.add(new Span.Builder(repostioryName)
+                                .typeface(boldFont)
+                                .build());
+                        break;
+                    case "repository":
+                        int index = repostioryName.indexOf('/');
+                        int repoLength = repostioryName.length();
+                        repostioryName = repostioryName.substring(index + 1, repoLength);
+                        spans.add(new Span.Builder(repostioryName)
+                                .typeface(boldFont)
+                                .build());
+                        break;
+                }
+                eventInfo = Trestle.getFormattedText(spans);
+            }
+
+            return eventInfo;
+        }
+
+        private CharSequence getDeleteEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(String.format(" deleted %s ", payload.getRefType()))
+                    .build());
+
+            if (!(payload.getRef().equals("null"))) {
+                spans.add(new Span.Builder(String.format("%s ", payload.getRef()))
+                        .typeface(boldFont)
+                        .build());
+            }
+            spans.add(new Span.Builder("at ")
+                    .build());
+            spans.add(new Span.Builder(repostioryName)
+                    .typeface(boldFont)
+                    .build());
+
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getWatchEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            if (payload.getAction().equals("started")) {
+                spans.add(new Span.Builder(" starred ")
+                        .build());
+            }
+            if (repostioryName.equals("/")) { // Legacy Event
+                eventInfo = String.format("Legacy %s", event.getType());
+            } else {
+                spans.add(new Span.Builder(repostioryName)
+                        .typeface(boldFont)
+                        .build());
+                eventInfo = Trestle.getFormattedText(spans);
+            }
+
+            return eventInfo;
+        }
+
+        private CharSequence getMemberEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" added ")
+                    .build());
+            spans.add(new Span.Builder(payload.getMember().getLogin())
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" to ")
+                    .build());
+            spans.add(new Span.Builder(repostioryName)
+                    .typeface(boldFont)
+                    .build());
+
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getForkEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" forked ")
+                    .build());
+            spans.add(new Span.Builder(repostioryName)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" to ")
+                    .build());
+
+            Repository forkee = payload.getForkee();
+            if (!forkee.getName().equals("")) {
+                if (!(forkee.getFullName().equals(""))) {
+                    spans.add(new Span.Builder(forkee.getFullName())
+                            .typeface(boldFont)
+                            .build());
+                } else { // Legacy Event
+                    spans.add(new Span.Builder("deleted")
+                            .build());
+                }
+            } else { // Legacy Event
+                String repoNameSubstring = repostioryName.substring(
+                        repostioryName.indexOf('/'), repostioryName.length());
+                spans.add(new Span.Builder(String.format("%s%s", login, repoNameSubstring))
+                        .typeface(boldFont)
+                        .build());
+            }
+
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getGollumEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+
+            List<Page> pages = payload.getPages();
+            if (pages != null) {
+                Page page = pages.get(0);
+                spans.add(new Span.Builder(String.format(" %s the ", page.getAction()))
+                        .build());
+                spans.add(new Span.Builder(repostioryName)
+                        .typeface(boldFont)
+                        .build());
+                spans.add(new Span.Builder(" wiki")
+                        .build());
+            } else {
+                spans.add(new Span.Builder(String.format(" %s the ", payload.getAction()))
+                        .build());
+                spans.add(new Span.Builder(repostioryName)
+                        .typeface(boldFont)
+                        .build());
+                spans.add(new Span.Builder(" wiki")
+                        .build());
+            }
+
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getCommitCommentEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" commented on commit ")
+                    .build());
+
+            if (payload.getComment() != null) {
+                spans.add(new Span.Builder(String.format("%s@%s", repostioryName, payload.getComment().getCommitId()))
+                        .typeface(boldFont)
+                        .build());
+
+                eventInfo = Trestle.getFormattedText(spans);
+            } else { // Legacy Event
+                eventInfo = String.format("Legacy %s", event.getType());
+            }
+
+            return eventInfo;
+        }
+
+        private CharSequence getPullRequestReviewCommentEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+
+            String pullRequestUrl = payload.getComment().getPullRequestUrl();
+            if (pullRequestUrl.length() > 0) {
+                String pullRequestUrlId = pullRequestUrl.substring(
+                        pullRequestUrl.indexOf("/pulls/") + 7,
+                        pullRequestUrl.length());
+                spans.add(new Span.Builder(" commented on pull request ")
+                        .build());
+                spans.add(new Span.Builder(String.format("%s#%s", repostioryName, pullRequestUrlId))
+                        .typeface(boldFont)
+                        .build());
+            } else { // Legacy Event
+                spans.add(new Span.Builder(" commented on pull request ")
+                        .build());
+                spans.add(new Span.Builder(String.format("%s#", repostioryName))
+                        .typeface(boldFont)
+                        .build());
+            }
+
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getReleaseEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" released ")
+                    .build());
+            spans.add(new Span.Builder(payload.getRelease().getTagName())
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" at ")
+                    .build());
+            spans.add(new Span.Builder(repostioryName)
+                    .typeface(boldFont)
+                    .build());
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getPullRequestEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+
+            if (payload.getAction().equals("closed")) {
+                if (payload.getPullRequest().getMerged()) {
+                    spans.add(new Span.Builder(" merged pull request ")
+                            .build());
+                } else {
+                    spans.add(new Span.Builder(" closed pull request ")
+                            .build());
+                }
+            } else {
+                spans.add(new Span.Builder(String.format(" %s pull request ", payload.getAction()))
+                        .build());
+            }
+
+            spans.add(new Span.Builder(String.format("%s#%d", repostioryName, payload.getNumber()))
+                    .typeface(boldFont)
+                    .build());
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
+        }
+
+        private CharSequence getPublicEventInfo(Event event){
+            CharSequence eventInfo;
+
+            Actor actor = event.getActor();
+            Repository repository = event.getRepo();
+            String login = actor.getLogin();
+            String repostioryName = repository.getName();
+            Payload payload = event.getPayload();
+
+            List<Span> spans = new ArrayList<>();
+
+            spans.add(new Span.Builder(login)
+                    .typeface(boldFont)
+                    .build());
+            spans.add(new Span.Builder(" open sourced ")
+                    .build());
+
+            spans.add(new Span.Builder(repostioryName)
+                    .typeface(boldFont)
+                    .build());
+            eventInfo = Trestle.getFormattedText(spans);
+
+            return eventInfo;
         }
         // endregion
     }
 
     public static class FooterViewHolder extends RecyclerView.ViewHolder {
         // region Views
-        @Bind(R.id.loading_fl)
+        @BindView(R.id.loading_fl)
         FrameLayout loadingFrameLayout;
-        @Bind(R.id.error_rl)
+        @BindView(R.id.error_rl)
         RelativeLayout errorRelativeLayout;
-        @Bind(R.id.pb)
+        @BindView(R.id.pb)
         ProgressBar progressBar;
-        @Bind(R.id.reload_btn)
+        @BindView(R.id.reload_btn)
         Button reloadButton;
         // endregion
 

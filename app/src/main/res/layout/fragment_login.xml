@@ -45,8 +45,8 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/username"
                             android:singleLine="true"
-                            android:textColor="@color/secondary_text"
-                            android:textColorHint="@color/primary_text"
+                            android:textColor="@color/secondary_text_dark"
+                            android:textColorHint="@color/primary_text_dark"
                             app:textFont="noto_sans_regular" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -87,8 +87,8 @@
                 android:layout_gravity="right|center_vertical"
                 app:amount="5"
                 app:duration="@android:integer/config_mediumAnimTime"
-                app:endColor="@color/inverse_primary_text"
-                app:startColor="@color/inverse_tertiary_text" />
+                app:endColor="@color/primary_text_light"
+                app:startColor="@color/tertiary_text_light" />
 
         </LinearLayout>
 

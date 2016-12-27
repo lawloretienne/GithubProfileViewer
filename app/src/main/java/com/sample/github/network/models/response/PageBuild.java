@@ -18,7 +18,7 @@ public class PageBuild {
     @SerializedName("commit")
     public String commit;
     @SerializedName("duration")
-    public Integer duration;
+    public int duration;
     @SerializedName("created_at")
     public String createdAt;
     @SerializedName("updated_at")
@@ -43,7 +43,7 @@ public class PageBuild {
         return commit;
     }
 
-    public Integer getDuration() {
+    public int getDuration() {
         return duration;
     }
 
@@ -75,7 +75,7 @@ public class PageBuild {
         this.commit = commit;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 

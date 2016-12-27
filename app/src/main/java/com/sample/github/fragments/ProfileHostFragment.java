@@ -18,8 +18,9 @@ import com.sample.github.network.models.response.User;
 import com.sample.github.utilities.FontCache;
 import com.sample.github.utilities.TrestleUtility;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by etiennelawlor on 1/20/16.
@@ -27,11 +28,11 @@ import butterknife.ButterKnife;
 public class ProfileHostFragment extends BaseFragment {
 
     // region Views
-    @Bind(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPager viewPager;
-    @Bind(R.id.tabs)
+    @BindView(R.id.tabs)
     TabLayout tabLayout;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
     // endregion
 
@@ -39,6 +40,7 @@ public class ProfileHostFragment extends BaseFragment {
     private Typeface font;
     private User user;
     private String username;
+    private Unbinder unbinder;
     // endregion
 
     // region Constructors
@@ -78,7 +80,7 @@ public class ProfileHostFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_profile_host, container, false);
-        ButterKnife.bind(this, rootView);
+        unbinder = ButterKnife.bind(this, rootView);
 
         return rootView;
     }
@@ -114,7 +116,7 @@ public class ProfileHostFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         removeListeners();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
     // endregion
 

@@ -10,7 +10,7 @@ public class Issue {
 
     // region Fields
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("url")
     public String url;
     @SerializedName("repository_url")
@@ -24,7 +24,7 @@ public class Issue {
     @SerializedName("html_url")
     public String htmlUrl;
     @SerializedName("number")
-    public Integer number;
+    public int number;
     @SerializedName("state")
     public String state;
     @SerializedName("title")
@@ -36,9 +36,9 @@ public class Issue {
     @SerializedName("assignee")
     public User assignee;
     @SerializedName("locked")
-    public Boolean locked;
+    public boolean locked;
     @SerializedName("comments")
-    public Integer comments;
+    public int comments;
     @SerializedName("pull_request")
     public PullRequest pullRequest;
     @SerializedName("created_at")
@@ -49,7 +49,7 @@ public class Issue {
 
     // region Getters
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -77,7 +77,7 @@ public class Issue {
         return htmlUrl;
     }
 
-    public Integer getNumber() {
+    public int getNumber() {
         return number;
     }
 
@@ -101,11 +101,11 @@ public class Issue {
         return assignee;
     }
 
-    public Boolean getLocked() {
+    public boolean getLocked() {
         return locked;
     }
 
-    public Integer getComments() {
+    public int getComments() {
         return comments;
     }
 
@@ -125,7 +125,7 @@ public class Issue {
 
     // region Setters
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -153,7 +153,7 @@ public class Issue {
         this.htmlUrl = htmlUrl;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -177,11 +177,11 @@ public class Issue {
         this.assignee = assignee;
     }
 
-    public void setLocked(Boolean locked) {
+    public void setLocked(boolean locked) {
         this.locked = locked;
     }
 
-    public void setComments(Integer comments) {
+    public void setComments(int comments) {
         this.comments = comments;
     }
 

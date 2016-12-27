@@ -12,7 +12,7 @@ public class Deployment {
     @SerializedName("url")
     public String url;
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("sha")
     public String sha;
     @SerializedName("ref")
@@ -41,7 +41,7 @@ public class Deployment {
         return url;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -93,7 +93,7 @@ public class Deployment {
         this.url = url;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

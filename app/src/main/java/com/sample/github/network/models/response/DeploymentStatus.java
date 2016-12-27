@@ -12,7 +12,7 @@ public class DeploymentStatus {
     @SerializedName("url")
     public String url;
     @SerializedName("id")
-    public Integer id;
+    public int id;
     @SerializedName("state")
     public String state;
     @SerializedName("creator")
@@ -37,7 +37,7 @@ public class DeploymentStatus {
         return url;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -81,7 +81,7 @@ public class DeploymentStatus {
         this.url = url;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
