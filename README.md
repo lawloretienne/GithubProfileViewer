@@ -1,9 +1,12 @@
-GithubProfileViewer
-=====================
+# GithubProfileViewer
 
-Views profile information of a GitHub user using the GitHub API.
-Displays info, repositories, and events.
+![GithubProfileViewer](https://raw.githubusercontent.com/lawloretienne/GithubProfileViewer/master/images/ic_launcher.png)
 
+## Overview
+
+Views profile information of a GitHub user using the GitHub API. Displays info, repositories, and events.
+
+## Screenshots
 
                             |                           |                           |                           
 :--------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
