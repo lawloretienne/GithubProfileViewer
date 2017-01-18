@@ -1,5 +1,7 @@
 package com.sample.github.network.models.response;
 
+import android.text.TextUtils;
+
 import com.google.gson.annotations.SerializedName;
 import com.sample.github.utilities.DateUtility;
 
@@ -7,6 +9,8 @@ import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
+import timber.log.Timber;
 
 /**
  * Created by etiennelawlor on 11/30/16.
@@ -448,13 +452,16 @@ public class Repository {
     }
 
     public String getFormattedPushedAt(){
-        Calendar calendar = DateUtility.getCalendar(pushedAt, PATTERN);
-        long days = DateUtility.getTimeUnitDiff(calendar, Calendar.getInstance(), TimeUnit.DAYS);
-        String formattedPushedAt;
-        if(days > 30L){
-            formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
-        } else {
-            formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
+        String formattedPushedAt = "";
+        if(!TextUtils.isEmpty(pushedAt)){
+            Calendar calendar = DateUtility.getCalendar(pushedAt, PATTERN);
+            long days = DateUtility.getTimeUnitDiff(calendar, Calendar.getInstance(), TimeUnit.DAYS);
+
+            if(days > 30L){
+                formattedPushedAt = String.format("Updated on %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
+            } else {
+                formattedPushedAt = String.format("Updated %s", DateUtility.getFormattedDateAndTime(calendar, DateUtility.FORMAT_RELATIVE));
+            }
         }
         return formattedPushedAt;
     }
