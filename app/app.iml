@@ -62,13 +62,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/prod/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/prod/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/prod/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testProd/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testProd/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testProd/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testProd/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testProd/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testProd/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testProd/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestProd/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestProd/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestProd/assets" type="java-test-resource" />
@@ -76,6 +69,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestProd/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestProd/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestProd/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testProd/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testProd/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testProd/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testProd/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testProd/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testProd/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testProd/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/assets" type="java-resource" />
